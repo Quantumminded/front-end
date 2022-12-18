@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from "styled-components";
 import {Small,Body,Highlight,Subtitle,Title,Headings} from './Style/StyledTypography'
+import {Input,Button} from './Style/StyledComponents'
 function SignIn() {
 
 const Container = styled.div`
-display: flex;
-justify-content: center;
+text-align: center;
 `
   // function onSignIn(googleUser) {
   //   var profile = googleUser.getBasicProfile();
@@ -19,6 +19,17 @@ justify-content: center;
     <div>SignIn</div>
     <Container>
       <Title>SignIn</Title>
+        <Input placeholder="Email"/>
+        <Input placeholder="Password"/>
+        <Button><Highlight>Sign In</Highlight></Button>
+        <Small>Not a member? <span>Sign Up</span></Small>
+      <Subtitle>Facebook</Subtitle>
+      <Subtitle>Google</Subtitle>
+      <Subtitle>Apple</Subtitle>
+      <Subtitle>Email</Subtitle>
+
+
+
     <div className="g-signin2" data-onsuccess="onSignIn"></div>
     </Container>
     </>
