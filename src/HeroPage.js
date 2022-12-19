@@ -25,7 +25,7 @@ function HeroPage() {
     </div>
 
     {/* Cards Container */}
-    <div className='md:flex justify-center h-96'>
+    <div className='h-96 md:flex justify-center'>
       {/* Document Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
