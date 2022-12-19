@@ -3,7 +3,6 @@ import React from 'react'
 function HeroPage() {
   return (
    <div>
-  
     <div>
       {/* Img  */}
       <div className='bg-[url("https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80")] h-96 w-screen bg-cover bg-center p-24'>
@@ -26,53 +25,29 @@ function HeroPage() {
     </div>
 
     {/* Cards Container */}
-    <div className='md:flex justify-center'>
+    <div className='md:flex justify-center h-96'>
       {/* Document Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
+            <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2">Document</h5>
-            <p className="text-gray-700 text-base mb-4">
-              Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-            <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-          </div>
         </div>
       </div>
       {/* Calls Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1617103023188-fb6c08d8b8b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
+            <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1617103023188-fb6c08d8b8b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2">Calls</h5>
-            <p className="text-gray-700 text-base mb-4">
-              Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-            <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-          </div>
         </div>
       </div>
       {/* Translation Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-            <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1543165796-5426273eaab3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
+            <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1543165796-5426273eaab3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
-          <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2">Translation</h5>
-            <p className="text-gray-700 text-base mb-4">
-              Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-            <button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-          </div>
         </div>
       </div>
     </div>
