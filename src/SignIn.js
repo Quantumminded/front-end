@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import styled from "styled-components";
 import {Small,Body,Highlight,Subtitle,Title,Headings} from './Style/StyledTypography'
 import {Input,Button} from './Style/StyledComponents'
@@ -17,13 +17,23 @@ function SignIn() {
       'Authorization': 'Bearer <YOUR_JWT_TOKEN>'
     }
   });
+  const email = useRef()
+  const password = useRef()
+  
+  function handleEmail (e){
+      email.current = e.target.value 
+  }
+  function handlePassword (e){
+        password.current = e.target.value
+  }
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
-  const login = (email, password) =>
-  client.post('/login', { email:"laura@yourcompany.com", password:"asdasdasd" }).then(response => {
+  const login = (e,email,password) =>{
+    e.preventDefault()
+  client.post('/login', { email, password }).then(response => {
     // Save the JWT token in local storage
     localStorage.setItem('token', response.data.token);
-  });
+  })};
 
   // function onSignIn(googleUser) {
   //   var profile = googleUser.getBasicProfile();
@@ -37,9 +47,9 @@ function SignIn() {
     <div>SignIn</div>
     <Container>
       <Title>SignIn</Title>
-        <form onSubmit={login}>
-        <Input type="email" name='email' placeholder="Email"/>
-        <Input type="password" name='password' placeholder="Password"/>
+        <form onSubmit={(e)=> login(e, email.current,password.current)}>
+        <Input onChange={(e)=> handleEmail(e)} type="email" name='email' placeholder="Email"/>
+        <Input onChange={(e)=> handlePassword(e)} type="password" name='password' placeholder="Password"/>
         <Button type='submit'><Highlight>Sign In</Highlight></Button>
         </form>
         <Small>Not a member? <span>Sign Up</span></Small>
@@ -47,7 +57,7 @@ function SignIn() {
       <Subtitle>Apple</Subtitle>
       <Subtitle>Email</Subtitle>
 
-      {/* <div className="g-signin2" data-onsuccess="onSignIn"></div> */}
+      <div className="g-signin2" data-onsuccess="onSignIn"></div>
 
 
     </Container>
