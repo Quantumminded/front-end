@@ -10,10 +10,7 @@ text-align: center;
 `
 
 function SignIn() {
-  const prevent = (e) =>{
-    console.log("it works")
-    // e.preventDefault()
-  }
+  //Server needs to run on port 3001
   const client = axios.create({
     baseURL: 'http://localhost:3001',
     headers: {
