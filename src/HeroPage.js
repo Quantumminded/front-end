@@ -29,7 +29,7 @@ function HeroPage() {
       {/* Document Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+          <a href="/homePage" data-mdb-ripple="true" data-mdb-ripple-color="light">
             <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
         </div>
@@ -37,7 +37,7 @@ function HeroPage() {
       {/* Calls Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+          <a href="/homePage" data-mdb-ripple="true" data-mdb-ripple-color="light">
             <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1617103023188-fb6c08d8b8b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
         </div>
@@ -45,7 +45,7 @@ function HeroPage() {
       {/* Translation Card */}
       <div className="flex justify-center m-5">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
-          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+          <a href="/homePage" data-mdb-ripple="true" data-mdb-ripple-color="light">
             <img className="rounded-t-lg h-full" src="https://images.unsplash.com/photo-1543165796-5426273eaab3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""/>
           </a>
         </div>
