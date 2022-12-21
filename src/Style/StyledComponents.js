@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Input = styled.input`
-  display:block;
-  width:25%;
-  margin:20px auto;
-  padding:15px;
-  background:rgba(0,0,0,0.2);
-  color:#fff;
-  border:0;
+  display: block;
+  width: 25%;
+  margin: 20px auto;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: 0;
 `;
 const Button = styled.button`
   border: 1px solid black;
