@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+
+
 
 const scalein = keyframes`
   100% {
@@ -25,6 +27,7 @@ const fadein = keyframes`
   100% {
     opacity: 0.8;
   }
+  
 `
 const Container = styled.div`
 display: flex;
@@ -40,7 +43,7 @@ const Rectangle = styled.div`
   positon: relative;
   width: 50px;
   height: 50px;
-  background: #380848;
+  background: ${props => props.inputColor};
   transform: scale(0);
   border-radius: 50%;
   color: white;
@@ -61,14 +64,28 @@ const Notifi = styled.div`
 
 
 export default function Notification({ data }) {
-    return (
-        <Container >
-            <Rectangle>
-                <Notifi>
-                    <span>{data}</span>
-                </Notifi>
-            </Rectangle>
-        </Container>
+  const [color, setColor] = useState()
+  // checks for the String we get from the server which gets passed down as props to Notification
+  useEffect(() => {
+    if (data === "Email and Password is required") {
+      setColor('#3c90d1')
+    } else
+      if (data === "Logged in") {
+        setColor('#039f03')
+      } else {
+        setColor('#e14d45')
+      }
 
-    )
+  }, [data])
+
+  return (
+    <Container >
+      <Rectangle inputColor={color}>
+        <Notifi>
+          <span>{data}</span>
+        </Notifi>
+      </Rectangle>
+    </Container>
+
+  )
 }
