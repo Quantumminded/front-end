@@ -20,10 +20,10 @@ const Span = styled.span`
   cursor: pointer;
 `;
 const Name = styled(Input)`
-width: 12.3%;
-display: inline;
-margin:0 0.2%;
-margin-top: 1rem;
+  width: 12.3%;
+  display: inline;
+  margin: 0 0.2%;
+  margin-top: 1rem;
 `;
 
 function SignIn() {
@@ -39,7 +39,7 @@ function SignIn() {
   const email = useRef();
   const password = useRef();
 
-  const [validPassword,setValidPassword]= useState()
+  const [validPassword, setValidPassword] = useState();
 
   //Handels the inputs
   function handleEmail(e) {
@@ -49,10 +49,12 @@ function SignIn() {
     password.current = e.target.value;
   }
 
-  function comparePasswords(){
-    const validatorField = document.getElementById('confirm')
-    if(password.current === validPassword) validatorField.style.border = '3px solid green'
-    if(password.current !== validPassword) validatorField.style.border = '3px solid red'
+  function comparePasswords() {
+    const validatorField = document.getElementById("confirm");
+    if (password.current === validPassword)
+      validatorField.style.border = "3px solid green";
+    if (password.current !== validPassword)
+      validatorField.style.border = "3px solid red";
   }
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
@@ -70,7 +72,7 @@ function SignIn() {
         .catch((err) => setMessage(err.response.data.message));
   };
 
-  const [message, setMessage] = useState()
+  const [message, setMessage] = useState();
   //Form for Login
   if (!signUp)
     return (
@@ -117,12 +119,26 @@ function SignIn() {
         <div>SignUp</div>
         <Container>
           <Title>SignUp</Title>
-          <form action="https://super-secret-backend.onrender.com/signup" method="POST">
+          <form
+            action="https://super-secret-backend.onrender.com/signup"
+            method="POST"
+          >
             <Name type="text" name="firstName" placeholder="Firstname" />
             <Name type="text" name="lastName" placeholder="Lastname" />
             <Input type="email" name="email" placeholder="Email" />
-            <Input onChange={(e) =>handlePassword(e)} type="password" name="password" placeholder="Password" />
-            <Input id="confirm" onChange={(e) =>setValidPassword(e.target.value)}type="password" placeholder="Confirm Password" onBlur={comparePasswords()}/>
+            <Input
+              onChange={(e) => handlePassword(e)}
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+            <Input
+              id="confirm"
+              onChange={(e) => setValidPassword(e.target.value)}
+              type="password"
+              placeholder="Confirm Password"
+              onBlur={comparePasswords()}
+            />
             <AllLanguages />
             <Button type="submit">
               <Highlight>Sign Up</Highlight>
