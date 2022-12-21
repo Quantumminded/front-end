@@ -51,6 +51,7 @@ function SignIn() {
 
   function comparePasswords() {
     const validatorField = document.getElementById("confirm");
+    if (validatorField) 
     if (password.current === validPassword)
       validatorField.style.border = "3px solid green";
     if (password.current !== validPassword)
