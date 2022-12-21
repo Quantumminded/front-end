@@ -82,7 +82,11 @@ function SignIn() {
           }, 5000);
           
         })
-        .catch((err) => setMessage(err.response.data.message));
+        .catch((err) => {
+          setMessage(err.response.data.message)
+          setTimeout(() => {
+          setMessage(null)
+        }, 5000)})
   };
   const [message, setMessage] = useState();
   //Form for Login
