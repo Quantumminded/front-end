@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Notification from "./Components/notification/Notification";
+import SocialLogin from "./Components/notification/SocialLogin";
 import {
   Small,
   Body,
@@ -119,9 +120,7 @@ function SignIn() {
             Not a member?
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
-          <Subtitle>Facebook</Subtitle>
-          <Subtitle>Apple</Subtitle>
-          <Subtitle>Email</Subtitle>
+          <SocialLogin/>
         </Container>
         <p>Email: test@company.com</p>
         <p>Password: test1234</p>
