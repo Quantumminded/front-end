@@ -53,12 +53,11 @@ function SignIn() {
     const validatorField = document.getElementById("confirm");
     if (validatorField) {
       if (password.current === validPassword)
-      validatorField.style.border = "3px solid green";
+        validatorField.style.border = "3px solid green";
 
-    if (password.current !== validPassword)
-      validatorField.style.border = "3px solid red";
+      if (password.current !== validPassword)
+        validatorField.style.border = "3px solid red";
     }
-
   }
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
