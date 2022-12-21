@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+import Notification from "./Components/notification/Notification";
 import {
   Small,
   Body,
@@ -70,20 +71,28 @@ function SignIn() {
           // Save the JWT token in local storage
           localStorage.setItem("token", response.data.token);
           setJwttoken(response.data.token);
+          document.cookie = `token=${response.data.token}`
+
+          //Sets message for display
           setMessage(response.data.message);
+
+          //clears the Notification
+          setTimeout(() => {
+            setMessage(null)
+          }, 5000);
+          
         })
         .catch((err) => setMessage(err.response.data.message));
   };
-
   const [message, setMessage] = useState();
   //Form for Login
   if (!signUp)
     return (
       <>
         <div>SignIn</div>
+        {message && <Notification data={message}/>}
         <Container>
           <Title>Login</Title>
-          {message}
           <form onSubmit={(e) => login(e, email.current, password.current)}>
             <Input
               onChange={(e) => handleEmail(e)}
