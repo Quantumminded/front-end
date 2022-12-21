@@ -24,8 +24,8 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route index element={<HeroPage />} />
-            <Route path='/homePage' element={<HomePage />} />
-            <Route path="/category/:id" element={<Category />} />
+            <Route path='/HomePage' element={<HomePage />} />
+            <Route path="/Category/:id" element={<Category />} />
             <Route path='/SignIn' element={<SignIn />} />
             <Route path='/WorkerPorfile' element={<WorkerProfile />} />
             <Route path='/ClientPorfile' element={<ClientProfile />} />

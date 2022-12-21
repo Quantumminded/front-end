@@ -1,41 +1,148 @@
-import React from 'react'
+import React, { useState } from "react";
+import Button from "./Button";
+import "./index.css";
+
 
 function Nav() {
+  let Links = [
+    { name: "HOME", link: "/HomePage" },
+    { name: "SERVICES", link: "/" },
+    { name: "ABOUT", link: "/" },
+    { name: "CONTACT", link: "/" },
+  ];
+  let [open, setOpen] = useState(false);
+  const [navbar, setNavbar] = useState(false);
   return (
-    
-<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-  <div className="container flex flex-wrap items-center justify-between mx-auto">
-    <a href="https://flowbite.com/" className="flex items-center">
-        <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Logo</span>
-    </a>
-    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-      <span className="sr-only">Open main menu</span>
-      <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-    </button>
-    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    // <nav className="shadow-md w-full fixed top-0 left-0">
+    //   <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+    //     <div className="font-bold text-2xl cursor-pointer flex items-center text-grey-800">
+    //       <span className="text-3xl text-indigo-600 mr-1 pt-2">
+    //         <ion-icon name="logo-ionic"></ion-icon>
+    //       </span>
+    //       Name
+    //     </div>
+    //     <div
+    //       onClick={() => setOpen(!open)}
+    //       className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+    //     >
+    //       <ion-icon name={open ? "close" : "menu"}></ion-icon>
+    //     </div>
+    //     <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-i ${ open ? "top-20 opacity-100" : "top-[-490px]" } md:opacity-100`} >
+    //       {Links.map((link) => (
+    //         <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+    //           <a
+    //             href={link.link}
+    //             className="text-gray-800 hover:text-grey-400 duration-500"
+    //           >
+    //             {link.name}
+    //           </a>
+    //         </li>
+    //       ))}
+    //       <Button>SignIn</Button>
+    //       <Button>Register</Button>
+    //     </ul>
+    //   </div>
+    // </nav>
 
+        <nav className="w-full bg-cyan-600 shadow">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+                <div>
+                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                        <a href="javascript:void(0)">
+                            <h2 className="text-2xl font-bold text-white">LOGO</h2>
+                        </a>
+                        <div className="md:hidden">
+                            <button
+                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                                onClick={() => setNavbar(!navbar)}
+                            >
+                                {navbar ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-6 h-6 text-white"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-6 h-6 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                            navbar ? "block" : "hidden"
+                        }`}
+                    >
+                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                            <li className="text-white hover:text-indigo-200">
+                                <a href="javascript:void(0)">Home</a>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <a href="javascript:void(0)">Blog</a>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <a href="javascript:void(0)">About US</a>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <a href="javascript:void(0)">Contact US</a>
+                            </li>
+                        </ul>
+
+                        <div className="mt-3 space-y-2 lg:hidden md:hidden">
+                    <a
+                        href="javascript:void(0)"
+                        className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                    >
+                        Sign in
+                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                    >
+                        Sign up
+                    </a>
+                </div>
+                    </div>
+                </div>
+                <div className="hidden space-x-2 md:inline-block">
+                    <a
+                        href="javascript:void(0)"
+                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                    >
+                        Sign in
+                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                    >
+                        Sign up
+                    </a>
+                </div>
+            </div>
+        </nav>
   )
 }
 
-export default Nav
+export default Nav;
