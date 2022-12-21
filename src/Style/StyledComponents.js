@@ -5,9 +5,10 @@ const Input = styled.input`
   width: 37.53vh;
   margin: 20px auto;
   padding: 15px;
-  background: rgba(0, 0, 0, 0.2);
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 3px;
   color: #fff;
-  border: 0;
 `;
 const Button = styled.button`
   border: 1px solid black;

@@ -5,10 +5,10 @@ import SocialLogin from "./Components/notification/SocialLogin";
 import {
   Small,
   Body,
-  Highlight,
   Subtitle,
   Title,
   Headings,
+  Highlight,
 } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
 import axios from "axios";
@@ -26,6 +26,16 @@ const Name = styled(Input)`
   display: inline;
   margin: 0 0.2%;
   margin-top: 1rem;
+`;
+
+const Line = styled.hr`
+  color: red;
+  display: inline-block;
+  width: 10vw;
+`;
+const HighlightWhite = styled(Highlight)`
+  color: #fff;
+  letter-spacing: 1px;
 `;
 
 function SignIn() {
@@ -72,32 +82,34 @@ function SignIn() {
           // Save the JWT token in local storage
           localStorage.setItem("token", response.data.token);
           setJwttoken(response.data.token);
-          document.cookie = `token=${response.data.token}`
+          document.cookie = `token=${response.data.token}`;
 
           //Sets message for display
           setMessage(response.data.message);
 
           //clears the Notification
           setTimeout(() => {
-            setMessage(null)
+            setMessage(null);
           }, 5000);
-          
         })
         .catch((err) => {
-          setMessage(err.response.data.message)
+          setMessage(err.response.data.message);
           setTimeout(() => {
-          setMessage(null)
-        }, 5000)})
+            setMessage(null);
+          }, 5000);
+        });
   };
   const [message, setMessage] = useState();
   //Form for Login
   if (!signUp)
     return (
       <>
-        <div>SignIn</div>
-        {message && <Notification data={message}/>}
+        <div>Sign In to Whatever</div>
+        {message && <Notification data={message} />}
         <Container>
-          <Title>Login</Title>
+          <Title>Sign In to Whatever</Title>
+          <SocialLogin />
+          <Line /> OR <Line />
           <form onSubmit={(e) => login(e, email.current, password.current)}>
             <Input
               onChange={(e) => handleEmail(e)}
@@ -113,14 +125,24 @@ function SignIn() {
             />
 
             <Button type="submit">
-              <Highlight>Sign In</Highlight>
+              <HighlightWhite>Continue</HighlightWhite>
             </Button>
           </form>
+          <Container>
+            <div>
+              <input type={"checkbox"} name={"rememberme"} />
+              <label htmlFor="rememberme">Remember Me</label>
+            </div>
+            <a href="#" style={{ color: "#56c38d" }}>
+              {" "}
+              Forgot Password ?
+            </a>
+          </Container>
+          <Line />
           <Small>
             Not a member?
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
-          <SocialLogin/>
         </Container>
         <p>Email: test@company.com</p>
         <p>Password: test1234</p>
@@ -156,9 +178,10 @@ function SignIn() {
             />
             <AllLanguages />
             <Button type="submit">
-              <Highlight>Sign Up</Highlight>
+              <HighlightWhite>Sign Up</HighlightWhite>
             </Button>
           </form>
+          <Line />
           <Small>
             Already a member?
             <Span onClick={() => setSignUp(!signUp)}>Sign In</Span>
