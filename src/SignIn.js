@@ -19,7 +19,12 @@ const Span = styled.span`
   color: blue;
   cursor: pointer;
 `;
-const Name = styled(Input)``;
+const Name = styled(Input)`
+width: 12.3%;
+display: inline;
+margin:0 0.2%;
+margin-top: 1rem;
+`;
 
 function SignIn() {
   //Server needs to run on port 3001
@@ -27,15 +32,14 @@ function SignIn() {
   const [signUp, setSignUp] = useState(false);
   //Sent client for axios TODO:Work in progress
   const client = axios.create({
-    baseURL: "http://localhost:3001",
-    headers: {
-      Authorization: `Bearer ${jwttoken}`,
-    },
+    baseURL: "https://super-secret-backend.onrender.com/",
   });
 
   //Sores the userInput of Login
   const email = useRef();
   const password = useRef();
+
+  const [validPassword,setValidPassword]= useState()
 
   //Handels the inputs
   function handleEmail(e) {
@@ -43,6 +47,12 @@ function SignIn() {
   }
   function handlePassword(e) {
     password.current = e.target.value;
+  }
+
+  function comparePasswords(){
+    const validatorField = document.getElementById('confirm')
+    if(password.current === validPassword) validatorField.style.border = '3px solid green'
+    if(password.current !== validPassword) validatorField.style.border = '3px solid red'
   }
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
@@ -95,6 +105,8 @@ function SignIn() {
           <Subtitle>Apple</Subtitle>
           <Subtitle>Email</Subtitle>
         </Container>
+        <p>Email: test@company.com</p>
+        <p>Password: test1234</p>
       </>
     );
 
@@ -105,12 +117,12 @@ function SignIn() {
         <div>SignUp</div>
         <Container>
           <Title>SignUp</Title>
-          <form action="http://localhost:3001/signup" method="POST">
+          <form action="https://super-secret-backend.onrender.com/signup" method="POST">
             <Name type="text" name="firstName" placeholder="Firstname" />
             <Name type="text" name="lastName" placeholder="Lastname" />
             <Input type="email" name="email" placeholder="Email" />
-            <Input type="password" name="password" placeholder="Password" />
-            <Input type="password" placeholder="Confirm Password" />
+            <Input onChange={(e) =>handlePassword(e)} type="password" name="password" placeholder="Password" />
+            <Input id="confirm" onChange={(e) =>setValidPassword(e.target.value)}type="password" placeholder="Confirm Password" onBlur={comparePasswords()}/>
             <AllLanguages />
             <Button type="submit">
               <Highlight>Sign Up</Highlight>
