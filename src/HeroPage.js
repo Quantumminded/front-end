@@ -2,7 +2,7 @@ import React from 'react'
 
 function HeroPage() {
   return (
-   <div>
+   <div className='mt-[4.8rem]'>
     <div>
       {/* Img  */}
       <div className='bg-[url("https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80")] h-96 w-screen bg-cover bg-center p-24'>
