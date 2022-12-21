@@ -69,9 +69,9 @@ function SignIn() {
         .post("/login", { email, password })
         .then((response) => {
           // Save the JWT token in local storage
-          setMessage(response.data.message);
           localStorage.setItem("token", response.data.token);
           setJwttoken(response.data.token);
+          setMessage(response.data.message);
         })
         .catch((err) => setMessage(err.response.data.message));
   };
