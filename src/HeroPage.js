@@ -58,9 +58,9 @@ function HeroPage() {
     <div className="hero-overlay bg-opacity-60"></div>
     <div className="hero-content text-center text-neutral-content">
       <div className="max-w-md">
-        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+        <h1 className="mb-5 text-5xl font-bold">Find the perfect helper for Translations</h1>
         <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <button className="btn btn-primary">Get Started</button>
+        <button className="btn btn-primary"><a href='/HomePage'>Get Started</a></button>
       </div>
     </div>
   </div>
@@ -70,7 +70,8 @@ function HeroPage() {
       <img src="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jdW1lbnRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Documents</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
         <button className="btn btn-primary">Get Started</button>
       </div>
     </div>
@@ -81,7 +82,8 @@ function HeroPage() {
       <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FsbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Calls</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
         <button className="btn btn-primary">Get Started</button>
       </div>
     </div>
@@ -92,7 +94,8 @@ function HeroPage() {
       <img src="https://images.unsplash.com/photo-1643920508624-9ac3ae5a2adb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRpY3Rpb25hcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Translations</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
         <button className="btn btn-primary">Get Started</button>
       </div>
     </div>
