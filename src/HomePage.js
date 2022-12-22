@@ -2,7 +2,7 @@ import React from 'react'
 
 function HomePage() {
   return (
-    <div className='bg-cyan-700'>
+    <div className='bg-cyan-700 mb-2'>
     {/* Hero Section */}
       <div className="hero min-h-min" style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}>
         <div className="hero-overlay bg-opacity-60">
@@ -21,12 +21,185 @@ function HomePage() {
           </div>
         </div>
       </div> 
+
+      {/* Category Container */}
+      <div className='ml-5 mr-5'>
+        {/* Documents Container */}
+        <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Docs</h2>
+        <div className='flex gap-10'>
+          {/* Documents Cards */}
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Docs
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Docs</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Docs
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Docs</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Docs
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Docs</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Docs
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Docs</div> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Calls Container */}
+        <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Calls</h2>
+        <div className='flex gap-10'>
+          {/* Calls Cards */}
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Call
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Call</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Call
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Call</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Call
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Call</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Call
+                <div className="badge badge-secondary">NEW</div>
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Call</div> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Translations Container */}
+        <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Translations</h2>
+        <div className='flex gap-10 pb-10'>
+          {/* Translations Cards */}
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Translations
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Translations</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Translations
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Translations</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Translations
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Translations</div> 
+              </div>
+            </div>
+          </div>
+          <div className="card bg-base-100 shadow-xl">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                Translations
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Translations</div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <div className='mt-8'>
+      {/* <div className='mt-8'> */}
         {/* H1 most popular in category */}
-        <h1 className='ml-8 mr-8 text-xl'>Most popular in Documents</h1>
+        {/* <h1 className='ml-8 mr-8 text-xl'>Most popular in Documents</h1> */}
           {/* Card Container Documents */}
-          <div className='flex m-8 gap-5'>
+          {/* <div className='flex m-8 gap-5'>
           <div className="card border-2 border-black bg-yellow-300">
             <img src="https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" className="h-32 w-full object-cover" />
             <div className="px-6 py-4">
@@ -69,11 +242,11 @@ function HomePage() {
               <p className="text-gray-700 text-base">Card description goes here</p>
             </div>
           </div>
-        </div>
+        </div> */}
          {/* H1 most popular in category */}
-         <h1 className='ml-8 mr-8 text-xl'>Most popular in Calls</h1>
+         {/* <h1 className='ml-8 mr-8 text-xl'>Most popular in Calls</h1> */}
           {/* Card Container Callss */}
-          <div className='flex m-8 gap-5'>
+          {/* <div className='flex m-8 gap-5'>
           <div className="card border-2 border-yellow-400">
             <img src="https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" className="h-32 w-full object-cover" />
             <div className="px-6 py-4">
@@ -116,11 +289,11 @@ function HomePage() {
               <p className="text-gray-700 text-base">Card description goes here</p>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* H1 most popular in category */}
-        <h1 className='ml-8 mr-8 text-xl'>Most popular in Translation</h1>
+        {/* <h1 className='ml-8 mr-8 text-xl'>Most popular in Translation</h1> */}
           {/* Card Container Translation */}
-        <div className='flex m-8 gap-5'>
+        {/* <div className='flex m-8 gap-5'>
           <div className="card border-2 border-yellow-400">
             <img src="https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" className="h-32 w-full object-cover" />
             <div className="px-6 py-4">
@@ -164,7 +337,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
