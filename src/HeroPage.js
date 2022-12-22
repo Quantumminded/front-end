@@ -65,9 +65,9 @@ function HeroPage() {
     </div>
   </div>
   {/* Hero section category Documents */}
-  <div className="hero min-h-screen bg-base-200">
+  <div className="hero min-h-16 bg-base-200">
     <div className="hero-content flex-col lg:flex-row">
-      <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+      <img src="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jdW1lbnRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Documents</h1>
         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
@@ -76,9 +76,9 @@ function HeroPage() {
     </div>
   </div>
   {/* Hero section category Calls */}
-  <div className="hero min-h-screen bg-base-200">
+  <div className="hero min-h-16 bg-base-200">
     <div className="hero-content flex-col lg:flex-row-reverse">
-      <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+      <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FsbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Calls</h1>
         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
@@ -87,9 +87,9 @@ function HeroPage() {
     </div>
   </div>
   {/* Hero section category Translation */}
-  <div className="hero min-h-screen bg-base-200">
+  <div className="hero min-h-16 bg-base-200 mb-3">
     <div className="hero-content flex-col lg:flex-row">
-      <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+      <img src="https://images.unsplash.com/photo-1643920508624-9ac3ae5a2adb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRpY3Rpb25hcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" className="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 className="text-5xl font-bold">Translations</h1>
         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
