@@ -10,7 +10,6 @@ import {
 import { Input, Button } from "./Style/StyledComponents";
 import axios from "axios";
 import AllLanguages from "./AllLanguages";
-
 const Container = styled.div`
   text-align: center;
 `;
