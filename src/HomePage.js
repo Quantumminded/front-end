@@ -28,7 +28,7 @@ function HomePage() {
         <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Docs</h2>
         <div className='flex gap-10'>
           {/* Documents Cards */}
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -41,7 +41,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -54,7 +54,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -67,7 +67,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -86,7 +86,7 @@ function HomePage() {
         <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Calls</h2>
         <div className='flex gap-10'>
           {/* Calls Cards */}
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -99,7 +99,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -112,7 +112,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -125,7 +125,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -144,7 +144,7 @@ function HomePage() {
         <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Translations</h2>
         <div className='flex gap-10 pb-10'>
           {/* Translations Cards */}
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -156,7 +156,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -168,7 +168,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -180,7 +180,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
