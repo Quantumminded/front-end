@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Button from "./Button";
+// import Button from "./Button";
 import "./index.css";
 
 
 function Nav() {
-  let Links = [
-    { name: "HOME", link: "/HomePage" },
-    { name: "SERVICES", link: "/" },
-    { name: "ABOUT", link: "/" },
-    { name: "CONTACT", link: "/" },
-  ];
-  let [open, setOpen] = useState(false);
+  // let Links = [
+  //   { name: "HOME", link: "/HomePage" },
+  //   { name: "SERVICES", link: "/" },
+  //   { name: "ABOUT", link: "/" },
+  //   { name: "CONTACT", link: "/" },
+  // ];
+  // let [open, setOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
   return (
     // <nav className="shadow-md w-full fixed top-0 left-0">
@@ -48,7 +48,7 @@ function Nav() {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
+                        <a href="/">
                             <h2 className="text-2xl font-bold text-white">LOGO</h2>
                         </a>
                         <div className="md:hidden">
@@ -97,28 +97,28 @@ function Nav() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Home</a>
+                                <a href="/HomePage">Home</a>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Blog</a>
+                                <a href="/">Blog</a>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">About US</a>
+                                <a href="/">About US</a>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Contact US</a>
+                                <a href="/">Contact US</a>
                             </li>
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:hidden">
                     <a
-                        href="javascript:void(0)"
+                        href="/SignIn"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </a>
                     <a
-                        href="javascript:void(0)"
+                        href="/"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Sign up
@@ -128,13 +128,13 @@ function Nav() {
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
                     <a
-                        href="javascript:void(0)"
+                        href="/SignIn"
                         className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </a>
                     <a
-                        href="javascript:void(0)"
+                        href="/"
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Sign up
