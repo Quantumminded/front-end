@@ -24,9 +24,10 @@ function HomePage() {
 
       {/* Category Container */}
       <div className='ml-5 mr-5'>
+
         {/* Documents Container */}
         <h2 className='mt-3 mb-3 text-2xl font-bold text-yellow-300'>Most popular in Docs</h2>
-        <div className='flex gap-10'>
+        <div className='gap-10 flex'>
           {/* Documents Cards */}
           <div className="card bg-yellow-400 shadow-xl">
             <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
