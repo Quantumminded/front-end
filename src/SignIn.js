@@ -1,13 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import styled from "styled-components";
 import Notification from "./Components/notification/Notification";
 import SocialLogin from "./Components/notification/SocialLogin";
 import {
   Small,
-  Body,
-  Subtitle,
   Title,
-  Headings,
   Highlight,
 } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
@@ -37,7 +34,6 @@ const HighlightWhite = styled(Highlight)`
   color: #fff;
   letter-spacing: 1px;
 `;
-
 function SignIn() {
   //Server needs to run on port 3001
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
