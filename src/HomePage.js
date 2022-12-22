@@ -4,11 +4,11 @@ function HomePage() {
   return (
     <div className='bg-cyan-700'>
       <div>
-        {/* Links to Category */}
-        <ul className='flex justify-around'>
-          <li><a href='/'>Documents</a></li>
-          <li><a href='/'>Calls</a></li>
-          <li><a href='/'>Translation</a></li>
+        {/* Category button */}
+        <ul className='flex justify-around '>
+          <li className='m-2'><button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm gap-10"><a href='/'>Documents</a></button></li>
+          <li className='m-2'><button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm"><a href='/'>Calls</a></button></li>
+          <li className='m-2'><button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm"><a href='/'>Translations</a></button></li>
         </ul>
       </div>
       {/* Header Image */}
