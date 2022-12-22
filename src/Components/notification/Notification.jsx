@@ -30,6 +30,7 @@ const fadein = keyframes`
   
 `
 const Container = styled.div`
+position: absolute;
 display: flex;
 	height: 100%;
 	justify-content: center;
