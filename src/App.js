@@ -15,6 +15,7 @@ import DocumentForm from './DocumentForm';
 import CallForm from './CallForm';
 import TransaltionForm from './TransaltionForm';
 import Category from './Category';
+import About from './About';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route index element={<HeroPage />} />
             <Route path='/HomePage' element={<HomePage />} />
             <Route path="/Category/:id" element={<Category />} />
+            <Route path="/About" element={<About />} />
             <Route path='/SignIn' element={<SignIn />} />
             <Route path='/WorkerPorfile' element={<WorkerProfile />} />
             <Route path='/ClientPorfile' element={<ClientProfile />} />
