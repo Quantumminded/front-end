@@ -144,7 +144,7 @@ function SignIn() {
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
         </Container>
-        <p>Email: test@company.com</p>
+        <p>Email: email1@testcompany.com</p>
         <p>Password: test1234</p>
       </>
     );
