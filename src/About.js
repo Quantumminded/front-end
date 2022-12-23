@@ -28,7 +28,7 @@ function About() {
             <p className="font-normal text-sm leading-3 text-indigo-700 hover:text-indigo-800 cursor-pointer pb-2">About</p>
             <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                 <div className="w-full lg:w-6/12">
-                    <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">We are here to make great design accessible and delightfull for everyone</h2>
+                    <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">We are here to make great translation accessible and delightfull for everyone</h2>
                     <p className="font-normal text-base leading-6 text-gray-600 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire,</p>
                 </div>
                 <div className="w-full lg:w-6/12">
