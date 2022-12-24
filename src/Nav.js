@@ -44,7 +44,7 @@ function Nav() {
     //   </div>
     // </nav>
 
-        <nav className="w-full bg-cyan-600 shadow">
+        <nav className="w-full bg-b3 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -96,16 +96,16 @@ function Nav() {
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-y1">
                                 <a href="/HomePage">Home</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-y1">
                                 <a href="/">Services</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-y1">
                                 <a href="/About">About US</a>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-y1">
                                 <a href="/">Contact US</a>
                             </li>
                         </ul>
@@ -113,13 +113,13 @@ function Nav() {
                         <div className="mt-3 space-y-2 lg:hidden md:hidden">
                     <a
                         href="/SignIn"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-yellow-300 rounded-md shadow hover:bg-gray-800"
+                        className="inline-block w-full px-4 py-2 text-center text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </a>
                     <a
                         href="/SelectRequest"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-yellow-300 rounded-md shadow hover:bg-gray-100"
+                        className="inline-block w-full px-4 py-2 text-center text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-100"
                     >
                         Post a request
                     </a>
@@ -129,13 +129,13 @@ function Nav() {
                 <div className="hidden space-x-2 md:inline-block">
                     <a
                         href="/SignIn"
-                        className="px-4 py-2 text-white bg-yellow-300 rounded-md shadow hover:bg-gray-800"
+                        className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
                     >
                         Sign in
                     </a>
                     <a
                         href="/SelectRequest"
-                        className="px-4 py-2 text-white bg-yellow-300 rounded-md shadow hover:bg-gray-800"
+                        className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
                     >
                         Post a request
                     </a>
