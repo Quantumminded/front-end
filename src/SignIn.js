@@ -44,7 +44,7 @@ function SignIn() {
   const [signUp, setSignUp] = useState(false);
   //Sent client for axios TODO:Work in progress
   const client = axios.create({
-    baseURL: "https://super-secret-backend.onrender.com/",
+    baseURL: "http://localhost:3001/",
   });
 
   //Sores the userInput of Login
@@ -174,8 +174,11 @@ function SignIn() {
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
         </Container>
-        <p>Email: email1@testcompany.com</p>
-        <p>Password: test1234</p>
+        CHEAT CODE
+        all Passwords are test1234
+        <form action="https://super-secret-backend.onrender.com/" method="post">
+      <button type="submit"><HighlightWhite>Get All Users</HighlightWhite></button>
+        </form>
       </>
     );
 
