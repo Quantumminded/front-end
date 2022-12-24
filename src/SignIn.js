@@ -44,12 +44,14 @@ function SignIn() {
   const [signUp, setSignUp] = useState(false);
   //Sent client for axios TODO:Work in progress
   const client = axios.create({
-    baseURL: "https://super-secret-backend.onrender.com/",
+    baseURL: "http://localhost:3001/",
   });
 
   //Sores the userInput of Login
   const email = useRef();
   const password = useRef();
+  const firstName = useRef();
+  const lastName = useRef();
 
   const [validPassword, setValidPassword] = useState();
 
@@ -59,6 +61,12 @@ function SignIn() {
   }
   function handlePassword(e) {
     password.current = e.target.value;
+  }
+  function handleFirstName(e) {
+    firstName.current = e.target.value;
+  }
+  function handleLastName(e) {
+    lastName.current = e.target.value;
   }
 
   function comparePasswords() {
@@ -98,6 +106,27 @@ function SignIn() {
             setMessage(null);
           }, 5000);
         });
+  };
+
+  //Signup Function
+
+  const signUpFunction = (e,firstName,lastName ,email, password) => {
+    e.preventDefault();
+    client.post("/signup",{firstName,lastName,email,password}).then((response) => {
+      //Sets message for display
+      setMessage(response.data.message);
+
+      //clears the Notification
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
+    })
+    .catch((err) => {
+      setMessage(err.response.data.message);
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
+    });
   };
   const [message, setMessage] = useState();
   //Form for Login
@@ -154,19 +183,29 @@ function SignIn() {
     return (
       <>
         <div>SignUp</div>
+        {message && <Notification data={message} />}
         <Container>
           <Title>SignUp</Title>
-          <form
-            action="https://super-secret-backend.onrender.com/signup"
-            method="POST"
+          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current)}
           >
-            <Name type="text" name="firstName" placeholder="Firstname" />
-            <Name type="text" name="lastName" placeholder="Lastname" />
-            <Input type="email" name="email" placeholder="Email" />
+            <Name
+              onChange={(e) => handleFirstName(e)}
+              type="text"
+              placeholder="Firstname"
+            />
+            <Name
+              onChange={(e) => handleLastName(e)}
+              type="text"
+              placeholder="Lastname"
+            />
+            <Input
+              onChange={(e) => handleEmail(e)}
+              type="email"
+              placeholder="Email"
+            />
             <Input
               onChange={(e) => handlePassword(e)}
               type="password"
-              name="password"
               placeholder="Password"
             />
             <Input
@@ -176,7 +215,7 @@ function SignIn() {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
-            <AllLanguages />
+            <AllLanguages language={""} />
             <Button type="submit">
               <HighlightWhite>Sign Up</HighlightWhite>
             </Button>
