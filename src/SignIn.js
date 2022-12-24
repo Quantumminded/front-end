@@ -44,7 +44,7 @@ function SignIn() {
   const [signUp, setSignUp] = useState(false);
   //Sent client for axios TODO:Work in progress
   const client = axios.create({
-    baseURL: "http://localhost:3001/",
+    baseURL: "https://super-secret-backend.onrender.com/",
   });
 
   //Sores the userInput of Login
@@ -52,6 +52,7 @@ function SignIn() {
   const password = useRef();
   const firstName = useRef();
   const lastName = useRef();
+  const language = useRef();
 
   const [validPassword, setValidPassword] = useState();
 
@@ -110,9 +111,9 @@ function SignIn() {
 
   //Signup Function
 
-  const signUpFunction = (e,firstName,lastName ,email, password) => {
+  const signUpFunction = (e,firstName,lastName ,email, password,language) => {
     e.preventDefault();
-    client.post("/signup",{firstName,lastName,email,password}).then((response) => {
+    client.post("/signup",{firstName,lastName,email,password,language}).then((response) => {
       //Sets message for display
       setMessage(response.data.message);
 
@@ -186,7 +187,7 @@ function SignIn() {
         {message && <Notification data={message} />}
         <Container>
           <Title>SignUp</Title>
-          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current)}
+          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language.current)}
           >
             <Name
               onChange={(e) => handleFirstName(e)}
@@ -215,7 +216,7 @@ function SignIn() {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
-            <AllLanguages language={""} />
+            <AllLanguages language={language} />
             <Button type="submit">
               <HighlightWhite>Sign Up</HighlightWhite>
             </Button>

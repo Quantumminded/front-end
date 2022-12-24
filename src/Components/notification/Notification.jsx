@@ -70,7 +70,7 @@ export default function Notification({ data }) {
     if (data === "Email and Password is required") {
       setColor('#3c90d1')
     } else
-      if (data === "Logged in") {
+      if (data === "Logged in" || data === "Account Created") {
         setColor('#039f03')
       } else {
         setColor('#e14d45')

@@ -1,8 +1,12 @@
 import React from 'react'
 
-export default function AllLanguages() {
+export default function AllLanguages({language}) {
+    function handleLanguage(e){
+        console.log(language)
+        language.current = e.target.value
+    }
     return (
-        <select id="languages" name="languages">
+        <select onChange={(e)=> handleLanguage(e)} id="languages" name="languages">
             <option>Select Language</option>
             <option value="{sq}">Albanian - shqip</option>
             <option value="{af}">Afrikaans</option>
