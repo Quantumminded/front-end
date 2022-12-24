@@ -27,7 +27,7 @@ function SelectRequest() {
             </div>
             <div className="px-4 md:w-auto w-full">
               <button className="w-full hover:bg-gray-300 transition duration-150 text-base font-medium leading-none text-center text-gray-800 py-4 px-12 bg-y2 focus:outline-none">
-                Read more
+                <a href="/CallForm">Select</a>
               </button>
             </div>
           </div>
@@ -46,7 +46,7 @@ function SelectRequest() {
             </div>
             <div className="px-4 md:w-auto w-full">
               <button className="w-full hover:bg-gray-300 transition duration-150 text-base font-medium leading-none text-center text-gray-800 py-4 px-12 bg-y1 focus:outline-none">
-                Read more
+                <a href="/DocumentForm">Select</a>
               </button>
             </div>
           </div>
@@ -65,7 +65,7 @@ function SelectRequest() {
             </div>
             <div className="px-4 md:w-auto w-full">
               <button className="w-full hover:bg-gray-300 transition duration-150 text-base font-medium leading-none text-center text-gray-800 py-4 px-12 bg-y1 focus:outline-none">
-                Read more
+               <a href="/TransaltionForm">Select</a>
               </button>
             </div>
           </div>
