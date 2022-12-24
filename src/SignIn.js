@@ -4,10 +4,7 @@ import Notification from "./Components/notification/Notification";
 import SocialLogin from "./Components/notification/SocialLogin";
 import {
   Small,
-  Body,
-  Subtitle,
   Title,
-  Headings,
   Highlight,
 } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
