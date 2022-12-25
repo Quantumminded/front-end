@@ -17,21 +17,12 @@ const Span = styled.span`
   color: blue;
   cursor: pointer;
 `;
-const Name = styled(Input)`
-  width: 12.3%;
-  display: inline;
-  margin: 0 0.2%;
-  margin-top: 1rem;
-`;
+
 
 const Line = styled.hr`
   color: red;
   display: inline-block;
   width: 10vw;
-`;
-const HighlightWhite = styled(Highlight)`
-  color: #fff;
-  letter-spacing: 1px;
 `;
 function SignIn() {
   //Server needs to run on port 3001
@@ -151,7 +142,7 @@ function SignIn() {
             />
 
             <Button type="submit">
-              <HighlightWhite>Continue</HighlightWhite>
+              <Highlight color="color">Continue</Highlight>
             </Button>
           </form>
           <Container>
@@ -172,7 +163,7 @@ function SignIn() {
         CHEAT CODE
         all Passwords are test1234
         <form action="https://super-secret-backend.onrender.com/" method="post">
-      <button type="submit"><HighlightWhite>Get All Users</HighlightWhite></button>
+      <button type="submit"><Highlight color="white">Get All Users</Highlight></button>
         </form>
       </>
     );
@@ -187,12 +178,21 @@ function SignIn() {
           <Title>SignUp</Title>
           <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language)}
           >
-            <Name
+
+<div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required/>
+        </div>
+        <div>
+            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required/>
+        </div>
+            <Input
               onChange={(e) => handleFirstName(e)}
               type="text"
               placeholder="Firstname"
             />
-            <Name
+            <Input
               onChange={(e) => handleLastName(e)}
               type="text"
               placeholder="Lastname"
@@ -216,11 +216,11 @@ function SignIn() {
             />
             <AllLanguages setLanguage={setLanguage} />
             <Button type="submit">
-              <HighlightWhite>Sign Up</HighlightWhite>
+              <Highlight color="white">Sign Up</Highlight>
             </Button>
           </form>
           <Line />
-          <Small>
+          <Small color="grey">
             Already a member?
             <Span onClick={() => setSignUp(!signUp)}>Sign In</Span>
           </Small>

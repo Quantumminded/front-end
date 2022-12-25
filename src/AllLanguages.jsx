@@ -2,10 +2,12 @@ import React from 'react'
 
 export default function AllLanguages({setLanguage}) {
     function handleLanguage(e){
+        console.log(e.target)
         setLanguage(e.target.value)
     }
     return (
-        <select onChange={(e)=> handleLanguage(e)} id="languages" name="languages">
+        <>
+        <select onChange={(e)=> handleLanguage(e)} id="languages" name="languages" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option>Select Language</option>
             <option value="{sq}">Albanian - shqip</option>
             <option value="{af}">Afrikaans</option>
@@ -150,5 +152,6 @@ export default function AllLanguages({setLanguage}) {
             <option value="{yo}">Yoruba - Èdè Yorùbá</option>
             <option value="{zu}">Zulu - isiZulu</option>
         </select>
+        </>
     )
 }
