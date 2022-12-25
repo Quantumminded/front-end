@@ -133,7 +133,7 @@ function SignIn() {
         {message && <Notification data={message} />}
 
         <Container>
-          <Title >Login</Title>
+          <Title color="white" >Login</Title>
           <SocialLogin />
           <Line /> OR <Line />
           <form onSubmit={(e) => login(e, email.current, password.current)}>
@@ -160,12 +160,11 @@ function SignIn() {
               <label htmlFor="rememberme">Remember Me</label>
             </div>
             <a href="#" style={{ color: "#56c38d" }}>
-              {" "}
               Forgot Password ?
             </a>
           </Container>
           <Line />
-          <Small>
+          <Small color="grey">
             Not a member?
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
