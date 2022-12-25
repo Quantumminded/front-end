@@ -130,10 +130,10 @@ function SignIn() {
   if (!signUp)
     return (
       <>
-        <div>Sign In to Whatever</div>
         {message && <Notification data={message} />}
+
         <Container>
-          <Title>Sign In to Whatever</Title>
+          <Title >Login</Title>
           <SocialLogin />
           <Line /> OR <Line />
           <form onSubmit={(e) => login(e, email.current, password.current)}>

@@ -30,7 +30,7 @@ const fadein = keyframes`
   
 `
 const Container = styled.div`
-position: absolute;
+position: relative;
 display: flex;
 	height: 100%;
 	justify-content: center;
@@ -41,7 +41,6 @@ const Rectangle = styled.div`
  display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: relative;
   width: 50px;
   height: 50px;
   background: ${props => props.inputColor};

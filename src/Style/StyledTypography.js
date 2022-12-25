@@ -39,7 +39,7 @@ const Title = styled.h3`
   font-weight: 700;
   font-size: 26px;
   line-height: 32px;
-  color: #323232;
+  color: ${props => props.color ? props.color : '#323232' };
 `;
 
 const Headings = styled.h1`
