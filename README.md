@@ -41,7 +41,7 @@ User profile:
 
 | Path             | Component            | Permissions                | Behavior                                                     |
 | ---------------- | -------------------- | -------------------------- | ------------------------------------------------------------ |
-| `/`              | Home                 | Public `<Route>`           | Home page                                                    |
+| `/`              | Home                 | Public `<Route>`           | Home pag                                                    |
 | `/signup`        | SignupPage           | Public `<Route>`           | Sign up form, link to login, navigate to homepage after signup |
 | `/login`         | LoginPage            | anon only `<AnonRoute>`    | Login form, link to signup, navigate to homepage after login |
 | `/exitpoint`     | TournamentListPage   | user only `<PrivateRoute>` | Shows all exit points in a list                              |
