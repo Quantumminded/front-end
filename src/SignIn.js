@@ -49,7 +49,7 @@ function SignIn() {
   const password = useRef();
   const firstName = useRef();
   const lastName = useRef();
-  const language = useRef();
+  const [language, setLanguage] = useState()
 
   const [validPassword, setValidPassword] = useState();
 
@@ -109,6 +109,7 @@ function SignIn() {
   //Signup Function
 
   const signUpFunction = (e,firstName,lastName ,email, password,language) => {
+    console.log(firstName,lastName ,email, password,language)
     e.preventDefault();
     client.post("/signup",{firstName,lastName,email,password,language}).then((response) => {
       //Sets message for display
@@ -187,7 +188,7 @@ function SignIn() {
         {message && <Notification data={message} />}
         <Container>
           <Title>SignUp</Title>
-          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language.current)}
+          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language)}
           >
             <Name
               onChange={(e) => handleFirstName(e)}
@@ -216,7 +217,7 @@ function SignIn() {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
-            <AllLanguages language={language} />
+            <AllLanguages setLanguage={setLanguage} />
             <Button type="submit">
               <HighlightWhite>Sign Up</HighlightWhite>
             </Button>
