@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+//Axios client with the jwtToken
+import { client } from './utils/client.mjs';
 //Import pages
 import Nav from './Nav';
 import HeroPage from './HeroPage';
@@ -19,6 +21,9 @@ import About from './About';
 
 
 function App() {
+  //authetication of user for the whole app
+  const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
+  client(jwttoken).get()
   return (
     <>
       <Nav ></Nav>
@@ -28,7 +33,7 @@ function App() {
             <Route path='/HomePage' element={<HomePage />} />
             <Route path="/Category/:id" element={<Category />} />
             <Route path="/About" element={<About />} />
-            <Route path='/SignIn' element={<SignIn />} />
+            <Route path='/SignIn' element={<SignIn setJwttoken={setJwttoken} />} />
             <Route path='/WorkerPorfile' element={<WorkerProfile />} />
             <Route path='/ClientPorfile' element={<ClientProfile />} />
             <Route path='/PostOffer' element={<PostOffer />} />
