@@ -18,14 +18,17 @@ import CallForm from './CallForm';
 import TransaltionForm from './TransaltionForm';
 import Category from './Category';
 import About from './About';
-
+//Module for various cookie settings
+import { CookiesProvider,useCookies } from 'react-cookie';
 
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
-  client(jwttoken).get()
+  //Cookie 
+  const [cookies, setCookie] = useCookies();
   return (
     <>
+    <CookiesProvider >
       <Nav ></Nav>
       <BrowserRouter>
         <Routes>
@@ -44,6 +47,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer></Footer>
+      </CookiesProvider>
     </>
   );
 }

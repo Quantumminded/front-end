@@ -1,5 +1,5 @@
 import React from 'react'
-
+import useCookies from 'react-cookie/cjs/useCookies';
 function HomePage() {
   return (
     <div className='bg-cyan-700 mb-2'>
