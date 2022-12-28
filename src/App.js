@@ -20,14 +20,18 @@ import Category from './Category';
 import About from './About';
 //Module for various cookie settings
 import { CookiesProvider,useCookies } from 'react-cookie';
+import toast,{ Toaster } from 'react-hot-toast';
 
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
   //Cookie 
   const [cookies, setCookie] = useCookies();
+  const notify = () => toast('Here is your toast.');
+
   return (
     <>
+    <Toaster/>
     <CookiesProvider >
       <Nav ></Nav>
       <BrowserRouter>
