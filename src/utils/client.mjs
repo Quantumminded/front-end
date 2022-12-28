@@ -3,7 +3,7 @@ import axios from "axios";
 //Get the Token in every call of the client("token in here").post() etc.
 const client = (jwtToken) =>
   axios.create({
-    baseURL: "http://localhost:3001",
+    baseURL: "https://super-secret-backend.onrender.com/",
     headers: { authorization: jwtToken },
   });
 
