@@ -207,6 +207,7 @@ function SignIn({setJwttoken}) {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
+            
             <AllLanguages setLanguage={setLanguage} />
             <Button type="submit">
               <HighlightWhite>Sign Up</HighlightWhite>
