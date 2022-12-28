@@ -8,8 +8,11 @@ import {
   Highlight,
 } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
-import axios from "axios";
 import AllLanguages from "./AllLanguages";
+import { useCookies } from 'react-cookie';
+//Custom Axios client with header & authorization
+import { client } from "./utils/client.mjs";
+
 const Container = styled.div`
   text-align: center;
 `;
@@ -24,16 +27,16 @@ const Line = styled.hr`
   display: inline-block;
   width: 10vw;
 `;
-function SignIn() {
-  //Server needs to run on port 3001
-  const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
-  const [signUp, setSignUp] = useState(false);
-  //Sent client for axios TODO:Work in progress
-  const client = axios.create({
-    baseURL: "https://super-secret-backend.onrender.com/",
-  });
+const HighlightWhite = styled(Highlight)`
+  color: #fff;
+  letter-spacing: 1px;
+`;
 
-  //Sores the userInput of Login
+function SignIn({setJwttoken}) {
+  const [cookies, setCookie] = useCookies(['token']);
+  //Server needs to run on port 3001
+  const [signUp, setSignUp] = useState(false);
+
   const email = useRef();
   const password = useRef();
   const firstName = useRef();
@@ -42,42 +45,34 @@ function SignIn() {
 
   const [validPassword, setValidPassword] = useState();
 
-  //Handels the inputs
-  function handleEmail(e) {
-    email.current = e.target.value;
-  }
-  function handlePassword(e) {
-    password.current = e.target.value;
-  }
-  function handleFirstName(e) {
-    firstName.current = e.target.value;
-  }
-  function handleLastName(e) {
-    lastName.current = e.target.value;
-  }
-
   function comparePasswords() {
     const validatorField = document.getElementById("confirm");
+    const {value} = password.current
     if (validatorField) {
-      if (password.current === validPassword)
+      if (value === validPassword)
         validatorField.style.border = "3px solid green";
 
-      if (password.current !== validPassword)
+      if (value !== validPassword)
         validatorField.style.border = "3px solid red";
     }
   }
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
   const login = (e, email, password) => {
+
     e.preventDefault();
     if (!signUp)
-      client
+      client()
         .post("/login", { email, password })
         .then((response) => {
+          const {token} = response.data
           // Save the JWT token in local storage
-          localStorage.setItem("token", response.data.token);
-          setJwttoken(response.data.token);
-          document.cookie = `token=${response.data.token}`;
+          localStorage.setItem("token", token);
+  
+          setJwttoken(token);
+          //Sets Cookie for 1 hour
+          setCookie('token', token, { path: '/' , maxAge: 3600});
+          // document.cookie = `token=${response.data.token}`;
 
           //Sets message for display
           setMessage(response.data.message);
@@ -88,6 +83,7 @@ function SignIn() {
           }, 5000);
         })
         .catch((err) => {
+          console.log(err)
           setMessage(err.response.data.message);
           setTimeout(() => {
             setMessage(null);
@@ -96,11 +92,10 @@ function SignIn() {
   };
 
   //Signup Function
-
   const signUpFunction = (e,firstName,lastName ,email, password,language) => {
     console.log(firstName,lastName ,email, password,language)
     e.preventDefault();
-    client.post("/signup",{firstName,lastName,email,password,language}).then((response) => {
+    client().post("/signup",{firstName,lastName,email,password,language}).then((response) => {
       //Sets message for display
       setMessage(response.data.message);
 
@@ -116,6 +111,7 @@ function SignIn() {
       }, 5000);
     });
   };
+
   const [message, setMessage] = useState();
   //Form for Login
   if (!signUp)
@@ -127,15 +123,15 @@ function SignIn() {
           <Title color="white" >Login</Title>
           <SocialLogin />
           <Line /> OR <Line />
-          <form onSubmit={(e) => login(e, email.current, password.current)}>
+          <form onSubmit={(e) => login(e, email.current.value, password.current.value)}>
             <Input
-              onChange={(e) => handleEmail(e)}
+              ref={email}
               type="email"
               name="email"
               placeholder="Email"
             />
             <Input
-              onChange={(e) => handlePassword(e)}
+              ref={password}
               type="password"
               name="password"
               placeholder="Password"
@@ -176,34 +172,25 @@ function SignIn() {
         {message && <Notification data={message} />}
         <Container>
           <Title>SignUp</Title>
-          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language)}
+          <form onSubmit={(e) => signUpFunction(e,firstName.current.value,lastName.current.value,email.current.value,password.current.value,language)}
           >
-
-<div>
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
-            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required/>
-        </div>
-        <div>
-            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
-            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required/>
-        </div>
-            <Input
-              onChange={(e) => handleFirstName(e)}
+            <Name
+              ref={firstName}
               type="text"
               placeholder="Firstname"
             />
-            <Input
-              onChange={(e) => handleLastName(e)}
+            <Name
+              ref={lastName}
               type="text"
               placeholder="Lastname"
             />
             <Input
-              onChange={(e) => handleEmail(e)}
+              ref={email}
               type="email"
               placeholder="Email"
             />
             <Input
-              onChange={(e) => handlePassword(e)}
+              ref={password}
               type="password"
               placeholder="Password"
             />
@@ -214,6 +201,7 @@ function SignIn() {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
+            
             <AllLanguages setLanguage={setLanguage} />
             <Button type="submit">
               <Highlight color="white">Sign Up</Highlight>
