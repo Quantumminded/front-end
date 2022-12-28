@@ -13,7 +13,7 @@ const Container = styled.div`
   text-align: center;
 `;
 const Span = styled.span`
-  color: blue;
+  color: #ffcd00;
   cursor: pointer;
 `;
 
@@ -21,10 +21,6 @@ const Line = styled.hr`
   color: red;
   display: inline-block;
   width: 10vw;
-`;
-const HighlightWhite = styled(Highlight)`
-  color: #fff;
-  letter-spacing: 1px;
 `;
 
 function SignIn({ setJwttoken }) {
@@ -138,14 +134,17 @@ function SignIn({ setJwttoken }) {
               placeholder="Password"
             />
 
-            <Button type="submit">
+            <Button
+              type="submit"
+              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
               <Highlight color="color">Continue</Highlight>
             </Button>
           </form>
           <Container>
             <div>
               <input type={"checkbox"} name={"rememberme"} />
-              <label htmlFor="rememberme">Remember Me</label>
+              <label htmlFor="rememberme"> Remember Me </label>
             </div>
             <a href="#" style={{ color: "#56c38d" }}>
               Forgot Password ?
@@ -154,7 +153,7 @@ function SignIn({ setJwttoken }) {
           <Line />
           <Small color="grey">
             Not a member?
-            <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
+            <Span onClick={() => setSignUp(!signUp)}> Sign Up </Span>
           </Small>
         </Container>
         CHEAT CODE all Passwords are test1234
@@ -170,10 +169,9 @@ function SignIn({ setJwttoken }) {
   if (signUp)
     return (
       <>
-        <div>SignUp</div>
         {message && <Notification data={message} />}
         <Container>
-          <Title>SignUp</Title>
+          <Title color="white">SignUp</Title>
           <form
             onSubmit={(e) =>
               signUpFunction(
@@ -199,14 +197,17 @@ function SignIn({ setJwttoken }) {
             />
 
             <AllLanguages setLanguage={setLanguage} />
-            <Button type="submit">
-              <Highlight color="white">Sign Up</Highlight>
+            <Button
+              type="submit"
+              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              <Highlight color="color">Sign Up</Highlight>
             </Button>
           </form>
           <Line />
           <Small color="grey">
             Already a member?
-            <Span onClick={() => setSignUp(!signUp)}>Sign In</Span>
+            <Span onClick={() => setSignUp(!signUp)}> Sign In </Span>
           </Small>
         </Container>
       </>
