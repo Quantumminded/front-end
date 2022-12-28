@@ -1,15 +1,11 @@
-import React, {useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Notification from "./Components/notification/Notification";
 import SocialLogin from "./Components/notification/SocialLogin";
-import {
-  Small,
-  Title,
-  Highlight,
-} from "./Style/StyledTypography";
+import { Small, Title, Highlight } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
 import AllLanguages from "./AllLanguages";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "./utils/client.mjs";
 
@@ -21,7 +17,6 @@ const Span = styled.span`
   cursor: pointer;
 `;
 
-
 const Line = styled.hr`
   color: red;
   display: inline-block;
@@ -32,8 +27,8 @@ const HighlightWhite = styled(Highlight)`
   letter-spacing: 1px;
 `;
 
-function SignIn({setJwttoken}) {
-  const [cookies, setCookie] = useCookies(['token']);
+function SignIn({ setJwttoken }) {
+  const [cookies, setCookie] = useCookies(["token"]);
   //Server needs to run on port 3001
   const [signUp, setSignUp] = useState(false);
 
@@ -41,13 +36,13 @@ function SignIn({setJwttoken}) {
   const password = useRef();
   const firstName = useRef();
   const lastName = useRef();
-  const [language, setLanguage] = useState()
+  const [language, setLanguage] = useState();
 
   const [validPassword, setValidPassword] = useState();
 
   function comparePasswords() {
     const validatorField = document.getElementById("confirm");
-    const {value} = password.current
+    const { value } = password.current;
     if (validatorField) {
       if (value === validPassword)
         validatorField.style.border = "3px solid green";
@@ -59,19 +54,18 @@ function SignIn({setJwttoken}) {
 
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
   const login = (e, email, password) => {
-
     e.preventDefault();
     if (!signUp)
       client()
         .post("/login", { email, password })
         .then((response) => {
-          const {token} = response.data
+          const { token } = response.data;
           // Save the JWT token in local storage
           localStorage.setItem("token", token);
-  
+
           setJwttoken(token);
           //Sets Cookie for 1 hour
-          setCookie('token', token, { path: '/' , maxAge: 3600});
+          setCookie("token", token, { path: "/", maxAge: 3600 });
           // document.cookie = `token=${response.data.token}`;
 
           //Sets message for display
@@ -83,7 +77,7 @@ function SignIn({setJwttoken}) {
           }, 5000);
         })
         .catch((err) => {
-          console.log(err)
+          console.log(err);
           setMessage(err.response.data.message);
           setTimeout(() => {
             setMessage(null);
@@ -92,24 +86,33 @@ function SignIn({setJwttoken}) {
   };
 
   //Signup Function
-  const signUpFunction = (e,firstName,lastName ,email, password,language) => {
-    console.log(firstName,lastName ,email, password,language)
+  const signUpFunction = (
+    e,
+    firstName,
+    lastName,
+    email,
+    password,
+    language
+  ) => {
+    console.log(firstName, lastName, email, password, language);
     e.preventDefault();
-    client().post("/signup",{firstName,lastName,email,password,language}).then((response) => {
-      //Sets message for display
-      setMessage(response.data.message);
+    client()
+      .post("/signup", { firstName, lastName, email, password, language })
+      .then((response) => {
+        //Sets message for display
+        setMessage(response.data.message);
 
-      //clears the Notification
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    })
-    .catch((err) => {
-      setMessage(err.response.data.message);
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    });
+        //clears the Notification
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+      })
+      .catch((err) => {
+        setMessage(err.response.data.message);
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+      });
   };
 
   const [message, setMessage] = useState();
@@ -118,18 +121,16 @@ function SignIn({setJwttoken}) {
     return (
       <>
         {message && <Notification data={message} />}
-
         <Container>
-          <Title color="white" >Login</Title>
+          <Title color="white">Login</Title>
           <SocialLogin />
           <Line /> OR <Line />
-          <form onSubmit={(e) => login(e, email.current.value, password.current.value)}>
-            <Input
-              ref={email}
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
+          <form
+            onSubmit={(e) =>
+              login(e, email.current.value, password.current.value)
+            }
+          >
+            <Input ref={email} type="email" name="email" placeholder="Email" />
             <Input
               ref={password}
               type="password"
@@ -156,10 +157,11 @@ function SignIn({setJwttoken}) {
             <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
           </Small>
         </Container>
-        CHEAT CODE
-        all Passwords are test1234
+        CHEAT CODE all Passwords are test1234
         <form action="https://super-secret-backend.onrender.com/" method="post">
-      <button type="submit"><Highlight color="white">Get All Users</Highlight></button>
+          <button type="submit">
+            <Highlight color="white">Get All Users</Highlight>
+          </button>
         </form>
       </>
     );
@@ -172,28 +174,22 @@ function SignIn({setJwttoken}) {
         {message && <Notification data={message} />}
         <Container>
           <Title>SignUp</Title>
-          <form onSubmit={(e) => signUpFunction(e,firstName.current.value,lastName.current.value,email.current.value,password.current.value,language)}
+          <form
+            onSubmit={(e) =>
+              signUpFunction(
+                e,
+                firstName.current.value,
+                lastName.current.value,
+                email.current.value,
+                password.current.value,
+                language
+              )
+            }
           >
-            <Name
-              ref={firstName}
-              type="text"
-              placeholder="Firstname"
-            />
-            <Name
-              ref={lastName}
-              type="text"
-              placeholder="Lastname"
-            />
-            <Input
-              ref={email}
-              type="email"
-              placeholder="Email"
-            />
-            <Input
-              ref={password}
-              type="password"
-              placeholder="Password"
-            />
+            <Input ref={firstName} type="text" placeholder="Firstname" />
+            <Input ref={lastName} type="text" placeholder="Lastname" />
+            <Input ref={email} type="email" placeholder="Email" />
+            <Input ref={password} type="password" placeholder="Password" />
             <Input
               id="confirm"
               onChange={(e) => setValidPassword(e.target.value)}
@@ -201,7 +197,7 @@ function SignIn({setJwttoken}) {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
-            
+
             <AllLanguages setLanguage={setLanguage} />
             <Button type="submit">
               <Highlight color="white">Sign Up</Highlight>
