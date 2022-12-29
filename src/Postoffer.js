@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Postoffer() {
+function PostOffer() {
   return (
-    <div>Postoffer</div>
+    <div>PostOffer</div>
   )
 }
 
-export default Postoffer
+export default PostOffer

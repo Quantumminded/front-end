@@ -146,7 +146,7 @@ function SignIn({ setJwttoken }) {
               <input type={"checkbox"} name={"rememberme"} />
               <label htmlFor="rememberme"> Remember Me </label>
             </div>
-            <a href="#" style={{ color: "#56c38d" }}>
+            <a href="/" style={{ color: "#56c38d" }}>
               Forgot Password ?
             </a>
           </Container>
