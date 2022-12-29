@@ -13,9 +13,9 @@ const Input = styled.input`
 const Button = styled.button`
   border: 1px solid black;
   border-radius: 12px;
-  background: #2ecc71;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
   border: 0;
-  color: #fff;
+  color: rgb(0 8 20 / var(--tw-text-opacity));
   padding: 10px;
   font-size: 20px;
   width: 330px;

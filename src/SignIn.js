@@ -2,27 +2,19 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Notification from "./Components/notification/Notification";
 import SocialLogin from "./Components/notification/SocialLogin";
-import {
-  Small,
-  Title,
-  Highlight,
-} from "./Style/StyledTypography";
+import { Small, Title, Highlight } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
-import axios from "axios";
 import AllLanguages from "./AllLanguages";
+import { useCookies } from "react-cookie";
+//Custom Axios client with header & authorization
+import { client } from "./utils/client.mjs";
 
 const Container = styled.div`
   text-align: center;
 `;
 const Span = styled.span`
-  color: blue;
+  color: #ffcd00;
   cursor: pointer;
-`;
-const Name = styled(Input)`
-  width: 12.3%;
-  display: inline;
-  margin: 0 0.2%;
-  margin-top: 1rem;
 `;
 
 const Line = styled.hr`
@@ -30,50 +22,28 @@ const Line = styled.hr`
   display: inline-block;
   width: 10vw;
 `;
-const HighlightWhite = styled(Highlight)`
-  color: #fff;
-  letter-spacing: 1px;
-`;
 
-function SignIn() {
+function SignIn({ setJwttoken }) {
+  const [cookies, setCookie] = useCookies(["token"]);
   //Server needs to run on port 3001
-  const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
   const [signUp, setSignUp] = useState(false);
-  //Sent client for axios TODO:Work in progress
-  const client = axios.create({
-    baseURL: "https://super-secret-backend.onrender.com/",
-  });
 
-  //Sores the userInput of Login
   const email = useRef();
   const password = useRef();
   const firstName = useRef();
   const lastName = useRef();
-  const [language, setLanguage] = useState()
+  const [language, setLanguage] = useState();
 
   const [validPassword, setValidPassword] = useState();
 
-  //Handels the inputs
-  function handleEmail(e) {
-    email.current = e.target.value;
-  }
-  function handlePassword(e) {
-    password.current = e.target.value;
-  }
-  function handleFirstName(e) {
-    firstName.current = e.target.value;
-  }
-  function handleLastName(e) {
-    lastName.current = e.target.value;
-  }
-
   function comparePasswords() {
     const validatorField = document.getElementById("confirm");
+    const { value } = password.current;
     if (validatorField) {
-      if (password.current === validPassword)
+      if (value === validPassword)
         validatorField.style.border = "3px solid green";
 
-      if (password.current !== validPassword)
+      if (value !== validPassword)
         validatorField.style.border = "3px solid red";
     }
   }
@@ -82,13 +52,17 @@ function SignIn() {
   const login = (e, email, password) => {
     e.preventDefault();
     if (!signUp)
-      client
+      client()
         .post("/login", { email, password })
         .then((response) => {
+          const { token } = response.data;
           // Save the JWT token in local storage
-          localStorage.setItem("token", response.data.token);
-          setJwttoken(response.data.token);
-          document.cookie = `token=${response.data.token}`;
+          localStorage.setItem("token", token);
+
+          setJwttoken(token);
+          //Sets Cookie for 1 hour
+          setCookie("token", token, { path: "/", maxAge: 3600 });
+          // document.cookie = `token=${response.data.token}`;
 
           //Sets message for display
           setMessage(response.data.message);
@@ -99,6 +73,7 @@ function SignIn() {
           }, 5000);
         })
         .catch((err) => {
+          console.log(err);
           setMessage(err.response.data.message);
           setTimeout(() => {
             setMessage(null);
@@ -107,75 +82,85 @@ function SignIn() {
   };
 
   //Signup Function
-
-  const signUpFunction = (e,firstName,lastName ,email, password,language) => {
-    console.log(firstName,lastName ,email, password,language)
+  const signUpFunction = (
+    e,
+    firstName,
+    lastName,
+    email,
+    password,
+    language
+  ) => {
+    console.log(firstName, lastName, email, password, language);
     e.preventDefault();
-    client.post("/signup",{firstName,lastName,email,password,language}).then((response) => {
-      //Sets message for display
-      setMessage(response.data.message);
+    client()
+      .post("/signup", { firstName, lastName, email, password, language })
+      .then((response) => {
+        //Sets message for display
+        setMessage(response.data.message);
 
-      //clears the Notification
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    })
-    .catch((err) => {
-      setMessage(err.response.data.message);
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-    });
+        //clears the Notification
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+      })
+      .catch((err) => {
+        setMessage(err.response.data.message);
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+      });
   };
+
   const [message, setMessage] = useState();
   //Form for Login
   if (!signUp)
     return (
       <>
-        <div>Sign In to Whatever</div>
         {message && <Notification data={message} />}
         <Container>
-          <Title>Sign In to Whatever</Title>
+          <Title color="white">Login</Title>
           <SocialLogin />
           <Line /> OR <Line />
-          <form onSubmit={(e) => login(e, email.current, password.current)}>
+          <form
+            onSubmit={(e) =>
+              login(e, email.current.value, password.current.value)
+            }
+          >
+            <Input ref={email} type="email" name="email" placeholder="Email" />
             <Input
-              onChange={(e) => handleEmail(e)}
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
-            <Input
-              onChange={(e) => handlePassword(e)}
+              ref={password}
               type="password"
               name="password"
               placeholder="Password"
             />
 
-            <Button type="submit">
-              <HighlightWhite>Continue</HighlightWhite>
+            <Button
+              type="submit"
+              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              <Highlight color="color">Continue</Highlight>
             </Button>
           </form>
           <Container>
             <div>
               <input type={"checkbox"} name={"rememberme"} />
-              <label htmlFor="rememberme">Remember Me</label>
+              <label htmlFor="rememberme"> Remember Me </label>
             </div>
             <a href="#" style={{ color: "#56c38d" }}>
-              {" "}
               Forgot Password ?
             </a>
           </Container>
           <Line />
-          <Small>
+          <Small color="grey">
             Not a member?
-            <Span onClick={() => setSignUp(!signUp)}>Sign Up</Span>
+            <Span onClick={() => setSignUp(!signUp)}> Sign Up </Span>
           </Small>
         </Container>
-        CHEAT CODE
-        all Passwords are test1234
+        CHEAT CODE all Passwords are test1234
         <form action="https://super-secret-backend.onrender.com/" method="post">
-      <button type="submit"><HighlightWhite>Get All Users</HighlightWhite></button>
+          <button type="submit">
+            <Highlight color="white">Get All Users</Highlight>
+          </button>
         </form>
       </>
     );
@@ -184,32 +169,25 @@ function SignIn() {
   if (signUp)
     return (
       <>
-        <div>SignUp</div>
         {message && <Notification data={message} />}
         <Container>
-          <Title>SignUp</Title>
-          <form onSubmit={(e) => signUpFunction(e,firstName.current,lastName.current,email.current,password.current,language)}
+          <Title color="white">SignUp</Title>
+          <form
+            onSubmit={(e) =>
+              signUpFunction(
+                e,
+                firstName.current.value,
+                lastName.current.value,
+                email.current.value,
+                password.current.value,
+                language
+              )
+            }
           >
-            <Name
-              onChange={(e) => handleFirstName(e)}
-              type="text"
-              placeholder="Firstname"
-            />
-            <Name
-              onChange={(e) => handleLastName(e)}
-              type="text"
-              placeholder="Lastname"
-            />
-            <Input
-              onChange={(e) => handleEmail(e)}
-              type="email"
-              placeholder="Email"
-            />
-            <Input
-              onChange={(e) => handlePassword(e)}
-              type="password"
-              placeholder="Password"
-            />
+            <Input ref={firstName} type="text" placeholder="Firstname" />
+            <Input ref={lastName} type="text" placeholder="Lastname" />
+            <Input ref={email} type="email" placeholder="Email" />
+            <Input ref={password} type="password" placeholder="Password" />
             <Input
               id="confirm"
               onChange={(e) => setValidPassword(e.target.value)}
@@ -217,15 +195,19 @@ function SignIn() {
               placeholder="Confirm Password"
               onBlur={comparePasswords()}
             />
+
             <AllLanguages setLanguage={setLanguage} />
-            <Button type="submit">
-              <HighlightWhite>Sign Up</HighlightWhite>
+            <Button
+              type="submit"
+              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              <Highlight color="color">Sign Up</Highlight>
             </Button>
           </form>
           <Line />
-          <Small>
+          <Small color="grey">
             Already a member?
-            <Span onClick={() => setSignUp(!signUp)}>Sign In</Span>
+            <Span onClick={() => setSignUp(!signUp)}> Sign In </Span>
           </Small>
         </Container>
       </>
