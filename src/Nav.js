@@ -105,9 +105,6 @@ function Nav() {
                             <li className="text-white hover:text-y1">
                                 <a href="/About">About US</a>
                             </li>
-                            <li className="text-white hover:text-y1">
-                                <a href="/">Contact US</a>
-                            </li>
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:hidden">

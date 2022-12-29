@@ -2,6 +2,7 @@ import React from "react";
 
 function SelectRequest() {
   return (
+  <div className="bg-b2 min-h-screen min-w-full" >
     <div className="2xl:mx-auto 2xl:container lg:py-16 lg:px-40 xl:px-20 md:py-12 md:px-6 py-9 px-4 bg-b2">
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-semibold leading-9 text-y1">
@@ -72,7 +73,8 @@ function SelectRequest() {
         </div>
       </div>
     </div>
-  );
+  </div>
+ );
 }
 
 export default SelectRequest;
