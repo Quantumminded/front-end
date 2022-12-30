@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Nav";
 import HeroPage from "./HeroPage";
@@ -18,7 +18,8 @@ import Category from "./Category";
 import About from "./About";
 //Module for various cookie settings
 import { CookiesProvider, useCookies } from "react-cookie";
-
+//Notification Toasts
+import { ToastContainer } from "react-toastify";
 
 function App() {
   //authetication of user for the whole app
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <CookiesProvider>
+        <ToastContainer />
         <Nav></Nav>
         <BrowserRouter>
           <Routes>

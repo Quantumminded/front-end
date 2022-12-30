@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-
+import { toast } from 'react-toastify';
 
 
 const scalein = keyframes`
@@ -75,7 +75,7 @@ export default function Notification({ data }) {
       } else {
         setColor('#e14d45')
       }
-
+    toast(data)
   }, [data])
 
   return (

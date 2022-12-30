@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Notification from "./Components/notification/Notification";
 import SocialLogin from "./Components/notification/SocialLogin";
 import { Small, Title, Highlight } from "./Style/StyledTypography";
 import { Input, Button } from "./Style/StyledComponents";
@@ -8,6 +7,7 @@ import AllLanguages from "./AllLanguages";
 import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "./utils/client.mjs";
+import { toast } from "react-toastify";
 
 const Container = styled.div`
   text-align: center;
@@ -47,7 +47,7 @@ function SignIn({ setJwttoken }) {
         validatorField.style.border = "3px solid red";
     }
   }
-
+  const notify = () => toast("wow");
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
   const login = (e, email, password) => {
     e.preventDefault();
@@ -66,7 +66,6 @@ function SignIn({ setJwttoken }) {
 
           //Sets message for display
           setMessage(response.data.message);
-
           //clears the Notification
           setTimeout(() => {
             setMessage(null);
@@ -112,11 +111,25 @@ function SignIn({ setJwttoken }) {
   };
 
   const [message, setMessage] = useState();
+
+  useEffect(() => {
+    toast.info(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: null,
+      theme: "colored",
+    });
+  }, [message]);
+
   //Form for Login
   if (!signUp)
     return (
       <>
-        {message && <Notification data={message} />}
+        {/* {message && <Notification data={message} />} */}
         <Container>
           <Title color="white">Login</Title>
           <SocialLogin />
@@ -169,7 +182,6 @@ function SignIn({ setJwttoken }) {
   if (signUp)
     return (
       <>
-        {message && <Notification data={message} />}
         <Container>
           <Title color="white">SignUp</Title>
           <form
