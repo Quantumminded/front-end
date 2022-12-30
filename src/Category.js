@@ -1,9 +1,15 @@
 import React from 'react'
 
-const Category = () => {
+// IMPORT COMPONENT
+import Banner from './Components/Category/Banner';
+
+
+function Category() {
   return (
-    <div className='mt-[4.8rem]'>Category</div>
+    <div>
+      <Banner/>
+    </div>
   )
 }
 
-export default Category
+export default Category;
