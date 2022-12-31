@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { client } from "./utils/client.mjs";
 import { useCookie } from "./utils/cookies.js";
 import { Link, NavLink } from "react-router-dom";
-import LogoutButton from "./Components/signIn/LogoutButton.jsx";
+import LogoutButton from "./Components/Login/LogoutButton.jsx";
 import ImageUpload from "./Components/upload/ImageUpload.jsx";
 
 function ClientProfile() {
