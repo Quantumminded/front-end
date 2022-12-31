@@ -1,26 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { Small, Title, Highlight } from "../../Style/StyledTypography";
-import { Input, Button } from "../../Style/StyledComponents";
+import { Title, Highlight } from "../../Style/StyledTypography";
+import { Button } from "../../Style/StyledComponents";
 import AllLanguages from "../../AllLanguages";
-import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
 import toast from "../notification/toastFunction";
-
-const Container = styled.div`
-  text-align: center;
-`;
-const Span = styled.span`
-  color: #ffcd00;
-  cursor: pointer;
-`;
-
-const Line = styled.hr`
-  color: red;
-  display: inline-block;
-  width: 10vw;
-`;
 
 export default function SignUp() {
 

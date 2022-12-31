@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import SocialLogin from "../notification/SocialLogin";
-import { Small, Title, Highlight } from "../../Style/StyledTypography";
+import {Title, Highlight } from "../../Style/StyledTypography";
 import { Input, Button } from "../../Style/StyledComponents";
 import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
@@ -11,10 +11,6 @@ import toast from "../notification/toastFunction";
 
 const Container = styled.div`
   text-align: center;
-`;
-const Span = styled.span`
-  color: #ffcd00;
-  cursor: pointer;
 `;
 
 const Line = styled.hr`
