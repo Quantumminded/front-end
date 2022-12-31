@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
+import { toast } from "react-toastify";
+
 export default function LogoutButton() {
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
@@ -8,6 +10,16 @@ export default function LogoutButton() {
         // Perform logout logic here, such as clearing the user's session and cookies
         removeCookie('token');
         navigate('/');
+        toast.info("Logged out", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: null,
+            theme: "colored",
+        });
     }
 
     return (
