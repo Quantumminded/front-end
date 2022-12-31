@@ -7,7 +7,7 @@ import AllLanguages from "./AllLanguages";
 import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "./utils/client.mjs";
-import { toast } from "react-toastify";
+import toast from "./Components/notification/toastFunction";
 
 const Container = styled.div`
   text-align: center;
@@ -47,7 +47,6 @@ function SignIn({ setJwttoken }) {
         validatorField.style.border = "3px solid red";
     }
   }
-  const notify = () => toast("wow");
   //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
   const login = (e, email, password) => {
     e.preventDefault();
@@ -65,7 +64,7 @@ function SignIn({ setJwttoken }) {
           // document.cookie = `token=${response.data.token}`;
 
           //Sets message for display
-          setMessage(response.data.message);
+          setMessage(response.data);
           //clears the Notification
           setTimeout(() => {
             setMessage(null);
@@ -73,7 +72,7 @@ function SignIn({ setJwttoken }) {
         })
         .catch((err) => {
           console.log(err);
-          setMessage(err.response.data.message);
+          setMessage(err.response.data);
           setTimeout(() => {
             setMessage(null);
           }, 5000);
@@ -95,7 +94,7 @@ function SignIn({ setJwttoken }) {
       .post("/signup", { firstName, lastName, email, password, language })
       .then((response) => {
         //Sets message for display
-        setMessage(response.data.message);
+        setMessage(response.data);
 
         //clears the Notification
         setTimeout(() => {
@@ -103,7 +102,7 @@ function SignIn({ setJwttoken }) {
         }, 5000);
       })
       .catch((err) => {
-        setMessage(err.response.data.message);
+        setMessage(err.response.data);
         setTimeout(() => {
           setMessage(null);
         }, 5000);
@@ -112,17 +111,9 @@ function SignIn({ setJwttoken }) {
 
   const [message, setMessage] = useState();
 
+  // Notification toast takes type and message from the response
   useEffect(() => {
-    toast.info(message, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: null,
-      theme: "colored",
-    });
+    if (message) toast(message.type, message.message);
   }, [message]);
 
   //Form for Login

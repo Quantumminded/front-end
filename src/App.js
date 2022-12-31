@@ -17,15 +17,13 @@ import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
 //Module for various cookie settings
-import { CookiesProvider, useCookies } from "react-cookie";
+import { CookiesProvider} from "react-cookie";
 //Notification Toasts
 import { ToastContainer } from "react-toastify";
 
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
-  //Cookie
-  const [cookies, setCookie] = useCookies();
 
   return (
     <>
