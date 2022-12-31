@@ -10,10 +10,10 @@ const Banner = () => {
                 </div>
                 <div className="flex justify-center items-center flex-col xl:w-2/5 md:px-6 sm:w-3/4 md:w-2/4">
                     <div className="">
-                        <h1 className="xl:text-4xl text-3xl font-semibold leading-9 text-gray-800">Book your Translation</h1>
+                        <h1 className="xl:text-4xl text-3xl font-semibold leading-9 text-y2">Book your Translation</h1>
                     </div>
                     <div className="mt-4">
-                        <p className="xl:text-xl text-base leading-7 text-center text-gray-600">Choose from thousands of professionals for your translation . Avail the 50% offer now.</p>
+                        <p className="xl:text-xl text-base leading-7 text-center text-y1">Choose from thousands of professionals for your translation . Avail the 50% offer now.</p>
                     </div>
                    
                 </div>
