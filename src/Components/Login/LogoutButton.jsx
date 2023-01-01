@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import { toast } from "react-toastify";
 
-export default function LogoutButton() {
+export default function LogoutButton({ setJwttoken }) {
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
     function handleLogout() {
         // Perform logout logic here, such as clearing the user's session and cookies
         removeCookie('token');
+        localStorage.removeItem(`token`)
         navigate('/');
         toast.info("Logged out", {
             position: "top-center",

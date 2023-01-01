@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import LogoutButton from "./Components/Login/LogoutButton.jsx";
 import ImageUpload from "./Components/upload/ImageUpload.jsx";
 
-function ClientProfile() {
+function ClientProfile({ setJwttoken }) {
   const { token } = useCookie();
   const [userData, setuserData] = useState();
   useEffect(() => {
@@ -60,7 +60,10 @@ function ClientProfile() {
                     </NavLink>
                   </li>
                   <li className="mb-4">
-                    <LogoutButton className="block font-semibold text-gray-400 hover:text-white" />
+                    <LogoutButton
+                      setJwttoken={setJwttoken}
+                      className="block font-semibold text-gray-400 hover:text-white"
+                    />
                   </li>
                 </ul>
               </nav>
