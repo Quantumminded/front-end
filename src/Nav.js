@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import NotificationCenter from "./Components/notification/NotificationCenter";
+import ProfileIcon from "./Components/notification/Profile/ProfileIcon";
 // import Button from "./Button";
 import "./index.css";
 
@@ -141,6 +143,10 @@ function Nav() {
           >
             Post a request
           </a>
+        </div>
+        <div className="flex gap-4">
+          <NotificationCenter />
+          <ProfileIcon />
         </div>
       </div>
     </nav>
