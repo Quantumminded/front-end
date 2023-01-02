@@ -5,7 +5,7 @@ import { Button } from "../../Style/StyledComponents";
 import AllLanguages from "../../AllLanguages";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
-import toast from "../notification/toastFunction";
+import toast from "../notification/toastMessage";
 
 export default function SignUp() {
 

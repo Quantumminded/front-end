@@ -22,7 +22,7 @@ import { CookiesProvider } from "react-cookie";
 import { ToastContainer } from "react-toastify";
 import { UserContext } from "./utils/UserContext";
 import { client } from "./utils/client.mjs";
-import toastMessage from "./Components/notification/toastFunction";
+import toastMessage from "./Components/notification/toastMessage";
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));

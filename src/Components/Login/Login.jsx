@@ -6,7 +6,7 @@ import { Input, Button } from "../../Style/StyledComponents";
 import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
-import toast from "../notification/toastFunction";
+import toast from "../notification/toastMessage";
 import useContextHook from "../../utils/customContextHook";
 
 

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { client } from '../../utils/client.mjs';
-
-
+import toastMessage from '../notification/toastMessage.js';
 const ImageUpload = () => {
     const fileInput = useRef(null);
 
@@ -20,10 +19,10 @@ const ImageUpload = () => {
         client()
             .post('/upload', formData)
             .then((response) => {
-                console.log(response.data);
+                toastMessage("info", response.data);
             })
             .catch((error) => {
-                console.error(error);
+                toastMessage("warning", error);
             });
     };
 
