@@ -12,10 +12,9 @@ export default function LogoutButton({ setJwttoken }) {
     function handleLogout() {
         // Perform logout logic here, such as clearing the user's session and cookies
         removeCookie('token');
-        setUser(null)
+        setUser(undefined)
         localStorage.removeItem(`token`)
         setAuthorized(false)
-        navigate('/');
         toast.info("Logged out", {
             position: "top-center",
             autoClose: 5000,
@@ -26,6 +25,8 @@ export default function LogoutButton({ setJwttoken }) {
             progress: null,
             theme: "colored",
         });
+        window.location.replace('/');
+
     }
 
     return (

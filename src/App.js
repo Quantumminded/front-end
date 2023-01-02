@@ -33,6 +33,7 @@ function App() {
   const [authorized, setAuthorized] = useState(false);
   //Context we will user Through out the App
   const contextValue = {
+    token: jwttoken,
     user: user,
     setUser: setUser,
     authorized: authorized,
@@ -41,7 +42,7 @@ function App() {
   //Checks if token in localStorage is still valid
   async function checkToken() {
     try {
-      const response = await client.get("/user/Profile");
+      const response = await client(jwttoken).get("/user/Profile");
       const { status } = response;
       console.log(status);
       if (status == 200) {
@@ -52,7 +53,7 @@ function App() {
         setAuthorized(true);
       }
     } catch (error) {
-      toastMessage("info", "Your Session is expired. Please login again.");
+      toastMessage("info", "Logged out");
     }
   }
   useEffect(() => {
