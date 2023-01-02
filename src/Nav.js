@@ -99,9 +99,6 @@ function Nav() {
                 <a href="/HomePage">Home</a>
               </li>
               <li className="text-white hover:text-y1">
-                <a href="/">Services</a>
-              </li>
-              <li className="text-white hover:text-y1">
                 <a href="/About">About US</a>
               </li>
               <li className="text-white hover:text-y1">
