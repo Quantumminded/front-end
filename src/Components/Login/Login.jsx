@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, } from "react";
 import styled from "styled-components";
 import SocialLogin from "../notification/SocialLogin";
-import {Title, Highlight } from "../../Style/StyledTypography";
+import { Title, Highlight } from "../../Style/StyledTypography";
 import { Input, Button } from "../../Style/StyledComponents";
 import { useCookies } from "react-cookie";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
-import toast from "../notification/toastFunction";
+import toast from "../notification/toastMessage";
+import useContextHook from "../../utils/customContextHook";
+
 
 
 const Container = styled.div`
@@ -25,17 +27,19 @@ export default function Login({ setJwttoken }) {
     //FORM REFS
     const email = useRef();
     const password = useRef();
+    const { setAuthorized, setUser } = useContextHook()
 
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
     const login = (e, email, password) => {
         e.preventDefault();
-        client()
+        client
             .post("/login", { email, password })
             .then((response) => {
-                const { token } = response.data;
+                const { token, user } = response.data;
                 // Save the JWT token in local storage
                 localStorage.setItem("token", token);
-
+                setUser(user[0])
+                setAuthorized(true)
                 setJwttoken(token);
                 //Sets Cookie for 1 hour
                 setCookie("token", token, { path: "/", maxAge: 3600 });

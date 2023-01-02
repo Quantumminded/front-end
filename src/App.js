@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 //Import pages
@@ -18,44 +18,99 @@ import Category from "./Category";
 import About from "./About";
 import TeamSection from "./About/TeamSection";
 import Privacy from "./Privacy";
-import Offer from "./Offer"
+import Offer from "./Offer";
 //Module for various cookie settings
-import { CookiesProvider} from "react-cookie";
+import { CookiesProvider } from "react-cookie";
 //Notification Toasts
 import { ToastContainer } from "react-toastify";
-
+import { UserContext } from "./utils/UserContext";
+import { client } from "./utils/client.mjs";
+import toastMessage from "./Components/notification/toastMessage";
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
+  const [user, setUser] = useState();
+  const [authorized, setAuthorized] = useState(false);
+  //Context we will user Through out the App
+  const contextValue = {
+    user: user,
+    setUser: setUser,
+    authorized: authorized,
+    setAuthorized: setAuthorized,
+  };
+  //Checks if token in localStorage is still valid
+  async function checkToken() {
+    try {
+      const response = await client.get("/user/Profile");
+      const { status } = response;
+      console.log(status);
+      if (status == 200) {
+        toastMessage("success", "Logged In");
+        //Sets the user to the data from the server
+        setUser(response.data[0]);
+        // Authorize the user if token still valid
+        setAuthorized(true);
+      }
+    } catch (error) {
+      toastMessage("info", "Your Session is expired. Please login again.");
+    }
+  }
+  useEffect(() => {
+    // Check if the user has visited before
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      // Run the initial function
+      checkToken();
 
+      // Set a flag in local storage so that we don't run the function again
+      localStorage.setItem("hasVisited", true);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Add the beforeunload event listener
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Return a cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+  // This is the event handler for the beforeunload event
+  function handleBeforeUnload() {
+    localStorage.removeItem("hasVisited");
+  }
   return (
     <>
       <CookiesProvider>
-        <ToastContainer />
-        <Nav></Nav>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<HeroPage />} />
-            <Route path="/HomePage" element={<HomePage />} />
-            <Route path="/Category/:id" element={<Category />} />
-            <Route path="/About" element={<About />} />
-            <Route
-              path="/SignIn"
-              element={<SignIn setJwttoken={setJwttoken} />}
-            />
-            <Route path="/WorkerPorfile" element={<WorkerProfile />} />
-            <Route path="/ClientProfile" element={<ClientProfile />} />
-            <Route path="/PostOffer" element={<PostOffer />} />
-            <Route path="/SelectRequest" element={<SelectRequest />} />
-            <Route path="/DocumentForm" element={<DocumentForm />} />
-            <Route path="/CallForm" element={<CallForm />} />
-            <Route path="/TransaltionForm" element={<TransaltionForm />} />
-            <Route path="/TeamSection" element={<TeamSection />} />
-            <Route path="/Privacy" element={<Privacy />} />
-            <Route path="/Offer" element={<Offer />} />
-          </Routes>
-        </BrowserRouter>
-        <Footer></Footer>
+        <UserContext.Provider value={contextValue}>
+          <ToastContainer />
+          <BrowserRouter>
+            <Nav />
+            <Routes>
+              <Route index element={<HeroPage />} />
+              <Route path="/HomePage" element={<HomePage />} />
+              <Route path="/Category/:id" element={<Category />} />
+              <Route path="/About" element={<About />} />
+              <Route
+                path="/SignIn"
+                element={<SignIn setJwttoken={setJwttoken} />}
+              />
+              <Route path="/WorkerPorfile" element={<WorkerProfile />} />
+              <Route
+                path="/ClientProfile"
+                setJwttoken={setJwttoken}
+                element={<ClientProfile />}
+              />
+              <Route path="/PostOffer" element={<PostOffer />} />
+              <Route path="/SelectRequest" element={<SelectRequest />} />
+              <Route path="/DocumentForm" element={<DocumentForm />} />
+              <Route path="/CallForm" element={<CallForm />} />
+              <Route path="/TransaltionForm" element={<TransaltionForm />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </UserContext.Provider>
       </CookiesProvider>
     </>
   );

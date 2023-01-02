@@ -5,7 +5,7 @@ import { Button } from "../../Style/StyledComponents";
 import AllLanguages from "../../AllLanguages";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
-import toast from "../notification/toastFunction";
+import toast from "../notification/toastMessage";
 
 export default function SignUp() {
 
@@ -28,7 +28,7 @@ export default function SignUp() {
     ) => {
         console.log(firstName, lastName, email, password, language);
         e.preventDefault();
-        client()
+        client
             .post("/signup", { firstName, lastName, email, password, language })
             .then((response) => {
                 //Sets message for display

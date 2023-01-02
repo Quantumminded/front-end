@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import NotificationCenter from "./Components/notification/NotificationCenter";
+import ProfileIcon from "./Components/notification/Profile/ProfileIcon";
 // import Button from "./Button";
 import "./index.css";
+import useContextHook from "./utils/customContextHook";
 
 function Nav() {
+  const { user, authorized } = useContextHook();
   // let Links = [
   //   { name: "HOME", link: "/HomePage" },
   //   { name: "SERVICES", link: "/" },
@@ -30,7 +35,7 @@ function Nav() {
     //       {Links.map((link) => (
     //         <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
     //           <a
-    //             href={link.link}
+    //             to={link.link}
     //             className="text-gray-800 hover:text-grey-400 duration-500"
     //           >
     //             {link.name}
@@ -47,9 +52,9 @@ function Nav() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="/">
+            <Link to="/">
               <h2 className="text-2xl font-bold text-white">LOGO</h2>
-            </a>
+            </Link>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -96,49 +101,65 @@ function Nav() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-white hover:text-y1">
-                <a href="/HomePage">Home</a>
+                <Link to="/HomePage">Home</Link>
               </li>
               <li className="text-white hover:text-y1">
-                <a href="/About">About US</a>
+                <Link to="/">Services</Link>
               </li>
               <li className="text-white hover:text-y1">
-                <a href="/TeamSection">Contact US</a>
+                <Link to="/About">About US</Link>
               </li>
               <li className="text-white hover:text-y1">
-                <a href="/ClientProfile">ClientProfile</a>
+                <Link to="/">Contact US</Link>
+              </li>
+              <li className="text-white hover:text-y1">
+                <Link to="/ClientProfile">ClientProfile</Link>
               </li>
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
-              <a
-                href="/SignIn"
+              <Link
+                to="/SignIn"
                 className="inline-block w-full px-4 py-2 text-center text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800"
               >
                 Sign in
-              </a>
-              <a
-                href="/SelectRequest"
+              </Link>
+              <Link
+                to="/SelectRequest"
                 className="inline-block w-full px-4 py-2 text-center text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-100"
               >
                 Post a request
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-          <a
-            href="/SignIn"
-            className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
-          >
-            Sign in
-          </a>
-          <a
-            href="/SelectRequest"
-            className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
-          >
-            Post a request
-          </a>
-        </div>
+        {authorized ? (
+          <div className="flex gap-4">
+            <Link
+              to="/SelectRequest"
+              className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              Post a request
+            </Link>
+            <NotificationCenter />
+            <ProfileIcon />
+          </div>
+        ) : (
+          <div className="hidden space-x-2 md:inline-block">
+            <Link
+              to="/SignIn"
+              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              Sign in
+            </Link>
+            <Link
+              to="/SelectRequest"
+              className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+            >
+              Post a request
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

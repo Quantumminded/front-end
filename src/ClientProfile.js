@@ -4,20 +4,16 @@ import { useCookie } from "./utils/cookies.js";
 import { Link, NavLink } from "react-router-dom";
 import LogoutButton from "./Components/Login/LogoutButton.jsx";
 import ImageUpload from "./Components/upload/ImageUpload.jsx";
+import useContextHook from "./utils/customContextHook.js";
 
-function ClientProfile() {
+function ClientProfile({ setJwttoken }) {
   const { token } = useCookie();
-  const [userData, setuserData] = useState();
-  useEffect(() => {
-    client(token)
-      .get(`/user/profile`)
-      .then((response) => setuserData(response.data[0]))
-      .catch((err) => console.error(err));
-  }, [token]);
+  const { user } = useContextHook();
+console.log(user)
   return (
     //TODO:Finish ClientProfile
     <>
-      {userData && (
+      {user && (
         <>
           <div className="flex gap-4">
             <div className="w-1/5">
@@ -60,7 +56,10 @@ function ClientProfile() {
                     </NavLink>
                   </li>
                   <li className="mb-4">
-                    <LogoutButton className="block font-semibold text-gray-400 hover:text-white" />
+                    <LogoutButton
+                      setJwttoken={setJwttoken}
+                      className="block font-semibold text-gray-400 hover:text-white"
+                    />
                   </li>
                 </ul>
               </nav>
@@ -68,7 +67,7 @@ function ClientProfile() {
             <form className="w-4/5 p-4 ">
               <div className="relative z-0 mb-6 w-full group">
                 <input
-                  value={userData.email}
+                  value={user.email}
                   type="email"
                   name="floating_email"
                   id="floating_email"
@@ -87,7 +86,7 @@ function ClientProfile() {
               <div className="grid md:grid-cols-2 md:gap-6">
                 <div className="relative z-0 mb-6 w-full group">
                   <input
-                    value={userData.firstName}
+                    value={user.firstName}
                     type="text"
                     name="floating_first_name"
                     id="floating_first_name"
@@ -104,7 +103,7 @@ function ClientProfile() {
                 </div>
                 <div className="relative z-0 mb-6 w-full group">
                   <input
-                    value={userData.lastName}
+                    value={user.lastName}
                     type="text"
                     name="floating_last_name"
                     id="floating_last_name"
@@ -123,7 +122,7 @@ function ClientProfile() {
               <div className="grid md:grid-cols-2 md:gap-6">
                 <div className="relative z-0 mb-6 w-full group">
                   <input
-                    value={userData.phonenumber}
+                    value={user.phonenumber}
                     type="tel"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     name="floating_phone"
@@ -141,7 +140,7 @@ function ClientProfile() {
                 </div>
                 <div className="relative z-0 mb-6 w-full group">
                   <input
-                    value={userData.address}
+                    value={user.address}
                     type="text"
                     name="address"
                     id="address"
@@ -158,7 +157,7 @@ function ClientProfile() {
                 </div>
                 <div className="relative z-0 mb-6 w-full group">
                   <input
-                    value={userData.languages}
+                    value={user.languages}
                     type="text"
                     name="languages"
                     id="languages"
