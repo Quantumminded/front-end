@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // IMPORT COMPONENT
 import HomeCard from "./Components/HomePage/HomeCard";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
-import HomeCard3 from "./Components/HomePage/HomeCard3";
+
 
 import useCookies from "react-cookie/cjs/useCookies";
 
