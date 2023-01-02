@@ -18,7 +18,7 @@ import Category from "./Category";
 import About from "./About";
 import TeamSection from "./About/TeamSection";
 import Privacy from "./Privacy";
-import Offer from "./Offer"
+import Offer from "./Offer";
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
@@ -47,7 +47,7 @@ function App() {
       if (status == 200) {
         toastMessage("success", "Logged In");
         //Sets the user to the data from the server
-        setUser(response.data);
+        setUser(response.data[0]);
         // Authorize the user if token still valid
         setAuthorized(true);
       }
