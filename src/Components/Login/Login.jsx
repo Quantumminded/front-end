@@ -27,12 +27,12 @@ export default function Login({ setJwttoken }) {
     //FORM REFS
     const email = useRef();
     const password = useRef();
-    const { setAuthorized, setUser } = useContextHook()
+    const { setAuthorized, setUser, token } = useContextHook()
 
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
     const login = (e, email, password) => {
         e.preventDefault();
-        client
+        client(token)
             .post("/login", { email, password })
             .then((response) => {
                 const { token, user } = response.data;
