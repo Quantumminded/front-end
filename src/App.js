@@ -18,6 +18,7 @@ import Category from "./Category";
 import About from "./About";
 import TeamSection from "./About/TeamSection";
 import Privacy from "./Privacy";
+import Offer from "./Offer"
 //Module for various cookie settings
 import { CookiesProvider} from "react-cookie";
 //Notification Toasts
@@ -51,6 +52,7 @@ function App() {
             <Route path="/TransaltionForm" element={<TransaltionForm />} />
             <Route path="/TeamSection" element={<TeamSection />} />
             <Route path="/Privacy" element={<Privacy />} />
+            <Route path="/Offer" element={<Offer />} />
           </Routes>
         </BrowserRouter>
         <Footer></Footer>

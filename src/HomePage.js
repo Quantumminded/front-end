@@ -8,7 +8,7 @@ import useCookies from "react-cookie/cjs/useCookies";
 
 function HomePage() {
   return (
-    <div className="bg-cyan-700 mb-2 w-full">
+    <div className="bg-b2 mb-2 w-full">
       {/* Category Buttons */}
       <ul className="flex justify-around">
         <li className="m-2">
