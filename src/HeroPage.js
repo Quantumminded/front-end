@@ -38,7 +38,7 @@ function HeroPage() {
               <div className="w-full lg:w-auto lg:-mr-32">
                 <img
                   src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                  alt="image with decent chairs"
+                  alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14"
                 />
               </div>
@@ -47,7 +47,7 @@ function HeroPage() {
             <div className="w-full h-full lg:hidden bg-y2">
               <img
                 src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                alt="image with decent chairs"
+                alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14"
               />
             </div>
@@ -65,7 +65,7 @@ function HeroPage() {
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-                Explore
+                <a href="/Category/documents">Explore</a>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -110,7 +110,7 @@ function HeroPage() {
               <div className="w-full lg:w-auto lg:-mr-32">
                 <img
                   src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                  alt="image with decent chairs"
+                  alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14"
                 />
               </div>
@@ -119,7 +119,7 @@ function HeroPage() {
             <div className="w-full h-full lg:hidden bg-y2">
               <img
                 src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                alt="image with decent chairs"
+                alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14"
               />
             </div>
@@ -137,7 +137,7 @@ function HeroPage() {
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-                Explore
+               <a href="/Category/calls">Explore</a>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -182,7 +182,7 @@ function HeroPage() {
               <div className="w-full lg:w-auto lg:-mr-32">
                 <img
                   src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                  alt="image with decent chairs"
+                  alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14"
                 />
               </div>
@@ -191,7 +191,7 @@ function HeroPage() {
             <div className="w-full h-full lg:hidden bg-y2">
               <img
                 src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
-                alt="image with decent chairs"
+                alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14"
               />
             </div>
@@ -204,12 +204,12 @@ function HeroPage() {
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
                 Get inspired by our curated selection of luxiwood interiors. We
-                hope get inspired to have luxiwood interior yourself. You’ll
+                hope get inspired to have luxiwood interior yourself. You ll
                 find tips here where you can buy a lot of cool
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-                Explore
+                <a href="/Category/translation">Explore</a>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -259,7 +259,7 @@ function HeroPage() {
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-white hover:bg-indigo-600 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
-                  View All
+                  <a href="/HomePage">View All</a>
                 </button>
               </div>
             </div>
@@ -276,7 +276,7 @@ function HeroPage() {
                   src="https://i.ibb.co/McW2r4N/Group-178.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -287,7 +287,7 @@ function HeroPage() {
                   src="https://i.ibb.co/vYkzzqG/Group-179.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -298,7 +298,7 @@ function HeroPage() {
                   src="https://i.ibb.co/zV9j7wt/Group-1775.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -309,7 +309,6 @@ function HeroPage() {
                   src="https://i.ibb.co/Tqs9Mbx/Group-1776.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
                 />
               </div>
               <div
@@ -320,7 +319,7 @@ function HeroPage() {
                   src="https://i.ibb.co/6HbjWy7/Group-1777.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+    
                 />
               </div>
               <div
@@ -331,7 +330,7 @@ function HeroPage() {
                   src="https://i.ibb.co/DGkXVGg/Group-1778.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -342,7 +341,7 @@ function HeroPage() {
                   src="https://i.ibb.co/QDrmWh2/Group-1779.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -353,7 +352,7 @@ function HeroPage() {
                   src="https://i.ibb.co/hHWS44y/Group-1780.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -364,7 +363,7 @@ function HeroPage() {
                   src="https://i.ibb.co/hLY20Ys/Group-1781.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+ 
                 />
               </div>
               <div
@@ -375,7 +374,7 @@ function HeroPage() {
                   src="https://i.ibb.co/7vvt1sH/Group-1782.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -386,7 +385,7 @@ function HeroPage() {
                   src="https://i.ibb.co/Gd3d670/Group-1783.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -397,7 +396,7 @@ function HeroPage() {
                   src="https://i.ibb.co/SsP5fmH/Group-1784.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+   
                 />
               </div>
               <div
@@ -408,7 +407,7 @@ function HeroPage() {
                   src="https://i.ibb.co/51CyJJT/Group-1785.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+   
                 />
               </div>
               <div
@@ -419,7 +418,7 @@ function HeroPage() {
                   src="https://i.ibb.co/KDjTgk5/Group-1786.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -430,7 +429,7 @@ function HeroPage() {
                   src="https://i.ibb.co/2N77h51/Group-1787.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -441,7 +440,7 @@ function HeroPage() {
                   src="https://i.ibb.co/F5zg9Y0/Group-1788.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+ 
                 />
               </div>
               <div
@@ -452,7 +451,7 @@ function HeroPage() {
                   src="https://i.ibb.co/tbmnJVg/Group-1789.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
+
                 />
               </div>
               <div
@@ -463,7 +462,6 @@ function HeroPage() {
                   src="https://i.ibb.co/5LNbgvV/Group-1790.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
                 />
               </div>
               <div
@@ -474,7 +472,6 @@ function HeroPage() {
                   src="https://i.ibb.co/6YBFL8w/Group-1791.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
                 />
               </div>
               <div
@@ -485,7 +482,6 @@ function HeroPage() {
                   src="https://i.ibb.co/s3MwWJ6/Group-1792.png"
                   className="w-16 h-16"
                   alt="display avatar"
-                  role="img"
                 />
               </div>
             </div>
@@ -1009,18 +1005,17 @@ function HeroPage() {
                   <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
                     <div>
                       <h1
-                        role="heading"
+                      
                         className="text-xl md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-b2 font-black leading-6 lg:leading-10 md:text-left text-center"
                       >
                         Become a Translator and start helping people
                       </h1>
                     </div>
                     <button
-                      role="button"
                       aria-label="Join the community"
                       className="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-b2 font-bold text-y2 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
                     >
-                      Register
+                      <a href="/SignIn">Register</a>
                     </button>
                   </div>
                   <div className="md:w-1/3 w-2/3">

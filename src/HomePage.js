@@ -2,29 +2,28 @@ import React from "react";
 
 // IMPORT COMPONENT
 import HomeCard from "./Components/HomePage/HomeCard";
-import HomeCard2 from "./Components/HomePage/HomeCard2";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 
 import useCookies from "react-cookie/cjs/useCookies";
 
 function HomePage() {
   return (
-    <div className="bg-cyan-700 mb-2 w-full">
+    <div className="bg-b2 mb-2 w-full">
       {/* Category Buttons */}
       <ul className="flex justify-around">
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/">Documents</a>
+            <a href="/Category/documents">Documents</a>
           </button>
         </li>
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/Category">Calls</a>
+            <a href="/Category/calls">Calls</a>
           </button>
         </li>
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/">Translations</a>
+            <a href="/Category/translations">Translations</a>
           </button>
         </li>
       </ul>

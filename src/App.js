@@ -16,6 +16,9 @@ import CallForm from "./CallForm";
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
+import TeamSection from "./About/TeamSection";
+import Privacy from "./Privacy";
+import Offer from "./Offer"
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
