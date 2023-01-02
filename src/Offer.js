@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Offer() {
+function Checkout() {
   return (
-    <div>Offer checkout</div>
+    <div>Checkout</div>
   )
 }
 
-export default Offer
+export default Checkout
