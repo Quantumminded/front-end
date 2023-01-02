@@ -102,7 +102,7 @@ function Nav() {
                 <a href="/About">About US</a>
               </li>
               <li className="text-white hover:text-y1">
-                <a href="/">Contact US</a>
+                <a href="/TeamSection">Contact US</a>
               </li>
               <li className="text-white hover:text-y1">
                 <a href="/ClientProfile">ClientProfile</a>
