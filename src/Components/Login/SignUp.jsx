@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
 import { Title, Highlight } from "../../Style/StyledTypography";
 import { Button } from "../../Style/StyledComponents";
 import AllLanguages from "../../AllLanguages";

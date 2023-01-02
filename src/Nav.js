@@ -7,7 +7,7 @@ import "./index.css";
 import useContextHook from "./utils/customContextHook";
 
 function Nav() {
-  const { user, authorized } = useContextHook();
+  const { authorized } = useContextHook();
   // let Links = [
   //   { name: "HOME", link: "/HomePage" },
   //   { name: "SERVICES", link: "/" },

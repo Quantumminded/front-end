@@ -25,7 +25,7 @@ export default function LogoutButton({ setJwttoken }) {
             progress: null,
             theme: "colored",
         });
-        window.location.replace('/');
+        navigate("/")
 
     }
 

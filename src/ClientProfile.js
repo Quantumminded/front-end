@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { client } from "./utils/client.mjs";
-import { useCookie } from "./utils/cookies.js";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import LogoutButton from "./Components/Login/LogoutButton.jsx";
 import ImageUpload from "./Components/upload/ImageUpload.jsx";
 import useContextHook from "./utils/customContextHook.js";
 
 function ClientProfile({ setJwttoken }) {
-  const { token } = useCookie();
   const { user } = useContextHook();
 console.log(user)
   return (

@@ -53,7 +53,7 @@ function App() {
         setAuthorized(true);
       }
     } catch (error) {
-      toastMessage("info", "Logged out");
+      toastMessage("info", "Your Session is expired. Please login again.");
     }
   }
   useEffect(() => {
@@ -66,7 +66,7 @@ function App() {
       // Set a flag in local storage so that we don't run the function again
       localStorage.setItem("hasVisited", true);
     }
-  }, []);
+  });
 
   useEffect(() => {
     // Add the beforeunload event listener
