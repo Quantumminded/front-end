@@ -152,12 +152,6 @@ function Nav() {
             >
               Sign in
             </Link>
-            <Link
-              to="/SelectRequest"
-              className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
-            >
-              Post a request
-            </Link>
           </div>
         )}
       </div>
