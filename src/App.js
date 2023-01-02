@@ -27,6 +27,14 @@ function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState();
+  const [authorized, setAuthorized] = useState(false);
+  //Context we will user Through out the App
+  const contextValue = {
+    user: user,
+    authorized: authorized,
+    setAuthorized: setAuthorized,
+  };
+  //Checks if token in localStorage is still valid
   async function checkToken() {
     try {
       const response = await client(jwttoken).get("/user/Profile");
@@ -34,23 +42,47 @@ function App() {
       console.log(status);
       if (status == 200) {
         toastMessage("success", "Logged In");
+        //Sets the user to the data from the server
         setUser(response.data);
+        // Authorize the user if token still valid
+        setAuthorized(true);
       }
     } catch (error) {
       toastMessage("info", "Your Session is expired. Please login again.");
     }
   }
   useEffect(() => {
-    checkToken();
+    // Check if the user has visited before
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      // Run the initial function
+      checkToken();
+
+      // Set a flag in local storage so that we don't run the function again
+      localStorage.setItem("hasVisited", true);
+    }
   }, []);
 
+  useEffect(() => {
+    // Add the beforeunload event listener
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Return a cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+  // This is the event handler for the beforeunload event
+  function handleBeforeUnload() {
+    localStorage.removeItem("hasVisited");
+  }
   return (
     <>
       <CookiesProvider>
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={contextValue}>
           <ToastContainer />
-          <Nav></Nav>
           <BrowserRouter>
+            <Nav />
             <Routes>
               <Route index element={<HeroPage />} />
               <Route path="/HomePage" element={<HomePage />} />
@@ -72,8 +104,8 @@ function App() {
               <Route path="/CallForm" element={<CallForm />} />
               <Route path="/TransaltionForm" element={<TransaltionForm />} />
             </Routes>
+            <Footer />
           </BrowserRouter>
-          <Footer></Footer>
         </UserContext.Provider>
       </CookiesProvider>
     </>
