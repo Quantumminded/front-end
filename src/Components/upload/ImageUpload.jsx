@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { client } from '../../utils/client.mjs';
+import useContextHook from '../../utils/customContextHook.js';
 import toastMessage from '../notification/toastMessage.js';
 const ImageUpload = () => {
     const fileInput = useRef(null);
-
+    const { token } = useContextHook()
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -16,7 +17,7 @@ const ImageUpload = () => {
         const formData = new FormData();
         formData.append('image', file);
 
-        client
+        client(token)
             .post('/upload', formData)
             .then((response) => {
                 toastMessage("info", response.data);

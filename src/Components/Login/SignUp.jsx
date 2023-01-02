@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
 import { Title, Highlight } from "../../Style/StyledTypography";
 import { Button } from "../../Style/StyledComponents";
 import AllLanguages from "../../AllLanguages";
@@ -28,7 +27,7 @@ export default function SignUp() {
     ) => {
         console.log(firstName, lastName, email, password, language);
         e.preventDefault();
-        client
+        client()
             .post("/signup", { firstName, lastName, email, password, language })
             .then((response) => {
                 //Sets message for display

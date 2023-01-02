@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SocialLogin from "../notification/SocialLogin";
 import { Title, Highlight } from "../../Style/StyledTypography";
@@ -27,12 +28,13 @@ export default function Login({ setJwttoken }) {
     //FORM REFS
     const email = useRef();
     const password = useRef();
-    const { setAuthorized, setUser } = useContextHook()
+    const { setAuthorized, setUser, token } = useContextHook()
 
+    const navigate = useNavigate()
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
     const login = (e, email, password) => {
         e.preventDefault();
-        client
+        client(token)
             .post("/login", { email, password })
             .then((response) => {
                 const { token, user } = response.data;
@@ -47,10 +49,12 @@ export default function Login({ setJwttoken }) {
 
                 //Sets message for display
                 setMessage(response.data);
+
                 //clears the Notification
                 setTimeout(() => {
+                    navigate('/')
                     setMessage(null);
-                }, 5000);
+                }, 2000);
             })
             .catch((err) => {
                 console.log(err);

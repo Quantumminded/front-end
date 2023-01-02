@@ -33,6 +33,7 @@ function App() {
   const [authorized, setAuthorized] = useState(false);
   //Context we will user Through out the App
   const contextValue = {
+    token: jwttoken,
     user: user,
     setUser: setUser,
     authorized: authorized,
@@ -41,7 +42,7 @@ function App() {
   //Checks if token in localStorage is still valid
   async function checkToken() {
     try {
-      const response = await client.get("/user/Profile");
+      const response = await client(jwttoken).get("/user/Profile");
       const { status } = response;
       console.log(status);
       if (status == 200) {
@@ -65,7 +66,7 @@ function App() {
       // Set a flag in local storage so that we don't run the function again
       localStorage.setItem("hasVisited", true);
     }
-  }, []);
+  });
 
   useEffect(() => {
     // Add the beforeunload event listener
