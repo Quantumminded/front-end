@@ -112,9 +112,6 @@ function Nav() {
               <li className="text-white hover:text-y1">
                 <Link to="/">Contact US</Link>
               </li>
-              <li className="text-white hover:text-y1">
-                <Link to="/ClientProfile">ClientProfile</Link>
-              </li>
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">

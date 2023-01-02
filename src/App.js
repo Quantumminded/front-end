@@ -99,7 +99,7 @@ function App() {
               />
               <Route path="/WorkerPorfile" element={<WorkerProfile />} />
               <Route
-                path="/ClientProfile"
+                path="/Profile"
                 setJwttoken={setJwttoken}
                 element={<ClientProfile />}
               />
