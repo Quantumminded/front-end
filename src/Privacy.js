@@ -3,10 +3,10 @@ import React from "react";
 function Privacy() {
   return (
     <div>
-      <div className="">
-        <h2>Privacy Policy</h2>
-        <h3>Effective Date: [Date]</h3>
-        <p>
+      <div>
+        <h2 className="text-center mt-5">Privacy Policy</h2>
+        <h3 className="text-center mt-2">Effective Date: [Date]</h3>
+        <p className="mt-2 text-center">
             This privacy policy applies to [Name of Website]
             and all of its related services and products (collectively, "our
             website" or "the website"). By using our website, you agree to the
