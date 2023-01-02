@@ -31,6 +31,7 @@ function App() {
   //Context we will user Through out the App
   const contextValue = {
     user: user,
+    setUser: setUser,
     authorized: authorized,
     setAuthorized: setAuthorized,
   };

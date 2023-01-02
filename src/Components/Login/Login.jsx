@@ -27,7 +27,7 @@ export default function Login({ setJwttoken }) {
     //FORM REFS
     const email = useRef();
     const password = useRef();
-    const { setAuthorized } = useContextHook()
+    const { setAuthorized, setUser } = useContextHook()
 
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
     const login = (e, email, password) => {
@@ -35,9 +35,10 @@ export default function Login({ setJwttoken }) {
         client
             .post("/login", { email, password })
             .then((response) => {
-                const { token } = response.data;
+                const { token, user } = response.data;
                 // Save the JWT token in local storage
                 localStorage.setItem("token", token);
+                setUser(user[0])
                 setAuthorized(true)
                 setJwttoken(token);
                 //Sets Cookie for 1 hour
