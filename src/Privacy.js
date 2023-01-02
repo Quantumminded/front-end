@@ -6,7 +6,7 @@ function Privacy() {
       <div>
         <h2 className="text-center mt-5">Privacy Policy</h2>
         <h3 className="text-center mt-2">Effective Date: [Date]</h3>
-        <p className="mt-2 text-center">
+        <p className="mt-2 ml-7 mr-7 text-center">
             This privacy policy applies to [Name of Website]
             and all of its related services and products (collectively, "our
             website" or "the website"). By using our website, you agree to the
