@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // IMPORT COMPONENT
 import HomeCard from "./Components/HomePage/HomeCard";
@@ -13,17 +14,17 @@ function HomePage() {
       <ul className="flex justify-around">
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/Category/documents">Documents</a>
+            <Link to="/Category/documents">Documents</Link>
           </button>
         </li>
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/Category/calls">Calls</a>
+            <Link to="/Category/calls">Calls</Link>
           </button>
         </li>
         <li className="m-2">
           <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <a href="/Category/translations">Translations</a>
+            <Link to="/Category/translations">Translations</Link>
           </button>
         </li>
       </ul>

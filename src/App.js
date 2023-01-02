@@ -107,6 +107,9 @@ function App() {
               <Route path="/DocumentForm" element={<DocumentForm />} />
               <Route path="/CallForm" element={<CallForm />} />
               <Route path="/TransaltionForm" element={<TransaltionForm />} />
+              <Route path="/Privacy" element={<Privacy />} />
+              <Route path="/TeamSection" element={<TeamSection />} />
+              <Route path="/Offer" element={<Offer />} />
             </Routes>
             <Footer />
           </BrowserRouter>

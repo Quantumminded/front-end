@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HeroPage() {
   return (
@@ -22,7 +23,7 @@ function HeroPage() {
               et a id nisi.
             </p>
             <button className="btn btn-primary">
-              <a href="/HomePage">Get Started</a>
+              <Link to="/HomePage">Get Started</Link>
             </button>
           </div>
         </div>
@@ -65,7 +66,7 @@ function HeroPage() {
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-                <a href="/Category/documents">Explore</a>
+                <Link to="/Category/documents">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -137,7 +138,7 @@ function HeroPage() {
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-               <a href="/Category/calls">Explore</a>
+               <Link to="/Category/calls">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -209,7 +210,7 @@ function HeroPage() {
                 furniture,decorations, plants, etc.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-                <a href="/Category/translation">Explore</a>
+                <Link to="/Category/translation">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -1015,7 +1016,7 @@ function HeroPage() {
                       aria-label="Join the community"
                       className="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-b2 font-bold text-y2 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
                     >
-                      <a href="/SignIn">Register</a>
+                      <Link to="/SignIn">Register</Link>
                     </button>
                   </div>
                   <div className="md:w-1/3 w-2/3">
