@@ -18,7 +18,7 @@ function Footer() {
             <a href="/" className="mr-4 hover:underline md:mr-6">Licensing</a>
         </li>
         <li>
-            <a href="/" className="hover:underline">Contact</a>
+            <a href="/TeamSection" className="hover:underline">Contact</a>
         </li>
     </ul>
 </footer>

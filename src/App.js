@@ -16,6 +16,7 @@ import CallForm from "./CallForm";
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
+import TeamSection from "./About/TeamSection";
 //Module for various cookie settings
 import { CookiesProvider} from "react-cookie";
 //Notification Toasts
@@ -47,6 +48,7 @@ function App() {
             <Route path="/DocumentForm" element={<DocumentForm />} />
             <Route path="/CallForm" element={<CallForm />} />
             <Route path="/TransaltionForm" element={<TransaltionForm />} />
+            <Route path="/TeamSection" element={<TeamSection />} />
           </Routes>
         </BrowserRouter>
         <Footer></Footer>
