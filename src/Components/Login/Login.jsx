@@ -50,11 +50,11 @@ export default function Login({ setJwttoken }) {
                 //Sets message for display
                 setMessage(response.data);
 
-                navigate('/')
                 //clears the Notification
                 setTimeout(() => {
+                    navigate('/')
                     setMessage(null);
-                }, 5000);
+                }, 2000);
             })
             .catch((err) => {
                 console.log(err);
