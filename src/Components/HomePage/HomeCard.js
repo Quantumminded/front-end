@@ -38,7 +38,7 @@ function HomeCard() {
             </div>
             <div className="text-gray-600 px-6 py-5  flex justify-center text-sm items-center">
             <div>
-              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce"><Link to='/Offer'>&nbsp;Book Now&nbsp;</Link></button>
+              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce"><Link to='/Checkout'>&nbsp;Book Now&nbsp;</Link></button>
             </div>
             </div>
           </div>
