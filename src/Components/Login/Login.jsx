@@ -32,7 +32,7 @@ export default function Login({ setJwttoken }) {
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND
     const login = (e, email, password) => {
         e.preventDefault();
-        client()
+        client
             .post("/login", { email, password })
             .then((response) => {
                 const { token } = response.data;

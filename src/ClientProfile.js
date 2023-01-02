@@ -9,7 +9,7 @@ function ClientProfile({ setJwttoken }) {
   const { token } = useCookie();
   const [userData, setuserData] = useState();
   useEffect(() => {
-    client(token)
+    client
       .get(`/user/profile`)
       .then((response) => setuserData(response.data[0]))
       .catch((err) => console.error(err));

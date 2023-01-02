@@ -37,7 +37,7 @@ function App() {
   //Checks if token in localStorage is still valid
   async function checkToken() {
     try {
-      const response = await client(jwttoken).get("/user/Profile");
+      const response = await client.get("/user/Profile");
       const { status } = response;
       console.log(status);
       if (status == 200) {

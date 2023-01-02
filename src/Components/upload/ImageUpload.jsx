@@ -16,7 +16,7 @@ const ImageUpload = () => {
         const formData = new FormData();
         formData.append('image', file);
 
-        client()
+        client
             .post('/upload', formData)
             .then((response) => {
                 toastMessage("info", response.data);
