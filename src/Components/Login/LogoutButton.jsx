@@ -6,12 +6,13 @@ import useContextHook from '../../utils/customContextHook';
 
 
 export default function LogoutButton({ setJwttoken }) {
-    const { setAuthorized } = useContextHook()
+    const { setAuthorized, setUser } = useContextHook()
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
     function handleLogout() {
         // Perform logout logic here, such as clearing the user's session and cookies
         removeCookie('token');
+        setUser(null)
         localStorage.removeItem(`token`)
         setAuthorized(false)
         navigate('/');
