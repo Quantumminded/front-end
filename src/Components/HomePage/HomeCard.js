@@ -5,11 +5,14 @@ function HomeCard() {
   return (
       <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
         <div className="bg-b2">
-          <img
-            src="https://source.unsplash.com/random/350x350"
-            alt=" random imgee"
-            className="w-full object-cover object-center rounded-lg shadow-md"
-          />
+          <div className="relative bottom-0 left-0">
+              <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
+                <img className="p-2" src="https://flagcdn.com/24x18/de.png" alt="language" />
+                <img className="p-2" src="https://flagcdn.com/24x18/it.png" alt="language" />
+                <img className="p-2" src="https://flagcdn.com/24x18/gb-eng.png" alt="language" />
+              </div>
+              <img className="w-full shadow rounded" src="https://picsum.photos/400/300" alt="pic" />
+          </div>
           <div className="relative px-4 -mt-16">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <div className="flex items-baseline">
@@ -38,7 +41,7 @@ function HomeCard() {
             </div>
             <div className="text-gray-600 px-6 py-5  flex justify-center text-sm items-center">
             <div>
-              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce"><Link to='/Offer'>&nbsp;Book Now&nbsp;</Link></button>
+              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce"><Link to='/Checkout'>&nbsp;Book Now&nbsp;</Link></button>
             </div>
             </div>
           </div>

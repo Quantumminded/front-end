@@ -31,7 +31,7 @@ const CallForm = () => {
                     <div className="mx-auto">
                         <div className="w-11/12 mx-auto ">
                             <div className="rounded relative mt-8 h-48">
-                                <img src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form1.jpg" alt className="w-full h-full object-cover rounded absolute shadow" />
+                                <img src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form1.jpg" alt='' className="w-full h-full object-cover rounded absolute shadow" />
                                 <div className="absolute bg-black opacity-50 top-0 right-0 bottom-0 left-0 rounded" />
                                 <div className="flex items-center px-3 py-2 rounded absolute right-0 mr-4 mt-4 cursor-pointer">
                                     <p className="text-xs text-gray-100">Change Cover Photo</p>
@@ -45,7 +45,7 @@ const CallForm = () => {
                                     </div>
                                 </div>
                                 <div className="w-20 h-20 rounded-full bg-cover bg-center bg-no-repeat absolute bottom-0 -mb-10 ml-12 shadow flex items-center justify-center">
-                                    <img src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg" alt className="absolute z-0 h-full w-full object-cover rounded-full shadow top-0 left-0 bottom-0 right-0" />
+                                    <img src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg" alt='' className="absolute z-0 h-full w-full object-cover rounded-full shadow top-0 left-0 bottom-0 right-0" />
                                     <div className="absolute bg-black opacity-50 top-0 right-0 bottom-0 left-0 rounded-full z-0" />
                                     <div className="cursor-pointer flex flex-col justify-center items-center z-10 text-gray-100">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-edit" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
