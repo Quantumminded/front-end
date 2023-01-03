@@ -20,6 +20,7 @@ import TeamSection from "./About/TeamSection";
 import Privacy from "./Privacy";
 import Checkout from "./Checkout";
 import ProductDetails from "./ProductDetails";
+import ProductDetails2 from "./ProductDetails2";
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
@@ -113,6 +114,7 @@ function App() {
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/ProductDetails" element={<ProductDetails />} />
+              <Route path="/ProductDetails2" element={<ProductDetails2 />} />
             </Routes>
             <Footer />
           </BrowserRouter>
