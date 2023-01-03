@@ -56,7 +56,7 @@ We hope that [translation web site] will become your go-to resource for all of y
             <div className="grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
                 <div>
                     <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-y1 mt-6">Founded</p>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <p className="font-normal text-base leading-6 text-y1 mt-6">In Berlin by two web & app developer as their final project.</p>
                 </div>
                 <div>
                     <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-y1 mt-6">50M montly enrichments</p>
