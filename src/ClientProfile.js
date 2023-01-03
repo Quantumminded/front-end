@@ -60,6 +60,64 @@ function ClientProfile({ setJwttoken }) {
                 </ul>
               </nav>
             </div>
+            <div className="rounded relative mt-8 h-48">
+              <img
+                src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form1.jpg"
+                alt=""
+                className="w-full h-full object-cover rounded absolute shadow"
+              />
+              <div className="absolute bg-black opacity-50 top-0 right-0 bottom-0 left-0 rounded" />
+              <div className="flex items-center px-3 py-2 rounded absolute right-0 mr-4 mt-4 cursor-pointer">
+                <p className="text-xs text-gray-100">Change Cover Photo</p>
+                <div className="ml-2 text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-edit"
+                    width={18}
+                    height={18}
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                    <line x1={16} y1={5} x2={19} y2={8} />
+                  </svg>
+                </div>
+              </div>
+              <div className="w-20 h-20 rounded-full bg-cover bg-center bg-no-repeat absolute bottom-0 -mb-10 ml-12 shadow flex items-center justify-center">
+                <img
+                  src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg"
+                  alt=""
+                  className="absolute z-0 h-full w-full object-cover rounded-full shadow top-0 left-0 bottom-0 right-0"
+                />
+                <div className="absolute bg-black opacity-50 top-0 right-0 bottom-0 left-0 rounded-full z-0" />
+                <div className="cursor-pointer flex flex-col justify-center items-center z-10 text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-edit"
+                    width={20}
+                    height={20}
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                    <line x1={16} y1={5} x2={19} y2={8} />
+                  </svg>
+                  <p className="text-xs text-gray-100">Edit Picture</p>
+                </div>
+              </div>
+            </div>
             <form className="w-4/5 p-4 ">
               <div className="relative z-0 mb-6 w-full group">
                 <input

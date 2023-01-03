@@ -37,24 +37,28 @@ export default function Login({ setJwttoken }) {
         client(token)
             .post("/login", { email, password })
             .then((response) => {
+                console.log(response)
                 const { token, user } = response.data;
                 // Save the JWT token in local storage
                 localStorage.setItem("token", token);
-                setUser(user[0])
-                setAuthorized(true)
-                setJwttoken(token);
-                //Sets Cookie for 1 hour
-                setCookie("token", token, { path: "/", maxAge: 3600 });
-                // document.cookie = `token=${response.data.token}`;
+   
+                    setUser(user[0])
+                    setAuthorized(true)
+                    setJwttoken(token);
+                    //Sets Cookie for 1 hour
+                    setCookie("token", token, { path: "/", maxAge: 3600 });
+                    // document.cookie = `token=${response.data.token}`;
 
-                //Sets message for display
-                setMessage(response.data);
+                    //Sets message for display
+                    setMessage(response.data);
 
-                //clears the Notification
-                setTimeout(() => {
-                    navigate('/')
-                    setMessage(null);
-                }, 2000);
+                    //clears the Notification
+                    setTimeout(() => {
+                        navigate('/')
+                        setMessage(null);
+                    }, 2000);
+                
+
             })
             .catch((err) => {
                 console.log(err);
