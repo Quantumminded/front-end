@@ -7,7 +7,11 @@ function AboutUsSection() {
             <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                 <div className="w-full lg:w-6/12">
                     <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9 text-y1">We are here to make great translation accessible and delightfull for everyone</h2>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire,</p>
+                    <p className="font-normal text-base leading-6 text-y1 mt-6">Welcome to [translation web site], a translation service created by two web developer students who are passionate about language and technology. As students, we understand the challenges of navigating different cultures and languages, and we created this service to help others overcome these barriers. Our goal is to provide a fast and reliable translation service that is accessible to everyone.
+
+We have brought together a team of professional translators who are native speakers of a wide range of languages. Our translators are carefully selected for their expertise and dedication to producing high-quality translations. We use the latest technology to ensure that our translations are accurate and true to the original content.
+
+We hope that [translation web site] will become your go-to resource for all of your translation needs. Whether you are a student, a business professional, or just someone looking to communicate with someone in another language, we are here to help. Thank you for choosing us, and we look forward to assisting you with all of your translation needs.</p>
                 </div>
                 <div className="w-full lg:w-6/12 bg-y1">
                     <img className="lg:block hidden w-full" src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png" alt="people discussing on board" />
