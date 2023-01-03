@@ -13,7 +13,7 @@ We have brought together a team of professional translators who are native speak
 
 We hope that [translation web site] will become your go-to resource for all of your translation needs. Whether you are a student, a business professional, or just someone looking to communicate with someone in another language, we are here to help. Thank you for choosing us, and we look forward to assisting you with all of your translation needs.</p>
                 </div>
-                <div className="w-full lg:w-6/12 bg-y1">
+                <div className="w-full lg:w-6/12 bg-b2">
                     <img className="lg:block hidden w-full" src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png" alt="people discussing on board" />
                     <img className="lg:hidden sm:block hidden w-full" src="https://i.ibb.co/16fPqrg/Rectangle-122-2.png" alt="people discussing on board" />
                     <img className="sm:hidden block w-full" src="https://i.ibb.co/Jxhpxh6/Rectangle-122.png" alt="people discussing on board" />
