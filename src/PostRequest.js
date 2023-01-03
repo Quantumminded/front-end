@@ -5,8 +5,8 @@ import InputTag from "./Components/Form/InputTag";
 import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
-
-const CallForm = () => {
+//TODO: Create PostRequest
+export default function PostRequest() {
   const [message, setMessage] = useState();
   useEffect(() => {
     if (message) toastMessage(message.type, message.message);
@@ -269,6 +269,4 @@ const CallForm = () => {
       </div>
     </div>
   );
-};
-
-export default CallForm;
+}
