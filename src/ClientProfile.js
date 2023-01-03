@@ -6,7 +6,6 @@ import useContextHook from "./utils/customContextHook.js";
 
 function ClientProfile({ setJwttoken }) {
   const { user } = useContextHook();
-console.log(user)
   return (
     //TODO:Finish ClientProfile
     <>
@@ -178,7 +177,7 @@ console.log(user)
                 Submit
               </button>
             </form>
-            <ImageUpload />
+            {/* <ImageUpload /> */}
           </div>
         </>
       )}
