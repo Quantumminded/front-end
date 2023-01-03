@@ -7,7 +7,7 @@ import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
 import HomeCard from "./Components/HomePage/HomeCard";
 
-const PostOffer = () => {
+const PostOffer = () => { 
   const [message, setMessage] = useState();
   useEffect(() => {
     if (message) toastMessage(message.type, message.message);
