@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HeroPage() {
+function LandingPage() {
   return (
     <div className="bg-b2">
       {/* Hero section big img */}
@@ -1030,4 +1030,4 @@ Our freelancers are experienced in a variety of languages and industries, and we
   );
 }
 
-export default HeroPage;
+export default LandingPage;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NotificationCenter from "./Components/notification/NotificationCenter";
-import ProfileIcon from "./Components/notification/Profile/ProfileIcon";
+import NotificationCenter from "../notification/NotificationCenter";
+import ProfileIcon from "../notification/Profile/ProfileIcon";
 // import Button from "./Button";
-import "./index.css";
-import useContextHook from "./utils/customContextHook";
+import "../../index.css";
+import useContextHook from "../../utils/customContextHook";
 
 function Nav() {
   const { authorized } = useContextHook();

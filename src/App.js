@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 //Import pages
-import Nav from "./Nav";
-import HeroPage from "./HeroPage";
+import Nav from "./Components/NavBar/Nav";
+import LandingPage from "./LandingPage";
 import HomePage from "./HomePage";
 import SignIn from "./SignIn";
-import Footer from "./Footer";
+import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
 import SelectRequest from "./SelectRequest";
 import WorkerProfile from "./WorkerProfile";
@@ -17,10 +17,10 @@ import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
 import TeamSection from "./About/TeamSection";
-import Privacy from "./Privacy";
+import Privacy from "./Components/PrivacyPolicy/Privacy";
 import Checkout from "./Checkout";
-import ProductDetails from "./ProductDetails";
-import ProductDetails2 from "./ProductDetails2";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import ProductDetails2 from "./Components/ProductDetails/ProductDetails2";
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
@@ -91,7 +91,7 @@ function App() {
           <BrowserRouter>
             <Nav />
             <Routes>
-              <Route index element={<HeroPage />} />
+              <Route index element={<LandingPage />} />
               <Route path="/HomePage" element={<HomePage />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
