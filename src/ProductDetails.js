@@ -25,7 +25,7 @@ function ProductDetails() {
           <div class="lg:sticky lg:top-0">
             <form class="space-y-4 lg:pt-8">
               <fieldset>
-                <legend class="text-lg font-bold">Lenguage</legend>
+                <legend class="text-lg font-bold">Language</legend>
 
                 <div class="mt-2 flex gap-1">
                   <img
@@ -84,7 +84,7 @@ function ProductDetails() {
                 <p class="text-sm">
                   <span class="block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</span>
 
-                  <a href="" class="mt-1 inline-block underline">
+                  <a href="/" class="mt-1 inline-block underline">
                     {" "}
                     Find out more{" "}
                   </a>

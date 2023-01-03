@@ -5,7 +5,7 @@ function HomeCard({ language }) {
   return (
     <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
       <div className="bg-b2">
-        <Link to="/ProductDetails2">
+        <Link to="/ProductDetails">
           <div className="relative bottom-0 left-0">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
               {language &&
