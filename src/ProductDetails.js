@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductDetails() {
   return (
@@ -102,12 +103,12 @@ function ProductDetails() {
                 Add to cart
               </button>
 
-              <button
+              <Link to='/Checkout'><button
                 type="button"
                 class="w-full rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
               >
                 Book Now
-              </button>
+              </button></Link>
             </form>
           </div>
 
