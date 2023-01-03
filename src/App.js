@@ -13,6 +13,7 @@ import WorkerProfile from "./WorkerProfile";
 import ClientProfile from "./ClientProfile";
 import DocumentForm from "./DocumentForm";
 import CallForm from "./CallForm";
+
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
@@ -99,7 +100,7 @@ function App() {
               />
               <Route path="/WorkerPorfile" element={<WorkerProfile />} />
               <Route
-                path="/ClientProfile"
+                path="/Profile"
                 setJwttoken={setJwttoken}
                 element={<ClientProfile />}
               />

@@ -112,9 +112,6 @@ function Nav() {
               <li className="text-white hover:text-y1">
                 <Link to="/TeamSection">Contact US</Link>
               </li>
-              <li className="text-white hover:text-y1">
-                <Link to="/ClientProfile">ClientProfile</Link>
-              </li>
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
@@ -134,10 +131,10 @@ function Nav() {
           </div>
         </div>
         {authorized ? (
-          <div className="flex gap-4">
+          <div className="flex gap-4 ">
             <Link
               to="/SelectRequest"
-              className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+              className="px-4 py-2  text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1 self-center"
             >
               Post a request
             </Link>
