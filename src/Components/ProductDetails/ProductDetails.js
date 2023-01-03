@@ -116,22 +116,13 @@ function ProductDetails() {
             <div class="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
               <p>
                 DESCRIPTION <br></br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
-                ad labore nostrum, a explicabo iste est dolorem deserunt id
-                ullam magni accusamus saepe, nulla sed sint reiciendis, aperiam
-                cumque officiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                eveniet ipsam mollitia nesciunt illo! Suscipit, corrupti!<br></br>
+                As a freelancer, I offer professional document translation services in Italian, German, and English. With my expertise in language translation, I can accurately and effectively translate a variety of documents, including legal documents, business documents, and personal documents. I pride myself on delivering high-quality translations that accurately convey the intended meaning of the original document, and I am dedicated to providing excellent customer service to ensure the complete satisfaction of my clients. Whether you need a simple letter translated or a complex legal document, I have the skills and experience to handle your translation needs.<br></br>
                 <br></br>
               </p>
 
               <h2>ABOUT ME</h2>
 
-              <ul>
-                <li>Professional translator</li>
-                <li>Details oriented</li>
-                <li>Odour prevention</li>
-                <li>Made from recycled materials</li>
-              </ul>
+              <p>As a freelancer translator, I am skilled in translating written documents or spoken language from one language to another. I work with a variety of clients and industries, using my language skills and cultural knowledge to accurately communicate the meaning and intent of the original text. I also have to research and use specialized terminology</p>
             </div>
           </div>
         </div>
