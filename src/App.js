@@ -13,13 +13,13 @@ import WorkerProfile from "./WorkerProfile";
 import ClientProfile from "./ClientProfile";
 import DocumentForm from "./DocumentForm";
 import CallForm from "./CallForm";
-
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
 import TeamSection from "./About/TeamSection";
 import Privacy from "./Privacy";
 import Checkout from "./Checkout";
+import ProductDetails from "./ProductDetails";
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
@@ -112,6 +112,7 @@ function App() {
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout" element={<Checkout />} />
+              <Route path="/ProductDetails" element={<ProductDetails />} />
             </Routes>
             <Footer />
           </BrowserRouter>

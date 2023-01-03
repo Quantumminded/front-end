@@ -5,38 +5,40 @@ function HomeCard({ language }) {
   return (
     <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
       <div className="bg-b2">
-        <div className="relative bottom-0 left-0">
-          <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
-            {language &&
-              language.map((ele) => (
-                <img
-                  className="p-2"
-                  src={`https://flagcdn.com/24x18/${ele}.png`}
-                  alt="language"
-                />
-              ))}
+        <Link to="/ProductDetails">
+          <div className="relative bottom-0 left-0">
+            <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
+              {language &&
+                language.map((ele) => (
+                  <img
+                    className="p-2"
+                    src={`https://flagcdn.com/24x18/${ele}.png`}
+                    alt="language"
+                  />
+                ))}
+              <img
+                className="p-2"
+                src="https://flagcdn.com/24x18/de.png"
+                alt="language"
+              />
+              <img
+                className="p-2"
+                src="https://flagcdn.com/24x18/it.png"
+                alt="language"
+              />
+              <img
+                className="p-2"
+                src="https://flagcdn.com/24x18/gb-eng.png"
+                alt="language"
+              />
+            </div>
             <img
-              className="p-2"
-              src="https://flagcdn.com/24x18/de.png"
-              alt="language"
-            />
-            <img
-              className="p-2"
-              src="https://flagcdn.com/24x18/it.png"
-              alt="language"
-            />
-            <img
-              className="p-2"
-              src="https://flagcdn.com/24x18/gb-eng.png"
-              alt="language"
+              className="w-full shadow rounded"
+              src="https://picsum.photos/400/300"
+              alt="pic"
             />
           </div>
-          <img
-            className="w-full shadow rounded"
-            src="https://picsum.photos/400/300"
-            alt="pic"
-          />
-        </div>
+        </Link>
         <div className="relative px-4 -mt-16">
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <div className="flex items-baseline">
