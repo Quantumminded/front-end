@@ -27,6 +27,7 @@ import { ToastContainer } from "react-toastify";
 import { UserContext } from "./utils/UserContext";
 import { client } from "./utils/client.mjs";
 import toastMessage from "./Components/notification/toastMessage";
+import DashBoard from "./Components/DashBoard/DashBoard";
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
@@ -112,6 +113,7 @@ function App() {
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout" element={<Checkout />} />
+              <Route path="/Dashboard" element={<DashBoard />} />
             </Routes>
             <Footer />
           </BrowserRouter>
