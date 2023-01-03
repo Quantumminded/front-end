@@ -110,7 +110,7 @@ function Nav() {
                 <Link to="/About">About US</Link>
               </li>
               <li className="text-white hover:text-y1">
-                <Link to="/">Contact US</Link>
+                <Link to="/TeamSection">Contact US</Link>
               </li>
               <li className="text-white hover:text-y1">
                 <Link to="/ClientProfile">ClientProfile</Link>
