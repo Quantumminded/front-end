@@ -39,9 +39,61 @@ function Checkout() {
                   </svg>
                   <button onClick={() => window.history.back()} className="text-sm pl-2 leading-none">Back</button>
                 </div>
+
+
                 <p className="text-5xl font-black leading-10 text-gray-800 pt-3">
-                  Documents Translation
+                  Products
                 </p>
+                {/* Product cards */}
+                <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
+                  <div className="w-1/4">
+                    <img
+                      src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
+                      alt=""
+                      className="w-full h-full object-center object-cover"
+                    />
+                  </div>
+                  <div className="md:pl-3 md:w-3/4">
+                    <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
+                      RF293
+                    </p>
+                    <div className="flex items-center justify-between w-full pt-1">
+                      <p className="text-base font-black leading-none text-gray-800">
+                        Documentation Translation
+                      </p>
+                      <select className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
+                        <option>x1</option>
+                        <option>x2</option>
+                        <option>x3</option>
+                      </select>
+                    </div>
+                    <p className="text-xs leading-3 text-gray-600 pt-2">
+                      Language: German to Italian
+                    </p>
+                    <p className="text-xs leading-3 text-gray-600 py-4">
+                      Document Type: Anmeldung formular
+                    </p>
+                    <p className="w-96 text-xs leading-3 text-gray-600">
+                      Date: Open ends
+                    </p>
+                    <div className="flex items-center justify-between pt-5 pr-6">
+                      <div className="flex itemms-center">
+                        <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
+                          Add to favorites
+                        </p>
+                        <p className="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">
+                          Remove
+                        </p>
+                      </div>
+                      <p className="text-base font-black leading-none text-gray-800">
+                        $200
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+                {/* Product card 2 */}
                 <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
                   <div className="w-1/4">
                     <img
@@ -89,6 +141,9 @@ function Checkout() {
                   </div>
                 </div>
               </div>
+
+
+              {/* Summary section  */}
               <div className="xl:w-1/2 md:w-1/3  w-full bg-gray-100 h-full">
                 <div className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto">
                   <div>
