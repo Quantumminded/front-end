@@ -49,7 +49,7 @@ function App() {
       const response = await client(jwttoken).get("/user/Profile");
       const { status } = response;
       console.log(status);
-      if (status == 200) {
+      if (status === 200) {
         toastMessage("success", "Logged In");
         //Sets the user to the data from the server
         setUser(response.data[0]);

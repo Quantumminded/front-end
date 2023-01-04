@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 import SocialLogin from "../notification/SocialLogin";
 import { Title, Highlight } from "../../Style/StyledTypography";
@@ -41,23 +41,23 @@ export default function Login({ setJwttoken }) {
                 const { token, user } = response.data;
                 // Save the JWT token in local storage
                 localStorage.setItem("token", token);
-   
-                    setUser(user[0])
-                    setAuthorized(true)
-                    setJwttoken(token);
-                    //Sets Cookie for 1 hour
-                    setCookie("token", token, { path: "/", maxAge: 3600 });
-                    // document.cookie = `token=${response.data.token}`;
 
-                    //Sets message for display
-                    setMessage(response.data);
+                setUser(user[0])
+                setAuthorized(true)
+                setJwttoken(token);
+                //Sets Cookie for 1 hour
+                setCookie("token", token, { path: "/", maxAge: 3600 });
+                // document.cookie = `token=${response.data.token}`;
 
-                    //clears the Notification
-                    setTimeout(() => {
-                        navigate('/')
-                        setMessage(null);
-                    }, 2000);
-                
+                //Sets message for display
+                setMessage(response.data);
+
+                //clears the Notification
+                setTimeout(() => {
+                    navigate('/')
+                    setMessage(null);
+                }, 2000);
+
 
             })
             .catch((err) => {
@@ -106,9 +106,9 @@ export default function Login({ setJwttoken }) {
                         <input type={"checkbox"} name={"rememberme"} />
                         <label htmlFor="rememberme"> Remember Me </label>
                     </div>
-                    <a href="/" style={{ color: "#56c38d" }}>
+                    <Link to="/" style={{ color: "#56c38d" }}>
                         Forgot Password ?
-                    </a>
+                    </Link>
                 </Container>
                 <Line />
             </Container>
