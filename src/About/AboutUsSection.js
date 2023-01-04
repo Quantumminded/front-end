@@ -7,9 +7,13 @@ function AboutUsSection() {
             <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                 <div className="w-full lg:w-6/12">
                     <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9 text-y1">We are here to make great translation accessible and delightfull for everyone</h2>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire,</p>
+                    <p className="font-normal text-base leading-6 text-y1 mt-6">Welcome to [translation web site], a translation service created by two web developer students who are passionate about language and technology. As students, we understand the challenges of navigating different cultures and languages, and we created this service to help others overcome these barriers. Our goal is to provide a fast and reliable translation service that is accessible to everyone.
+
+We have brought together a team of professional translators who are native speakers of a wide range of languages. Our translators are carefully selected for their expertise and dedication to producing high-quality translations. We use the latest technology to ensure that our translations are accurate and true to the original content.
+
+We hope that [translation web site] will become your go-to resource for all of your translation needs. Whether you are a student, a business professional, or just someone looking to communicate with someone in another language, we are here to help. Thank you for choosing us, and we look forward to assisting you with all of your translation needs.</p>
                 </div>
-                <div className="w-full lg:w-6/12 bg-y1">
+                <div className="w-full lg:w-6/12 bg-b2">
                     <img className="lg:block hidden w-full" src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png" alt="people discussing on board" />
                     <img className="lg:hidden sm:block hidden w-full" src="https://i.ibb.co/16fPqrg/Rectangle-122-2.png" alt="people discussing on board" />
                     <img className="sm:hidden block w-full" src="https://i.ibb.co/Jxhpxh6/Rectangle-122.png" alt="people discussing on board" />
@@ -52,7 +56,7 @@ function AboutUsSection() {
             <div className="grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
                 <div>
                     <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-y1 mt-6">Founded</p>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <p className="font-normal text-base leading-6 text-y1 mt-6">In Berlin by two web & app developer as their final project.</p>
                 </div>
                 <div>
                     <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-y1 mt-6">50M montly enrichments</p>
@@ -85,8 +89,7 @@ function AboutUsSection() {
             <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20 mt-16">
                 <div className="w-full lg:w-6/12">
                     <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-y1">Our Mission</h2>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6 w-full lg:w-10/12 xl:w-9/12">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
-                    <p className="font-normal text-base leading-6 text-y1 w-full lg:w-10/12 xl:w-9/12 mt-10">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
+                    <p className="font-normal text-base leading-6 text-y1 mt-6 w-full lg:w-10/12 xl:w-9/12">Our mission at [translation web site] is to provide high-quality, accurate, and reliable translation services to individuals and businesses around the world. We believe that language should not be a barrier to communication, and our goal is to bridge the gap between people of different cultures and backgrounds. Whether you need to translate a website, a document, or a personal message, we have the expertise and resources to deliver the best possible translation for your needs. We are committed to providing excellent customer service and delivering translations that are true to the original content. We strive to make the translation process as seamless and stress-free as possible, so that you can focus on your core business and personal endeavors.</p>
                 </div>
                 <div className="w-full lg:w-6/12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12 gap-10">

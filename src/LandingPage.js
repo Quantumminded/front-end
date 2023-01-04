@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HeroPage() {
+function LandingPage() {
   return (
     <div className="bg-b2">
       {/* Hero section big img */}
@@ -15,12 +15,10 @@ function HeroPage() {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">
-              Find the perfect helper for Translations
+            Don't get lost in translation
             </h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            Welcome to our translation services website! We are a team of professional freelancer translators dedicated to providing high-quality and accurate translations at competitive rates. With a diverse range of language expertise and experience in various industries, we are equipped to handle any translation project you may have.
             </p>
             <button className="btn btn-primary">
               <Link to="/HomePage">Get Started</Link>
@@ -60,10 +58,9 @@ function HeroPage() {
                 Documents
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-                Get inspired by our curated selection of luxiwood interiors. We
-                hope get inspired to have luxiwood interior yourself. You’ll
-                find tips here where you can buy a lot of cool
-                furniture,decorations, plants, etc.
+              Get your documents translated with us! At [Company Name], we specialize in providing high-quality and accurate translations for a variety of personal and professional documents. From birth certificates and diplomas to legal contracts and technical manuals, we have the expertise to handle any type of document translation.
+
+Our team of professional translators is experienced in a range of industries and languages, and we are committed to delivering fast and efficient service. We use advanced translation tools and techniques to ensure that your document translations are accurate and true to the original content.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
                 <Link to="/Category/documents">Explore</Link>
@@ -132,10 +129,9 @@ function HeroPage() {
                 Calls
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-                Get inspired by our curated selection of luxiwood interiors. We
-                hope get inspired to have luxiwood interior yourself. You’ll
-                find tips here where you can buy a lot of cool
-                furniture,decorations, plants, etc.
+              At [Company Name], we understand the importance of clear and accurate communication, especially when it comes to phone calls. That's why we offer professional call translation services to help you connect with clients and partners around the world.
+
+Our team of trained interpreters is proficient in a variety of languages and industries, and we are equipped to handle any type of call, whether it's a one-time business meeting or a recurring conference call. We use advanced translation technology to ensure that your calls are seamless and accurately convey the intended message.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
                <Link to="/Category/calls">Explore</Link>
@@ -204,10 +200,9 @@ function HeroPage() {
                 Translations
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-                Get inspired by our curated selection of luxiwood interiors. We
-                hope get inspired to have luxiwood interior yourself. You ll
-                find tips here where you can buy a lot of cool
-                furniture,decorations, plants, etc.
+              At [Company Name], we connect businesses and individuals with skilled freelancer translators for all their translation needs. Whether you need website localization, document translation, or interpretation services, we have a team of professionals ready to deliver high-quality and accurate results.
+
+Our freelancers are experienced in a variety of languages and industries, and we carefully vet all candidates to ensure they meet our high standards of excellence. We offer competitive rates and fast turnaround times, and our team is available to assist with any questions or concerns you may have throughout the process.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
                 <Link to="/Category/translation">Explore</Link>
@@ -1035,4 +1030,4 @@ function HeroPage() {
   );
 }
 
-export default HeroPage;
+export default LandingPage;
