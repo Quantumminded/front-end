@@ -6,7 +6,7 @@ import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
 
-const PostOffer = () => { 
+const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
     if (message) toastMessage(message.type, message.message);
@@ -66,7 +66,7 @@ const PostOffer = () => {
     // submit form values to API or somewhere else
   };
   return (
-    <div className="bg-b2">
+    <div id="Offer" className="bg-b2">
       <div className="pb-12 pt-12">
         <div className="flex justify-center">
           <BreadCrumbs />

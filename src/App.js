@@ -9,6 +9,7 @@ import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
 import SelectRequest from "./SelectRequest";
+import Select from "./Select";
 import WorkerProfile from "./WorkerProfile";
 import ClientProfile from "./ClientProfile";
 import DocumentForm from "./DocumentForm";
@@ -106,8 +107,10 @@ function App() {
                 setJwttoken={setJwttoken}
                 element={<ClientProfile />}
               />
-              <Route path="/PostOffer" element={<PostOffer />} />
-              <Route path="/SelectRequest" element={<SelectRequest />} />
+              <Route path="Select" element={<Select />}>
+                <Route path="Request" element={<SelectRequest />} />
+                <Route path="Offer" element={<PostOffer />} />
+              </Route>
               <Route path="/DocumentForm" element={<DocumentForm />} />
               <Route path="/CallForm" element={<CallForm />} />
               <Route path="/TransaltionForm" element={<TransaltionForm />} />
