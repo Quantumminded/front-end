@@ -4,96 +4,110 @@ import { Link } from "react-router-dom";
 // IMPORT COMPONENT
 import HomeCard from "./Components/HomePage/HomeCard";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
+import CategoryButtons from "./Components/HomePage/CategoryButtons";
 
 
 import useCookies from "react-cookie/cjs/useCookies";
 
+
+const products = [
+  {
+    id: 1,
+    name: 'Basic Tee',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$35',
+    color: 'Black',
+  },
+  // More products...
+]
+
 function HomePage() {
   return (
-    <div className="bg-b2 mb-2 w-full">
-      {/* Category Buttons */}
-      <ul className="flex justify-around">
-        <li className="m-2">
-          <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <Link to="/Category/documents">Documents</Link>
-          </button>
-        </li>
-        <li className="m-2">
-          <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <Link to="/Category/calls">Calls</Link>
-          </button>
-        </li>
-        <li className="m-2">
-          <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-sm lg:btn-sm">
-            <Link to="/Category/translations">Translations</Link>
-          </button>
-        </li>
-      </ul>
-      
-      {/* Hero Section */}
-      <HomeHeroSection />
+    <>
 
-      {/* Category Container */}
-      <div className="mr-auto ml-auto">
-        {/* Documents Text */}
-        <h2 className="mt-3 mb-3 ml-7 text-2xl font-bold text-yellow-300">
-          Most popular in Docs
-        </h2>
-        {/* Start Documents Container */}
-        <div className="flex justify-center gap-5">
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
+     <CategoryButtons />
+
+     <HomeHeroSection />
+
+      {/* Documents cards section */}
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">Most popular in Documents</h2>
+      <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 pt-6 gap-8">
+                
+        <div className="rounded border-gray-300" >
           <HomeCard />
         </div>
-        {/* End Documents Container */}
-
-        {/* Translations Text */}
-        <h2 className="mt-3 mb-3 ml-7 text-2xl font-bold text-yellow-300">
-          Most popular in Translations
-        </h2>
-        {/* Start Translations Container */}
-        <div className="flex justify-center gap-5">
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
+                
+        <div className="rounded border-gray-300" >
           <HomeCard />
         </div>
-        {/* End Translations Container */}
 
-        {/* Calls Text */}
-        <h2 className="mt-3 mb-3 ml-7 text-2xl font-bold text-yellow-300">
-          Most popular in Calls
-        </h2>
-        {/* Start Calls Container */}
-        <div className="flex justify-center gap-5">
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
+        <div className="rounded border-gray-300" >
           <HomeCard />
         </div>
-        {/* End Calls Container */}
+
+        <div className="rounded border-gray-300" >
+          <HomeCard />
+        </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
       </div>
 
-      {/* card container Grid */}
-      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8 p-5">
-        <div className="rounded border-gray-300">
-          <HomeCard />
-        </div>
-        <div className="rounded border-gray-300">
-          <HomeCard />
-        </div>
-        <div className="rounded border-gray-300">
-          <HomeCard />
-        </div>
-        <div className="rounded border-gray-300">
-          <HomeCard />
-        </div>
-        <div className="rounded border-gray-300">
-          <HomeCard />
-        </div>
-      </div>
     </div>
+    {/* Calls cards section */}
+    <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7">Most popular in Calls</h2>
+    <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
+                
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+                
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+    </div>
+    {/* Translations cards section */}
+    <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7">Most popular in Translations</h2>
+    <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
+                
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+                
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+      <div className="rounded border-gray-300" >
+        <HomeCard />
+      </div>
+
+    </div>
+       
+    </>
   );
 }
 

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function HomeCard({ language }) {
   return (
     <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
-      <div className="bg-b2">
+      <div className="bg-white ">
         <Link to="/ProductDetails">
-          <div className="relative bottom-0 left-0">
+          <div className="relative bottom-0 left-0 rounded-lg">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
               {language &&
                 language.map((ele) => (
@@ -39,8 +39,8 @@ function HomeCard({ language }) {
             />
           </div>
         </Link>
-        <div className="relative px-4 -mt-16">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="relative px-4 -mt-8">
+          <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
             <div className="flex items-baseline">
               <span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                 Calls
