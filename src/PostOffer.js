@@ -5,6 +5,7 @@ import InputTag from "./Components/Form/InputTag";
 import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
+import HomeCard from "./Components/HomePage/HomeCard";
 
 const PostOffer = () => {
   const [message, setMessage] = useState();
@@ -54,7 +55,7 @@ const PostOffer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     client(token)
-      .post("/request", { ...formValues })
+      .post("/task/create", { ...formValues })
       .then((response) => {
         setMessage(response.data);
         console.log(response);
@@ -260,7 +261,7 @@ const PostOffer = () => {
                         Publish
                       </button>
                     </div>
-                    {/* <HomeCard language={formValues.languages}/> */}
+                    <HomeCard language={formValues.languages}/>
                   </div>
                 </div>
               </div>

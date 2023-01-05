@@ -10,6 +10,7 @@ function HomeCard({ language }) {
             <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
               {language &&
                 language.map((ele) => (
+                  // console.log(ele.length)
                   <img
                     className="p-2"
                     src={`https://flagcdn.com/24x18/${ele}.png`}

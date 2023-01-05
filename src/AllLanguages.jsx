@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AllLanguages({ setLanguage, handleLanguages }) {
+export default function AllLanguages({ setLanguage, handleLanguages, name }) {
     function handleLanguage(e) {
         //handleLanguages for Creating a Request/Offer
         if (handleLanguages) handleLanguages(e)
@@ -9,7 +9,8 @@ export default function AllLanguages({ setLanguage, handleLanguages }) {
     }
     return (
         <>
-            <select onChange={(e) => handleLanguage(e)} id="languages" name="languages" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        {/* The name propertie is used to destinguisch beetwen fromLanguage and toLanguage in the Component PostRequest */}
+            <select onChange={(e) => handleLanguage(e)} id="languages" name={name ? name : "languages"} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option>Select Language</option>
                 <option value="sq">Albanian - shqip</option>
                 <option value="af">Afrikaans</option>
