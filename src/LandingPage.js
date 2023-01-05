@@ -15,10 +15,15 @@ function LandingPage() {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">
-            Don't get lost in translation
+              Don't get lost in translation
             </h1>
             <p className="mb-5">
-            Welcome to our translation services website! We are a team of professional freelancer translators dedicated to providing high-quality and accurate translations at competitive rates. With a diverse range of language expertise and experience in various industries, we are equipped to handle any translation project you may have.
+              Welcome to our translation services website! We are a team of
+              professional freelancer translators dedicated to providing
+              high-quality and accurate translations at competitive rates. With
+              a diverse range of language expertise and experience in various
+              industries, we are equipped to handle any translation project you
+              may have.
             </p>
             <button className="btn btn-primary">
               <Link to="/HomePage">Get Started</Link>
@@ -58,9 +63,16 @@ function LandingPage() {
                 Documents
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-              Get your documents translated with us! At [Company Name], we specialize in providing high-quality and accurate translations for a variety of personal and professional documents. From birth certificates and diplomas to legal contracts and technical manuals, we have the expertise to handle any type of document translation.
-
-Our team of professional translators is experienced in a range of industries and languages, and we are committed to delivering fast and efficient service. We use advanced translation tools and techniques to ensure that your document translations are accurate and true to the original content.
+                Get your documents translated with us! At [Company Name], we
+                specialize in providing high-quality and accurate translations
+                for a variety of personal and professional documents. From birth
+                certificates and diplomas to legal contracts and technical
+                manuals, we have the expertise to handle any type of document
+                translation. Our team of professional translators is experienced
+                in a range of industries and languages, and we are committed to
+                delivering fast and efficient service. We use advanced
+                translation tools and techniques to ensure that your document
+                translations are accurate and true to the original content.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
                 <Link to="/Category/documents">Explore</Link>
@@ -129,12 +141,19 @@ Our team of professional translators is experienced in a range of industries and
                 Calls
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-              At [Company Name], we understand the importance of clear and accurate communication, especially when it comes to phone calls. That's why we offer professional call translation services to help you connect with clients and partners around the world.
-
-Our team of trained interpreters is proficient in a variety of languages and industries, and we are equipped to handle any type of call, whether it's a one-time business meeting or a recurring conference call. We use advanced translation technology to ensure that your calls are seamless and accurately convey the intended message.
+                At [Company Name], we understand the importance of clear and
+                accurate communication, especially when it comes to phone calls.
+                That's why we offer professional call translation services to
+                help you connect with clients and partners around the world. Our
+                team of trained interpreters is proficient in a variety of
+                languages and industries, and we are equipped to handle any type
+                of call, whether it's a one-time business meeting or a recurring
+                conference call. We use advanced translation technology to
+                ensure that your calls are seamless and accurately convey the
+                intended message.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
-               <Link to="/Category/calls">Explore</Link>
+                <Link to="/Category/calls">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -200,9 +219,16 @@ Our team of trained interpreters is proficient in a variety of languages and ind
                 Translations
               </h1>
               <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5">
-              At [Company Name], we connect businesses and individuals with skilled freelancer translators for all their translation needs. Whether you need website localization, document translation, or interpretation services, we have a team of professionals ready to deliver high-quality and accurate results.
-
-Our freelancers are experienced in a variety of languages and industries, and we carefully vet all candidates to ensure they meet our high standards of excellence. We offer competitive rates and fast turnaround times, and our team is available to assist with any questions or concerns you may have throughout the process.
+                At [Company Name], we connect businesses and individuals with
+                skilled freelancer translators for all their translation needs.
+                Whether you need website localization, document translation, or
+                interpretation services, we have a team of professionals ready
+                to deliver high-quality and accurate results. Our freelancers
+                are experienced in a variety of languages and industries, and we
+                carefully vet all candidates to ensure they meet our high
+                standards of excellence. We offer competitive rates and fast
+                turnaround times, and our team is available to assist with any
+                questions or concerns you may have throughout the process.
               </p>
               <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
                 <Link to="/Category/translation">Explore</Link>
@@ -255,7 +281,7 @@ Our freelancers are experienced in a variety of languages and industries, and we
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-white hover:bg-indigo-600 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
-                  <a href="/HomePage">View All</a>
+                  <Link to="/HomePage">View All</Link>
                 </button>
               </div>
             </div>
@@ -272,7 +298,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/McW2r4N/Group-178.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -283,7 +308,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/vYkzzqG/Group-179.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -294,7 +318,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/zV9j7wt/Group-1775.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -315,7 +338,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/6HbjWy7/Group-1777.png"
                   className="w-16 h-16"
                   alt="display avatar"
-    
                 />
               </div>
               <div
@@ -326,7 +348,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/DGkXVGg/Group-1778.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -337,7 +358,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/QDrmWh2/Group-1779.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -348,7 +368,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/hHWS44y/Group-1780.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -359,7 +378,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/hLY20Ys/Group-1781.png"
                   className="w-16 h-16"
                   alt="display avatar"
- 
                 />
               </div>
               <div
@@ -370,7 +388,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/7vvt1sH/Group-1782.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -381,7 +398,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/Gd3d670/Group-1783.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -392,7 +408,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/SsP5fmH/Group-1784.png"
                   className="w-16 h-16"
                   alt="display avatar"
-   
                 />
               </div>
               <div
@@ -403,7 +418,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/51CyJJT/Group-1785.png"
                   className="w-16 h-16"
                   alt="display avatar"
-   
                 />
               </div>
               <div
@@ -414,7 +428,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/KDjTgk5/Group-1786.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -425,7 +438,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/2N77h51/Group-1787.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -436,7 +448,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/F5zg9Y0/Group-1788.png"
                   className="w-16 h-16"
                   alt="display avatar"
- 
                 />
               </div>
               <div
@@ -447,7 +458,6 @@ Our freelancers are experienced in a variety of languages and industries, and we
                   src="https://i.ibb.co/tbmnJVg/Group-1789.png"
                   className="w-16 h-16"
                   alt="display avatar"
-
                 />
               </div>
               <div
@@ -1000,10 +1010,7 @@ Our freelancers are experienced in a variety of languages and industries, and we
                 <div className="flex flex-wrap items-center md:flex-row flex-col-reverse">
                   <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
                     <div>
-                      <h1
-                      
-                        className="text-xl md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-b2 font-black leading-6 lg:leading-10 md:text-left text-center"
-                      >
+                      <h1 className="text-xl md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-b2 font-black leading-6 lg:leading-10 md:text-left text-center">
                         Become a Translator and start helping people
                       </h1>
                     </div>

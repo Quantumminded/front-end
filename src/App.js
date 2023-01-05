@@ -9,6 +9,7 @@ import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
 import SelectRequest from "./SelectRequest";
+import Select from "./Select";
 import WorkerProfile from "./WorkerProfile";
 import ClientProfile from "./ClientProfile";
 import DocumentForm from "./DocumentForm";
@@ -28,6 +29,8 @@ import { ToastContainer } from "react-toastify";
 import { UserContext } from "./utils/UserContext";
 import { client } from "./utils/client.mjs";
 import toastMessage from "./Components/notification/toastMessage";
+import DashBoard from "./Components/DashBoard/DashBoard";
+import PostRequest from "./PostRequest";
 function App() {
   //authetication of user for the whole app
   const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
@@ -47,7 +50,7 @@ function App() {
       const response = await client(jwttoken).get("/user/Profile");
       const { status } = response;
       console.log(status);
-      if (status == 200) {
+      if (status === 200) {
         toastMessage("success", "Logged In");
         //Sets the user to the data from the server
         setUser(response.data[0]);
@@ -105,14 +108,20 @@ function App() {
                 setJwttoken={setJwttoken}
                 element={<ClientProfile />}
               />
-              <Route path="/PostOffer" element={<PostOffer />} />
-              <Route path="/SelectRequest" element={<SelectRequest />} />
+              <Route path="Post" element={<PostRequest />} />
+              <Route path="Select" element={<Select />}>
+                <Route path="Request" element={<SelectRequest />}>
+                  <Route path=":type" element={<PostRequest />} />
+                </Route>
+                <Route path="Offer" element={<PostOffer />} />
+              </Route>
               <Route path="/DocumentForm" element={<DocumentForm />} />
               <Route path="/CallForm" element={<CallForm />} />
               <Route path="/TransaltionForm" element={<TransaltionForm />} />
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout" element={<Checkout />} />
+              <Route path="/Dashboard" element={<DashBoard />} />
               <Route path="/ProductDetails" element={<ProductDetails />} />
               <Route path="/ProductDetails2" element={<ProductDetails2 />} />
             </Routes>
