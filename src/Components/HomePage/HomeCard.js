@@ -22,17 +22,17 @@ function HomeCard({ language }) {
               <img
                 className="p-2"
                 src="https://flagcdn.com/24x18/de.png"
-                alt="language"
+                alt="flag language"
               />
               <img
                 className="p-2"
                 src="https://flagcdn.com/24x18/it.png"
-                alt="language"
+                alt="flag language"
               />
               <img
                 className="p-2"
                 src="https://flagcdn.com/24x18/gb-eng.png"
-                alt="language"
+                alt="flag language"
               />
             </div>
             <img

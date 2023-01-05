@@ -12,6 +12,8 @@ function Test({ language }) {
       }
       fetchData();
     }, []);
+
+    
   
     return (
         <>
@@ -22,6 +24,15 @@ function Test({ language }) {
             <Link to="/ProductDetails">
               <div className="relative bottom-0 left-0 rounded-lg">
                 <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
+                  {/* TEST FLEG  */}
+                {/* {task.languages.map((language) => (
+                  <img
+                    key={language}
+                    className="p-2"
+                    src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                    alt="language"
+                  />
+                ))} */}
                   <img
                     className="p-2"
                     src="https://flagcdn.com/24x18/de.png"
@@ -71,10 +82,9 @@ function Test({ language }) {
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
-      </div>
-        
-    </div>
     ))}
     </>
   );
