@@ -59,7 +59,7 @@ function Test({ language }) {
                   {task.description}
                 </h4>
                 <div className="mt-1">
-                  ${task.price}
+                  {task.price}
                   <span className="text-gray-600 text-sm"> /h</span>
                 </div>
                 <div className="mt-4">
