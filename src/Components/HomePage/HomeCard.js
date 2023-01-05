@@ -1,7 +1,9 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
+import React from "react";
 
 function HomeCard({ language }) {
+  
   return (
     <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
       <div className="bg-white ">
