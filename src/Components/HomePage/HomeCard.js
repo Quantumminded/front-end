@@ -9,7 +9,8 @@ function HomeCard({ language }) {
       <div className="bg-white ">
         <Link to="/ProductDetails">
           <div className="relative bottom-0 left-0 rounded-lg">
-            <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
+            <div className="absolute bottom-14 right-0 p-3 bg-transparent animate-pulse">
+              
               {language &&
                 language.map((ele) => (
                   // console.log(ele.length)
@@ -35,39 +36,55 @@ function HomeCard({ language }) {
                 alt="flag language"
               />
             </div>
+            
             <img
               className="w-full shadow rounded"
               src="https://picsum.photos/400/300"
               alt="pic"
             />
+            
           </div>
         </Link>
         <div className="relative px-4 -mt-8">
           <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
+            {/* PROFILE PIC  */}
+            <div className="avatar flex justify-center mb-3">
+                <div className="w-12 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" />
+                </div>
+              </div>
             <div className="flex items-baseline">
-              <span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+              {/* CATEGORY OF SERVICES */}
+              <span className="bg-y1 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                 Calls
               </span>
+              {/* LANGUAGE SPOKEN */}
               <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                Italian &bull; German
+                It &bull; De &bull; En
               </div>
+              {/* SMALL DESCIPTION OF SERVICE */}
             </div>
-            <h4 className="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+            <h4 className="mt-1 text-xl font-semibold uppercase leading-tight ">
               Calls in German & italian
             </h4>
+            {/* PRICE OF SERVICE */}
             <div className="mt-1">
               $100
               <span className="text-gray-600 text-sm"> /h</span>
             </div>
+            {/* REATING SECTION */}
             <div className="mt-4">
+              {/* REATING BY STARS */}
               <span className="text-teal-600 text-md font-semibold">
-                4/5 ratings{" "}
+               ✮ 4/5
               </span>
-              <span className="text-sm text-gray-600">
+              {/* RATING BASED ON NUMBER OF RATING  */}
+              <span className="text-sm text-gray-600 ml-1">
                 (based on 234 ratings)
               </span>
             </div>
           </div>
+          {/* BOOK NOW BUTTONS */}
           <div className="text-gray-600 px-6 py-5  flex justify-center text-sm items-center">
             <div>
               <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce">
