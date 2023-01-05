@@ -7,7 +7,7 @@ import ProfileIcon from '../notification/Profile/ProfileIcon'
 export default function DashBoard() {
     const { user, token } = useContextHook()
     useEffect(()=>{
-        client(token).get(`/requests/all/${user.languages}`)
+        client(token).get("/requests/all")
     })
     return (
         <div className='container mx-auto flex 	min-h-screen'>
