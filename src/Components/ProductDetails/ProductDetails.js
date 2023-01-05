@@ -81,8 +81,9 @@ function ProductDetails() {
               </fieldset>
 
               <div class="rounded border bg-gray-100 p-4">
-                <div className="avatar flex justify-end ml-2">
-                  <div className="w-12 rounded-full">
+                {/* PROFILE PIC */}
+                <div className="avatar">
+                  <div className="w-16 rounded-full">
                     <img src="https://placeimg.com/192/192/people" />
                   </div>
                 </div>
