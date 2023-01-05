@@ -7,7 +7,7 @@ import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
 import { Type } from "./Type";
 import { useParams } from "react-router";
-//TODO: Create PostRequest
+
 export default function PostRequest() {
   const [message, setMessage] = useState();
   const { type } = useParams();
