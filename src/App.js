@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Components/NavBar/Nav";
 import LandingPage from "./LandingPage";
-import HomePage from "./HomePage";
+import HomePage2 from "./HomePage2";
 import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
@@ -95,7 +95,7 @@ function App() {
             <Nav />
             <Routes>
               <Route index element={<LandingPage />} />
-              <Route path="/HomePage" element={<HomePage />} />
+              <Route path="/HomePage" element={<HomePage2 />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
               <Route
