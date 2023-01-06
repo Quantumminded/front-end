@@ -5,9 +5,9 @@ import React from "react";
 function HomeCard({ language }) {
   
   return (
-    <div className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
+    <div className="wrapper antialiased text-gray-900 mb-10">
       <div className="bg-white">
-          <div className="relative bottom-0 left-0 rounded-lg shadow-2xl">
+          <div className="relative bottom-0 left-0  shadow-2xl">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent">
               
               {language &&
@@ -37,7 +37,7 @@ function HomeCard({ language }) {
             </div>
             
             <img
-              className="w-full shadow rounded"
+              className="w-full shadow rounded-2xl bg-white"
               src="https://picsum.photos/400/300"
               alt="pic"
             />
