@@ -95,7 +95,8 @@ function App() {
             <Nav />
             <Routes>
               <Route index element={<LandingPage />} />
-              <Route path="/HomePage" element={<HomePage2 />} />
+              <Route path="/HomePage" element={<HomePage />} />
+              <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
               <Route
