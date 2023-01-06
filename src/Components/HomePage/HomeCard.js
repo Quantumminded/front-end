@@ -28,7 +28,7 @@ function HomeCard({ language }) {
                       key={language}
                       className="p-2"
                       src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
-                      alt="language"
+                      alt={language}
                     />
                   ))}
             </div>
@@ -46,7 +46,7 @@ function HomeCard({ language }) {
               {/* PROFILE PIC  */} 
               <div className="avatar flex justify-center mb-3 ">
                   <div className="w-12 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" />
+                    <img src="https://placeimg.com/192/192/people" alt="profile pictrue" />
                   </div>
                 </div>
               <div className="flex items-baseline">
@@ -91,7 +91,7 @@ function HomeCard({ language }) {
           {/* BOOK NOW BUTTONS */}
           <div className="text-gray-600 flex justify-center text-sm align-top">
             <div className="align-top">
-              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-2xl">
+              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-y1 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-2xl">
                 <Link to="/Checkout">&nbsp;Book Now&nbsp;</Link>
               </button>
             </div>
