@@ -6,8 +6,8 @@ function HomeCard({ language }) {
   
   return (
     <div className="wrapper antialiased text-gray-900 mb-10">
-      <div className="bg-white">
-          <div className="relative bottom-0 left-0  shadow-2xl">
+      <div className="">
+          <div className="relative bottom-0 left-0">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent">
               
               {language &&

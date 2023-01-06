@@ -31,7 +31,7 @@ function HomePage2() {
   };
 
   return (
-    <>
+    <div className=" bg-white">
       <CategoryButtons />
 
       <HomeHeroSection />
@@ -41,8 +41,8 @@ function HomePage2() {
       <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
         Most popular in Documents
       </h2>
-      <div className="container mx-auto px-7 pt-6 gap-8">
-        <div className=" md:hidden lg:hidden lg:gap-8 xl:hidden">
+      <div className="container mx-auto px-7 pt-6 gap-8 ">
+        <div className=" md:hidden lg:hidden lg:gap-8 xl:hidden ">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -162,7 +162,7 @@ function HomePage2() {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
