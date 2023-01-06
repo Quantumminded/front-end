@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HomeCard from "./Components/HomePage/HomeCard";
-import HomeCard2 from "./Components/HomePage/HomeCard2";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 
@@ -8,10 +7,11 @@ function HomePage2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cards = [
     <HomeCard />,
-    <HomeCard2 />,
     <HomeCard />,
-    <HomeCard2 />,
     <HomeCard />,
+    <HomeCard />,
+    <HomeCard />,
+    
   ];
 
   const handleNextClick = () => {
@@ -54,7 +54,7 @@ function HomePage2() {
             </div>
           ))}
         </div>
-        <div className="hidden sm:justify-between md:grid md:grid-cols-3 lg:grid lg:grid-cols-4 xl:grid xl:grid-cols-5 xl:gap-8">
+        <div className="hidden sm:justify-between md:grid md:grid-cols-3 md:gap-5 lg:grid lg:grid-cols-4 xl:grid xl:grid-cols-5 xl:gap-8">
           {cards.map((card, index) => (
             <div key={index} className="rounded border-gray-300">
               {card}

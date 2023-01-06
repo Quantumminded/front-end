@@ -2,6 +2,7 @@ import React from "react";
 
 // // // IMPORT COMPONENT
 import HomeCard from "./Components/HomePage/HomeCard";
+import HomeCard3 from "./Components/HomePage/HomeCard3";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 
@@ -20,7 +21,7 @@ function HomePage() {
         Most popular in Documents
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard />
+        <HomeCard3 />
       </div>
 
       {/* Calls cards section */}
@@ -28,7 +29,7 @@ function HomePage() {
         Most popular in Calls
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard />
+        <HomeCard3 />
       </div>
 
       {/* Translations cards section */}
@@ -36,7 +37,7 @@ function HomePage() {
         Most popular in Translations
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard />
+        <HomeCard3 />
       </div>
     </>
   );
