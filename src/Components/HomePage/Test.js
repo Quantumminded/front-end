@@ -16,38 +16,23 @@ function Test({ language }) {
     
   
     return (
-        <>
+    <>
         {tasks.map((task) => (
       <div key={task.id} className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
         
           <div className="bg-white ">
             <Link to="/ProductDetails">
               <div className="relative bottom-0 left-0 rounded-lg">
-                <div className="absolute bottom-14 right-0 p-3 bg-transparent animate-pulse">
+                <div className="absolute bottom-14 right-0 p-3 bg-transparent">
                   {/* TEST FLEG  */}
-                {task.languages.map((language) => (
-                  <img
-                    key={language}
-                    className="p-2"
-                    src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
-                    alt="language"
-                  />
-                ))}
-                  {/* <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/de.png"
-                    alt="language"
-                  />
-                  <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/it.png"
-                    alt="language"
-                  />
-                  <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/gb-eng.png"
-                    alt="language"
-                  /> */}
+                  {task.languages.map((language) => (
+                    <img
+                      key={language}
+                      className="p-2"
+                      src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                      alt="language"
+                    />
+                  ))}
                 </div>
                 <img
                   className="w-full shadow rounded"

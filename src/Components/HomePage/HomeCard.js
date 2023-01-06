@@ -1,39 +1,36 @@
-
 import { Link } from "react-router-dom";
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 function HomeCard({ language }) {
+  const [tasks, setTasks] = useState([]);
+  
+    useEffect(() => {
+      async function fetchData() {
+        const res = await fetch("https://super-secret-backend.onrender.com/api/task/all");
+        const data = await res.json();
+        setTasks(data);
+      }
+      fetchData();
+    }, []);
   
   return (
+    <>
+        {tasks.map((task) => (
+      <div key={task.id} className="wrapper  antialiased text-gray-900 mb-10">
     <div className="wrapper antialiased text-gray-900 mb-10">
       <div className="">
           <div className="relative bottom-0 left-0">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent">
               
-              {language &&
-                language.map((ele) => (
-                  // console.log(ele.length)
-                  <img
-                    className="p-2"
-                    src={`https://flagcdn.com/24x18/${ele}.png`}
-                    alt="language"
-                  />
-                ))}
-              <img
-                className="p-2"
-                src="https://flagcdn.com/24x18/de.png"
-                alt="flag language"
-              />
-              <img
-                className="p-2"
-                src="https://flagcdn.com/24x18/it.png"
-                alt="flag language"
-              />
-              <img
-                className="p-2"
-                src="https://flagcdn.com/24x18/gb-eng.png"
-                alt="flag language"
-              />
+              {/* FLEGs map based on lenguage  */}
+              {task.languages.map((language) => (
+                    <img
+                      key={language}
+                      className="p-2"
+                      src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                      alt="language"
+                    />
+                  ))}
             </div>
             
             <img
@@ -45,29 +42,32 @@ function HomeCard({ language }) {
           </div>
         <div className="relative px-4 -mt-8">
           <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
-            <div className="flex items-baseline">
-              {/* CATEGORY OF SERVICES */}
+
+              {/* PROFILE PIC  */} 
+              <div className="avatar flex justify-center mb-3 ">
+                  <div className="w-12 rounded-full">
+                    <img src="https://placeimg.com/192/192/people" />
+                  </div>
+                </div>
+              <div className="flex items-baseline">
+              
+              {/* TYPE OF SERVICES */}
               <span className="bg-y1 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
-                Calls
+                {task.type}
               </span>
               {/* LANGUAGE SPOKEN */}
               <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                It &bull; De &bull; En
+                {task.languages[0]} | {task.languages[1]}
               </div>
-              {/* PROFILE PIC  */}
-            <div className="avatar flex justify-end ml-2">
-                <div className="w-12 rounded-full">
-                  <img src="https://placeimg.com/192/192/people" />
-                </div>
-              </div>
+              
             </div>
             {/* SMALL DESCIPTION OF SERVICE */}
             <h4 className="mt-1 text-xl font-semibold uppercase leading-tight ">
-              Calls in German & italian
+              {task.title}
             </h4>
             {/* PRICE OF SERVICE */}
             <div className="mt-1">
-              $100
+              {task.price}
               <span className="text-gray-600 text-sm"> /h</span>
             </div>
             {/* REATING SECTION */}
@@ -99,6 +99,9 @@ function HomeCard({ language }) {
         </div>
       </div>
     </div>
+    </div>
+    ))}
+    </>
   );
 }
 
