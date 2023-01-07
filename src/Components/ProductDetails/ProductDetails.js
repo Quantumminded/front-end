@@ -16,7 +16,7 @@ function ProductDetails() {
             <div class="relative mt-4">
               <img
                 alt="Tee"
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="https://picsum.photos/400/300"
                 class="h-72 w-full rounded-xl object-cover lg:h-[540px]"
               />
             </div>
@@ -81,6 +81,12 @@ function ProductDetails() {
               </fieldset>
 
               <div class="rounded border bg-gray-100 p-4">
+                {/* PROFILE PIC */}
+                <div className="avatar">
+                  <div className="w-16 rounded-full">
+                    <img src="https://placeimg.com/192/192/people" />
+                  </div>
+                </div>
                 <p class="text-sm">
                   <span class="block">
                     Lorem Ipsum is simply dummy text of the printing and

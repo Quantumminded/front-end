@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Components/NavBar/Nav";
 import LandingPage from "./LandingPage";
+import HomePage2 from "./HomePage2";
 import HomePage from "./HomePage";
 import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
@@ -95,7 +96,8 @@ function App() {
             <Nav />
             <Routes>
               <Route index element={<LandingPage />} />
-              <Route path="/HomePage" element={<HomePage />} />
+              <Route path="/HomePage" element={<HomePage  />} />
+              <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
               <Route
@@ -109,8 +111,11 @@ function App() {
                 element={<ClientProfile />}
               />
               <Route path="Post" element={<PostRequest />} />
+              {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>
+              {/* Request is the Outlet of select  */}
                 <Route path="Request" element={<SelectRequest />}>
+                  {/* :type is also the outlet of request */}
                   <Route path=":type" element={<PostRequest />} />
                 </Route>
                 <Route path="Offer" element={<PostOffer />} />

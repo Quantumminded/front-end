@@ -6,37 +6,33 @@ function Test({ language }) {
   
     useEffect(() => {
       async function fetchData() {
-        const res = await fetch("https://super-secret-backend.onrender.com/task/all");
+        const res = await fetch("https://super-secret-backend.onrender.com/api/task/all");
         const data = await res.json();
         setTasks(data);
       }
       fetchData();
     }, []);
+
+    
   
     return (
-        <>
+    <>
         {tasks.map((task) => (
       <div key={task.id} className="wrapper bg-gray-400 antialiased text-gray-900 mb-10">
         
           <div className="bg-white ">
             <Link to="/ProductDetails">
               <div className="relative bottom-0 left-0 rounded-lg">
-                <div className="absolute bottom-14 right-0 p-3 bg-transparent  animate-pulse">
-                  <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/de.png"
-                    alt="language"
-                  />
-                  <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/it.png"
-                    alt="language"
-                  />
-                  <img
-                    className="p-2"
-                    src="https://flagcdn.com/24x18/gb-eng.png"
-                    alt="language"
-                  />
+                <div className="absolute bottom-14 right-0 p-3 bg-transparent">
+                  {/* TEST FLEG  */}
+                  {task.languages.map((language) => (
+                    <img
+                      key={language}
+                      className="p-2"
+                      src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                      alt="language"
+                    />
+                  ))}
                 </div>
                 <img
                   className="w-full shadow rounded"
@@ -49,7 +45,7 @@ function Test({ language }) {
               <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
                 <div className="flex items-baseline">
                   <span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
-                    Calls
+                    {task.type}
                   </span>
                   <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
                     {task.languages[0]} | {task.languages[1]}
@@ -71,10 +67,9 @@ function Test({ language }) {
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
-      </div>
-        
-    </div>
     ))}
     </>
   );

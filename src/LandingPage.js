@@ -276,8 +276,7 @@ function LandingPage() {
                 Meet our professional translator
               </h1>
               <p className="text-base leading-normal text-y1 mt-4 md:w-8/12 lg:w-11/12 text-center lg:text-left">
-                A good idiom for kids is "It's raining cats and dogs." Kids know
-                what both cats and dogs are from an early age
+              A team of highly skilled and experienced language experts who are dedicated to delivering top-quality translations for a wide range of industries and projects. From legal documents to marketing materials, our translators have the expertise and attention to detail to accurately convey the meaning and context of your content in any language.
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-white hover:bg-indigo-600 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
