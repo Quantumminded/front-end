@@ -236,7 +236,7 @@ function ClientProfile({ setJwttoken }) {
                     Submit
                   </button>
                 </form>
-                {/* <ImageUpload /> */}
+                <ImageUpload />
               </div>
             </div>
           </div>
