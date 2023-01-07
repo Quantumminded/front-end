@@ -111,8 +111,11 @@ function App() {
                 element={<ClientProfile />}
               />
               <Route path="Post" element={<PostRequest />} />
+              {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>
+              {/* Request is the Outlet of select  */}
                 <Route path="Request" element={<SelectRequest />}>
+                  {/* :type is also the outlet of request */}
                   <Route path=":type" element={<PostRequest />} />
                 </Route>
                 <Route path="Offer" element={<PostOffer />} />
