@@ -22,7 +22,7 @@
 - **Edit PreOpp Checklist** As a user I can edit a player profile to fit into the tournament view
 - **View Tournament Table** As a user I want to see the tournament table
 - **Edit User** As a user I can edit my profile, add or substract exit points
-- **Chat** As an anon I can chat with other people in the platform
+- **Chat** As an anon I can chat with other people in the platfor
 
 ## Backlog
 
