@@ -1,13 +1,14 @@
 import React from "react";
 
 // // // IMPORT COMPONENT
+import HomeCard from "./Components/HomePage/HomeCard";
 import HomeCard3 from "./Components/HomePage/HomeCard3";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 
 import useCookies from "react-cookie/cjs/useCookies";
 
-function HomePage() {
+function HomePage3() {
   return (
     <>
       {/* DISPLAY BUTTON FOR EACH TYPE */}
@@ -42,4 +43,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default HomePage3;

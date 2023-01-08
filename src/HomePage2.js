@@ -123,7 +123,7 @@ function HomePage2() {
 
       {/* Translations cards section */}
       <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
-        Most popular in Calls
+        Most popular in Translations
       </h2>
       <div className="container mx-auto px-7 pt-6 gap-8">
         <div className=" md:hidden lg:hidden lg:gap-8 xl:hidden">
