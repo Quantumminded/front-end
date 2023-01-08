@@ -22,7 +22,7 @@ function HomeCard3({ language }) {
           <div className="relative bottom-0 left-0">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent">
               
-              {/* FLEGs map based on lenguage  */}
+              {/* FLEGs map based on language  */}
               {task.languages.map((language) => (
                     <img
                       key={language}

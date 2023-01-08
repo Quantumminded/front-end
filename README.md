@@ -8,7 +8,7 @@
 
 ## User Stories
 
-- **Admin sign up:** As an admin I can sign up in the platform
+- **Admin sign up:** As an admin I can sign up in the platfor
 - **Admin log in:** As an admin I can login to the platform
 - **Admin log out:** As an admin I can logout from the platform so no one else can use it
 - **User sign up:** As a user I can sign up in the platform
@@ -22,7 +22,7 @@
 - **Edit PreOpp Checklist** As a user I can edit a player profile to fit into the tournament view
 - **View Tournament Table** As a user I want to see the tournament table
 - **Edit User** As a user I can edit my profile, add or substract exit points
-- **Chat** As an anon I can chat with other people in the platform
+- **Chat** As an anon I can chat with other people in the platfor
 
 ## Backlog
 
