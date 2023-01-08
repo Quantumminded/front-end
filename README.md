@@ -8,7 +8,7 @@
 
 ## User Stories
 
-- **Admin sign up:** As an admin I can sign up in the platform
+- **Admin sign up:** As an admin I can sign up in the platfor
 - **Admin log in:** As an admin I can login to the platform
 - **Admin log out:** As an admin I can logout from the platform so no one else can use it
 - **User sign up:** As a user I can sign up in the platform
