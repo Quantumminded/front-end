@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import HomeCard from "./Components/HomePage/HomeCard";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
+import HomeCard2 from "./Components/HomePage/HomeCard2";
 
 function HomePage2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cards = [
     <HomeCard />,
-    <HomeCard />,
-    <HomeCard />,
-    <HomeCard />,
-    <HomeCard />,
-    
   ];
 
   const handleNextClick = () => {

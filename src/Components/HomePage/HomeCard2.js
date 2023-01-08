@@ -1,68 +1,98 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HomeCard2() {
+function HomeCard2(props) {
+  
+  const { card } = props;
+
   return (
-    <div className="overflow-auto shadow-2xl rounded-3xl m-3">
-      <div className="relative bottom-0 left-0">
-        <button className="absolute h-12 w-12 p-3 m-3 right-0 justify-center rounded-full bg-transparent hover:bg-red-500 text-red-700 hover:text-white hover:border-transparent animate-pulse">
-          <i className="material-icons md-18 blue">favorite</i>
-        </button>
-        <Link className="absolute bottom-0 right-0 p-3 bg-transparent  animate-pulse">
-          <img
-            className="p-2"
-            src="https://flagcdn.com/24x18/de.png"
-            alt="language"
-          />
-          <img
-            className="p-2"
-            src="https://flagcdn.com/24x18/it.png"
-            alt="language"
-          />
-          <img
-            className="p-2"
-            src="https://flagcdn.com/24x18/gb-eng.png"
-            alt="language"
-          />
-        </Link>
-        <img
-          className="w-full shadow"
-          src="https://picsum.photos/400/300"
-          alt="pic"
-        />
-      </div>
-      <div className="px-6 py-4 bg-yellow-300">
-        <div className="font-bold text-center text-2xl mb-2 text-blue-900">
-          John D
-        </div>
-        <div className="text-400 text-center text-xl font-bold mb-2 text-gray-600">
-          Translator
-        </div>
-        <p className="text-gray-700 text-lg mb-2 font-bold text-center">
-          I will translate german italian<br></br> english and vice versa
-        </p>
-        <div className="grid grid-cols justify-between">
-          <p className="col-start-1 text-400 text-xl font-bold mb-2 text-gray-500">
-            100 € / Session
-          </p>
-          <p className="col-end-3 text-400 text-left text-xl mb-2 text-orange-500">
-            ✮ 4.5
-          </p>
-        </div>
-      </div>
-      <div className="text-gray-600 px-6 py-5 bg-yellow-400 flex justify-between text-sm items-center">
-        <div>
-          <button className="h-12 w-40 float-left bg-blue-500 hover:bg-blue-800 text-white text-xl font-bold p-2 m-2 rounded-full animate-bounce">
-            &nbsp;Book Now&nbsp;
-          </button>
-        </div>
-        <div>
-          <button className="h-12 w-12 float-right bg-orange-500 hover:bg-orange-800 text-white text-lg font-bold py-2 px-3 pb-1 rounded-full">
-            <i className="material-icons md-18 blue">email</i>
-          </button>
+    <>
+      <div key={card.id} className="wrapper antialiased text-gray-900 mb-10">
+    <div className="wrapper antialiased text-gray-900 mb-10">
+      <div className="">
+          <div className="relative bottom-0 left-0">
+            <div className="absolute bottom-14 right-0 p-3 bg-transparent">
+              
+              {/* FLEGs map based on language  */}
+              {card.languages.map((language) => (
+                    <img
+                      key={language}
+                      className="p-2"
+                      src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                      alt={language}
+                    />
+                  ))}
+            </div>
+            
+            <img
+              className="w-full shadow rounded-2xl bg-white"
+              src="https://picsum.photos/400/300"
+              alt="pic"
+            />
+            
+          </div>
+        <div className="relative px-4 -mt-8">
+          <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
+
+              {/* PROFILE PIC  */} 
+              <div className="avatar flex justify-center mb-3 ">
+                  <div className="w-12 rounded-full">
+                    <img src="https://placeimg.com/192/192/people" alt="profile pictrue" />
+                  </div>
+                </div>
+              <div className="flex items-baseline">
+              
+              {/* TYPE OF SERVICES */}
+              <span className="bg-y1 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                {card.type}
+              </span>
+              {/* LANGUAGE SPOKEN */}
+              <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                {card.languages[0]} | {card.languages[1]}
+              </div>
+              
+            </div>
+            {/* SMALL DESCIPTION OF SERVICE */}
+            <h4 className="mt-1 text-xl font-semibold uppercase leading-tight ">
+              {card.title}
+            </h4>
+            {/* PRICE OF SERVICE */}
+            <div className="mt-1">
+              {card.price}
+              <span className="text-gray-600 text-sm"> /h</span>
+            </div>
+            {/* REATING SECTION */}
+            <div className="mt-4">
+              {/* REATING BY STARS */}
+              <span className="text-teal-600 text-md font-semibold">
+               ✮ 4/5
+              </span>
+              {/* RATING BASED ON NUMBER OF RATING  */}
+              <span className="text-sm text-gray-600 ml-1">
+                (based on 234 ratings)
+              </span>
+            </div>
+            <Link to='/ProductDetails'>
+              <div className="text-center underline">
+                More Details
+              </div>
+            </Link>
+            
+          </div>
+          {/* BOOK NOW BUTTONS */}
+          <div className="text-gray-600 flex justify-center text-sm align-top">
+            <div className="align-top">
+              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-y1 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-2xl">
+                <Link to="/Checkout">&nbsp;Book Now&nbsp;</Link>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    </div>
+
+    </>
   );
 }
 

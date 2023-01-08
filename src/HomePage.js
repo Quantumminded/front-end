@@ -1,13 +1,28 @@
 import React from "react";
+import { useEffect, useState } from 'react';
 
 // // // IMPORT COMPONENT
-import HomeCard3 from "./Components/HomePage/HomeCard3";
+import HomeCard2 from "./Components/HomePage/HomeCard2";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 
 import useCookies from "react-cookie/cjs/useCookies";
 
 function HomePage() {
+    const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    async function fetchCards() {
+      try {
+        const response = await fetch('https://super-secret-backend.onrender.com/api/task/all');
+        const data = await response.json();
+        setCards(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchCards();
+  }, []);
   return (
     <>
       {/* DISPLAY BUTTON FOR EACH TYPE */}
@@ -20,7 +35,10 @@ function HomePage() {
         Most popular in Documents
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard3 />
+        {cards.filter(card => card.type === 'document').map(card => (
+          <HomeCard2 key={card.id} card={card} />
+          
+        ))}
       </div>
 
       {/* Calls cards section */}
@@ -28,7 +46,9 @@ function HomePage() {
         Most popular in Calls
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard3 />
+        {cards.filter(card => card.type === 'call').map(card => (
+          <HomeCard2 key={card.id} card={card} />
+        ))}
       </div>
 
       {/* Translations cards section */}
@@ -36,8 +56,10 @@ function HomePage() {
         Most popular in Translations
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
-        <HomeCard3 />
-      </div>
+        {cards.filter(card => card.type === 'translation').map(card => (
+          <HomeCard2 key={card.id} card={card} />
+          ))}
+        </div>
     </>
   );
 }
