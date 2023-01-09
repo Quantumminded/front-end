@@ -46,9 +46,9 @@ function HomePage4() {
       {/* HERO SECTION DISPLAY IMG WITH TEXT OVER IT */}
       <HomeHeroSection />
 
-      {/* DOCUMENTS CARD SECTION */}
+      {/* CALLS CARD SECTION */}
       <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
-        Most popular in Documents
+        Most popular in Calls
       </h2>
 
       {isSmallScreen ? (
@@ -59,7 +59,7 @@ function HomePage4() {
       onClick={() => {
         if (currentCardIndex === 0) {
           setCurrentCardIndex(
-            cards.filter((card) => card.type === "document").length - 1
+            cards.filter((card) => card.type === "call").length - 1
           );
         } else {
           setCurrentCardIndex(currentCardIndex - 1);
@@ -67,7 +67,7 @@ function HomePage4() {
       }}
       disabled={
         currentCardIndex === 0 ||
-        cards.filter((card) => card.type === "document").length === 0
+        cards.filter((card) => card.type === "call").length === 0
       }
     >
       Prev
@@ -102,6 +102,130 @@ function HomePage4() {
     <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
       {cards
         .filter((card) => card.type === "call")
+        .map((card) => (
+          <HomeCard2 key={card.id} card={card} />
+        ))}
+    </div>
+  )}
+
+  {/* DOCUMENTS CARD SECTION */}
+  <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
+        Most popular in Documents
+      </h2>
+
+      {isSmallScreen ? (
+  // Carousel for small screens
+  <div>
+    {/* Prev button */}
+    <button
+      onClick={() => {
+        if (currentCardIndex === 0) {
+          setCurrentCardIndex(
+            cards.filter((card) => card.type === "document").length - 1
+          );
+        } else {
+          setCurrentCardIndex(currentCardIndex - 1);
+        }
+      }}
+      disabled={
+        currentCardIndex === 0 ||
+        cards.filter((card) => card.type === "document").length === 0
+      }
+    >
+      Prev
+    </button>
+
+    {/* Current card */}
+    <HomeCard2 key={cards.filter(card => card.type === 'document')[currentCardIndex].id} card={cards.filter(card => card.type === 'document')[currentCardIndex]} />
+
+    {/* Next button */}
+    <button
+      onClick={() => {
+        if (
+          currentCardIndex ===
+          cards.filter((card) => card.type === "document").length - 1
+        ) {
+          setCurrentCardIndex(0);
+        } else {
+          setCurrentCardIndex(currentCardIndex + 1);
+        }
+      }}
+      disabled={
+        currentCardIndex ===
+          cards.filter((card) => card.type === "document").length - 1 ||
+        cards.filter((card) => card.type === "document").length === 0
+      }
+    >
+      Next
+    </button>
+  </div>
+) : (
+    // Responsive grid for medium and up screens
+    <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
+      {cards
+        .filter((card) => card.type === "document")
+        .map((card) => (
+          <HomeCard2 key={card.id} card={card} />
+        ))}
+    </div>
+  )}
+
+  {/* DOCUMENTS CARD SECTION */}
+  <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
+        Most popular in Translation
+      </h2>
+
+      {isSmallScreen ? (
+  // Carousel for small screens
+  <div>
+    {/* Prev button */}
+    <button
+      onClick={() => {
+        if (currentCardIndex === 0) {
+          setCurrentCardIndex(
+            cards.filter((card) => card.type === "translation").length - 1
+          );
+        } else {
+          setCurrentCardIndex(currentCardIndex - 1);
+        }
+      }}
+      disabled={
+        currentCardIndex === 0 ||
+        cards.filter((card) => card.type === "translation").length === 0
+      }
+    >
+      Prev
+    </button>
+
+    {/* Current card */}
+    <HomeCard2 key={cards.filter(card => card.type === 'translation')[currentCardIndex].id} card={cards.filter(card => card.type === 'translation')[currentCardIndex]} />
+
+    {/* Next button */}
+    <button
+      onClick={() => {
+        if (
+          currentCardIndex ===
+          cards.filter((card) => card.type === "translation").length - 1
+        ) {
+          setCurrentCardIndex(0);
+        } else {
+          setCurrentCardIndex(currentCardIndex + 1);
+        }
+      }}
+      disabled={
+        currentCardIndex ===
+          cards.filter((card) => card.type === "translation").length - 1 ||
+        cards.filter((card) => card.type === "translation").length === 0
+      }
+    >
+      Next
+    </button>
+  </div>
+) : (
+    // Responsive grid for medium and up screens
+    <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
+      {cards
+        .filter((card) => card.type === "translation")
         .map((card) => (
           <HomeCard2 key={card.id} card={card} />
         ))}
