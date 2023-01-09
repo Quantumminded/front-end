@@ -91,10 +91,10 @@ export default function Login({ setJwttoken, setSignUp, signUp }) {
                 <div className="bg-white dark:bg-gray-900">
                     <div className="flex justify-center h-screen ">
                         <div
-                            className="hidden bg-cover bg-center lg:block lg:w-2/3"
+                            className="hidden bg-cover lg:block lg:w-2/3"
                             style={{
                                 backgroundImage:
-                                    "url(https://as2.ftcdn.net/v2/jpg/04/59/86/27/1000_F_459862700_blwVQ5me7hzE64Rfe40hX1yycwipwRw1.jpg)",
+                                    "url(https://img.freepik.com/free-photo/group-business-people-having-meeting_53876-14814.jpg?w=1380&t=st=1673285061~exp=1673285661~hmac=1b311b554064bd83aede9b6204397e5059fbdc999c2c2660abcb20f5c0757317)",
                             }}
                         >
                             <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
