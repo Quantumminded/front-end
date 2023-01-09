@@ -16,22 +16,18 @@ function SignIn({ setJwttoken }) {
   if (!signUp)
     return (
       <>
-        <Login setJwttoken={setJwttoken} />
-        <Small color="grey" className=" text-center p-4">
-          Not a member?
-          <Span onClick={() => setSignUp(!signUp)}> Sign Up </Span>
-        </Small>
+        <Login
+          setJwttoken={setJwttoken}
+          setSignUp={setSignUp}
+          signUp={signUp}
+        />
       </>
     );
   //Form for SingUp
   if (signUp)
     return (
       <>
-        <SignUp />
-        <Small color="grey" className=" text-center p-4">
-          Already a member?
-          <Span onClick={() => setSignUp(!signUp)}> Sign In </Span>
-        </Small>
+        <SignUp setSignUp={setSignUp} signUp={signUp} />
       </>
     );
 }
