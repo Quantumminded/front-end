@@ -6,6 +6,7 @@ import Nav from "./Components/NavBar/Nav";
 import LandingPage from "./LandingPage";
 import HomePage2 from "./HomePage2";
 import HomePage from "./HomePage";
+import HomePage3 from "./HomePage3";
 import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
@@ -98,6 +99,7 @@ function App() {
               <Route index element={<LandingPage />} />
               <Route path="/HomePage" element={<HomePage  />} />
               <Route path="/HomePage2" element={<HomePage2 />} />
+              <Route path="/HomePage3" element={<HomePage3 />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
               <Route
