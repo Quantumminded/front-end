@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState, } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
-import SocialLogin from "../notification/SocialLogin";
 import { Title, Highlight, Small } from "../../Style/StyledTypography";
 import { Input, Button } from "../../Style/StyledComponents";
 import { useCookies } from "react-cookie";

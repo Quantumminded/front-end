@@ -23,9 +23,11 @@ export default function SelectionCard({ type, description, path }) {
                     </p>
                 </div>
                 <div className="px-4 md:w-auto w-full">
-                    <button className="w-full hover:bg-gray-300 transition duration-150 text-base font-medium leading-none text-center text-gray-800 py-4 px-12 bg-y2 focus:outline-none">
-                        <Link onClick={scrollIntoView} to={path}>Select</Link>
-                    </button>
+                    <Link onClick={scrollIntoView} to={path}>
+                        <button className="w-full hover:bg-gray-300 transition duration-150 text-base font-medium leading-none text-center text-gray-800 py-4 px-12 bg-y2 focus:outline-none">
+                            Select
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
