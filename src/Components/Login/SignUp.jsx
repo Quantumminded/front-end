@@ -25,7 +25,6 @@ export default function SignUp() {
         password,
         language
     ) => {
-        console.log(firstName, lastName, email, password, language);
         e.preventDefault();
         client()
             .post("/signup", { firstName, lastName, email, password, language })
