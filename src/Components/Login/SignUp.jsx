@@ -15,9 +15,11 @@ export default function SignUp() {
     const [language, setLanguage] = useState();
 
     const [validPassword, setValidPassword] = useState();
+    //For Awaiting promise
+    const [loading, setLoading] = useState(false)
 
     //Signup Function
-    const signUpFunction = (
+    const signUpFunction = async (
         e,
         firstName,
         lastName,
@@ -26,7 +28,9 @@ export default function SignUp() {
         language
     ) => {
         e.preventDefault();
-        client()
+        //Sets a boolean so we can disable the button while the request is not resolve
+        setLoading(true)
+        await client()
             .post("/signup", { firstName, lastName, email, password, language })
             .then((response) => {
                 //Sets message for display
@@ -43,6 +47,8 @@ export default function SignUp() {
                     setMessage(null);
                 }, 5000);
             });
+        //Sets a boolean so we can disable the button while the request is not resolve
+        setLoading(false)
     };
 
     function comparePasswords() {
@@ -103,8 +109,9 @@ export default function SignUp() {
                     <Button
                         type="submit"
                         className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+                        disabled={loading}
                     >
-                        <Highlight color="color">Sign Up</Highlight>
+                        <Highlight color="color">{loading ? "Loading..." : "Sign Up"}</Highlight>
                     </Button>
                 </form >
             </div >
