@@ -8,11 +8,18 @@ import OnGoinDashBoard from './OnGoinDashBoard.jsx'
 
 export default function DashBoard() {
     const { user, token } = useContextHook()
-    const [activeTab, setActiveTab] = useState()
+    const [activeTab, setActiveTab] = useState('Dashboard')
     //Gets All requests
     // useEffect(() => {
     //     client(token).get(`/requests/all/${user.languages}`)
     // })
+
+    //TODO: FINISH THE BACKEND AND FRONTEND CONNECTION FOR THE USERS TASKS
+    useEffect(() => {
+        client(token).get('user/task').then(data => console.log(data))
+
+    }, [])
+
     return (
         <>
             <div className='container mx-auto flex 	min-h-screen'>
@@ -36,11 +43,16 @@ export default function DashBoard() {
                 {/* TABS */}
                 <div className='w-3/4'>
                     <DashBoardTabs setActiveTab={setActiveTab} activeTab={activeTab} />
-                    <div className=' w-full h-screen bg-emerald-600 grid grid-cols-4 gap-4 p-4'>
-
+                    <div className=' w-full h-screen bg-emerald-600 flex gap-4 p-4'>
                         {/* Active Offers */}
+                        {activeTab == "Dashboard" && <HomeCard />}
+                        {/* ACCEPTED TASK/REQUESTS*/}
+                        {activeTab == "Active" && <OnGoinDashBoard />}
+                        {/* History of All the Work */}
+                        {activeTab == "Finished" && <OnGoinDashBoard />}
 
-                        <HomeCard />
+
+
 
 
                     </div>

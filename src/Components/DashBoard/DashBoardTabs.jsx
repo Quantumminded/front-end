@@ -11,13 +11,13 @@ export default function DashBoardTabs({ setActiveTab, activeTab }) {
     return (
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
             <li className="mr-2">
-                <button name="Dashboard" onClick={handleTab} className={activeTab == "Dashboard" ? active : inactive}>Dashboard</button>
+                <a name="Dashboard" onClick={handleTab} className={activeTab == "Dashboard" ? active : inactive}>Dashboard</a>
             </li>
             <li className="mr-2">
-                <button name="Active" onClick={handleTab} className={activeTab == "Active" ? active : inactive}>OnGoing</button>
+                <a name="Active" onClick={handleTab} className={activeTab == "Active" ? active : inactive}>OnGoing</a>
             </li>
             <li className="mr-2">
-                <button name="Finished" onClick={handleTab} className={activeTab == "Finished" ? active : inactive}>Finished</button>
+                <a name="Finished" onClick={handleTab} className={activeTab == "Finished" ? active : inactive}>Finished</a>
             </li>
         </ul>
     )

@@ -30,7 +30,7 @@ export default function ProfileIcon() {
             <div className="flex flex-1 px-2">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" className="overflow-hidden relative w-12 h-12 rounded bg-gray-100 dark:bg-gray-600">
-                        <img class="w-12 h-12 rounded" src={user.image} alt="Default avatar" />                    </div>
+                        <img className="w-12 h-12 rounded" src={user.image} alt="Default avatar" />                    </div>
                     <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                         <li><Link to='/Profile'>Profile</Link></li>
                         <li><Link to='/Dashboard'>Dashboard</Link></li>
