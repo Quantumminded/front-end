@@ -20,11 +20,11 @@ import CallForm from "./CallForm";
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
 import About from "./About";
-import TeamSection from "./About/TeamSection";
+import TeamSection from "./Components/About/TeamSection";
 import Privacy from "./Components/PrivacyPolicy/Privacy";
 import Checkout from "./Checkout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
-import ProductDetails2 from "./Components/ProductDetails/ProductDetails2";
+
 //Module for various cookie settings
 import { CookiesProvider } from "react-cookie";
 //Notification Toasts
@@ -98,7 +98,7 @@ function App() {
             <Nav />
             <Routes>
               <Route index element={<LandingPage />} />
-              <Route path="/HomePage" element={<HomePage  />} />
+              <Route path="/HomePage" element={<HomePage />} />
               <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/HomePage3" element={<HomePage3 />} />
               <Route path="/HomePage4" element={<HomePage4 />} />
@@ -117,7 +117,7 @@ function App() {
               <Route path="Post" element={<PostRequest />} />
               {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>
-              {/* Request is the Outlet of select  */}
+                {/* Request is the Outlet of select  */}
                 <Route path="Request" element={<SelectRequest />}>
                   {/* :type is also the outlet of request */}
                   <Route path=":type" element={<PostRequest />} />
@@ -131,8 +131,7 @@ function App() {
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Dashboard" element={<DashBoard />} />
-              <Route path="/ProductDetails" element={<ProductDetails />} />
-              <Route path="/ProductDetails2" element={<ProductDetails2 />} />
+              <Route path="/ProductDetails/:id" element={<ProductDetails />} />
             </Routes>
             <Footer />
           </BrowserRouter>

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
 // IMPORT COMPONENT
 
-import TeamSection from './About/TeamSection';
-import AboutUsSection from './About/AboutUsSection';
+import TeamSection from "./Components/About/TeamSection";
+import AboutUsSection from "./Components/About/AboutUsSection";
 
 function About() {
   return (
-    <div className='bg-b2'>
+    <div className="bg-b2">
       <AboutUsSection />
       <TeamSection />
     </div>
-  )
+  );
 }
 
-export default About
+export default About;
