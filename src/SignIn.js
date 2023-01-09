@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Small } from "./Style/StyledTypography";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/Login/SignUp";
 

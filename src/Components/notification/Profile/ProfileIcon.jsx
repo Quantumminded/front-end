@@ -5,7 +5,6 @@ import LogoutButton from '../../Login/LogoutButton'
 
 export default function ProfileIcon() {
     const { user } = useContextHook()
-    console.log(user)
     if (!user) return <p>Loading...</p>
     if (!user.image)
         return (
