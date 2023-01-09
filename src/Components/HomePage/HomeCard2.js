@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HomeCard2(props) {
-  
-  const { card } = props;
+function HomeCard2({ card }) {
+
 
   return (
     <>
