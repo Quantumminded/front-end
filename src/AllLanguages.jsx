@@ -1,5 +1,6 @@
 import React from 'react'
 
+//All languages in ISO 639-1 format
 const languages = [
     { "code": "aa", "name": "Afar" },
     { "code": "ab", "name": "Abkhazian" },
@@ -209,7 +210,8 @@ export default function AllLanguages({ setLanguage, handleLanguages, name }) {
             {/* The name propertie is used to destinguisch beetwen fromLanguage and toLanguage in the Component PostRequest */}
             <select onChange={(e) => handleLanguage(e)} id="languages" name={name ? name : "languages"} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option>Select Language</option>
-                {Object.keys(languages).map((ele, index) => (
+                {/* Get first the Array of Numbers with .keys later then map through and use the number to get the option */}
+                {Object.keys(languages).map((ele) => (
                     <option value={languages[ele].code}>{languages[ele].name}</option>
                 ))}
                 {/* <option value="sq">Albanian - shqip</option>
