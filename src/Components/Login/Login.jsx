@@ -25,14 +25,14 @@ const Line = styled.hr`
   width: 10vw;
 `;
 
-export default function Login({ setJwttoken, setSignUp, signUp }) {
+export default function Login({ setSignUp, signUp }) {
     //Cookie Hook
     const [cookies, setCookie] = useCookies(["token"]);
     const [loading, setLoading] = useState(false)
     //FORM REFS
     const email = useRef();
     const password = useRef();
-    const { setAuthorized, setUser, token } = useContextHook()
+    const { setAuthorized, setUser, token, setJwttoken } = useContextHook()
 
     const navigate = useNavigate()
     //TOKEN GET STORED IN LOCAL HOST WE RECIVE FROM BACKEND

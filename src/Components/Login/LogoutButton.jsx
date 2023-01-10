@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import useContextHook from '../../utils/customContextHook';
 
 
-export default function LogoutButton({ setJwttoken }) {
-    const { setAuthorized, setUser } = useContextHook()
+export default function LogoutButton() {
+    const { setAuthorized, setUser, setJwttoken } = useContextHook()
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
     function handleLogout() {

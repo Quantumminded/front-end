@@ -8,7 +8,7 @@ const Span = styled.span`
   cursor: pointer;
 `;
 
-function SignIn({ setJwttoken }) {
+function SignIn() {
   //Server needs to run on port 3001
   const [signUp, setSignUp] = useState(false);
 
@@ -16,7 +16,6 @@ function SignIn({ setJwttoken }) {
     return (
       <>
         <Login
-          setJwttoken={setJwttoken}
           setSignUp={setSignUp}
           signUp={signUp}
         />

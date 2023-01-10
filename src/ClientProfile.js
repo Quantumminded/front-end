@@ -12,7 +12,7 @@ function ClientProfile({ setJwttoken }) {
         <>
           <div className="flex gap-4">
             <div className="w-1/5">
-<SideBar   setJwttoken={setJwttoken}  />
+<SideBar/>
             </div>
             <div className="w-11/12 mx-auto p-4">
               <div className="rounded relative mt-8 h-48 flex">

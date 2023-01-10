@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import SideBar from '../../SideBar.jsx'
 import { client } from '../../utils/client.mjs'
 import useContextHook from '../../utils/customContextHook'
 import HomeCard from '../HomePage/HomeCard'
@@ -21,7 +22,8 @@ export default function DashBoard() {
     }, [])
 
     return (
-        <>
+        <><div className='container flex'>
+            <SideBar />
             <div className='container mx-auto flex 	min-h-screen'>
                 {/* Profile 1/4Coloum */}
                 <div className=' w-1/4 bg-orange-500'>
@@ -29,7 +31,10 @@ export default function DashBoard() {
                         <div className='flex items-center flex-col p-4'>
                             <ProfileIcon />
                             {/* Image + Name */}
-                            <p className=' text-base text-black'>{user && user.email}</p>
+                            {
+                                user &&
+                                <p className=' text-base text-black'>{user.email}</p>
+                            }
                         </div>
                         {/* Response Rates */}
                     </div>
@@ -59,6 +64,7 @@ export default function DashBoard() {
                 </div>
             </div>
             {/* DashBoard 3/4 Coloum End */}
+        </div>
         </>
     )
 }

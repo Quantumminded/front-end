@@ -1,17 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import LogoutButton from "./Components/Login/LogoutButton.jsx";
-export default function SideBar({ setJwttoken }) {
+export default function SideBar() {
   return (<nav className="bg-gray-800 h-screen">
     <ul className="py-4 px-2">
       <li className="mb-4">
-        <NavLink to="/" className="block font-semibold text-gray-400 hover:text-white" activeClassName="text-white">
-          Home
+        <NavLink to="/Profile" className="block font-semibold text-gray-400 hover:text-white" activeClassName="text-white">
+          Profile
         </NavLink>
       </li>
       <li className="mb-4">
-        <NavLink to="/ClientProfile" className="block font-semibold text-gray-400 hover:text-white" activeClassName="text-white">
-          Profile
+        <NavLink to="/Dashboard" className="block font-semibold text-gray-400 hover:text-white" activeClassName="text-white">
+          Dashboard
         </NavLink>
       </li>
       <li className="mb-4">
@@ -25,7 +25,7 @@ export default function SideBar({ setJwttoken }) {
         </NavLink>
       </li>
       <li className="mb-4">
-        <LogoutButton setJwttoken={setJwttoken} className="block font-semibold text-gray-400 hover:text-white" />
+        <LogoutButton className="block font-semibold text-gray-400 hover:text-white" />
       </li>
     </ul>
   </nav>);

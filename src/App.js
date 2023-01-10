@@ -46,6 +46,7 @@ function App() {
   //Context we will user Through out the App
   const contextValue = {
     token: jwttoken,
+    setJwttoken: setJwttoken,
     user: user,
     setUser: setUser,
     authorized: authorized,
@@ -108,16 +109,9 @@ function App() {
               <Route path="/HomePage4" element={<HomePage4 />} />
               <Route path="/Category/:id" element={<Category />} />
               <Route path="/About" element={<About />} />
-              <Route
-                path="/SignIn"
-                element={<SignIn setJwttoken={setJwttoken} />}
-              />
+              <Route path="/SignIn" element={<SignIn />} />
               <Route path="/WorkerPorfile" element={<WorkerProfile />} />
-              <Route
-                path="/Profile"
-                setJwttoken={setJwttoken}
-                element={<ClientProfile />}
-              />
+              <Route path="/Profile" element={<ClientProfile />} />
               <Route path="Post" element={<PostRequest />} />
               {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>
