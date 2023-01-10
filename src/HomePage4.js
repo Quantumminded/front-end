@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 
 // // // IMPORT COMPONENT
 import HomeCard2 from "./Components/HomePage/HomeCard2";
