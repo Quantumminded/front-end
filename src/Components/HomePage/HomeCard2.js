@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function HomeCard2({ card }) {
-
+  
 
   return (
     <>
@@ -71,7 +71,7 @@ function HomeCard2({ card }) {
                 (based on 234 ratings)
               </span>
             </div>
-            <Link to='/ProductDetails'>
+            <Link to={`/ProductDetails/${card.id}`}>
               <div className="text-center underline">
                 More Details
               </div>

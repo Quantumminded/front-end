@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 function HomeCard({ language }) {
   
@@ -42,7 +42,7 @@ function HomeCard({ language }) {
               {/* PROFILE PIC  */}
             <div className="avatar flex justify-end ml-2">
                 <div className="w-12 rounded-full">
-                  <img src="https://placeimg.com/192/192/people" />
+                  <img src="https://placeimg.com/192/192/people" alt="img"/>
                 </div>
               </div>
             </div>

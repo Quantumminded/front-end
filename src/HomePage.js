@@ -6,8 +6,6 @@ import HomeCard2 from "./Components/HomePage/HomeCard2";
 import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
 import CategoryButtons from "./Components/HomePage/CategoryButtons";
 
-import useCookies from "react-cookie/cjs/useCookies";
-
 function HomePage() {
     const [cards, setCards] = useState([]);
 

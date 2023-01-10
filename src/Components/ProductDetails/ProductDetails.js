@@ -1,16 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function ProductDetails() {
+  let { id } = useParams();
+  // Use the `id` parameter to make a request to the API to retrieve the product details
+  // useEffect(() => {
+  //   async function fetchProduct() {
+  //     let response = await fetch(`https://super-secret-backend.onrender.com/api/task/all/${id}`);
+  //     let product = await response.json();
+  //     console.log(product); // Log the product details to the console
+  //   }
+  //   fetchProduct();
+  // }, [id]); // Only refetch the product when the `id` parameter changes
+
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    async function fetchCards() {
+      try {
+        const response = await fetch(`https://super-secret-backend.onrender.com/api/task/all/${id}`);
+        const data = await response.json();
+        setCards(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchCards();
+  }, [id]);
+
+  console.log(cards)
   return (
-    <section>
+    <section key={id}>
       <div className="relative mx-auto max-w-screen-xl px-4 py-8">
         <div>
-          <h1 className="text-2xl font-bold lg:text-3xl">
-            Documents Translation
-          </h1>
+          <h1 className="text-2xl font-bold lg:text-3xl">Documents Translation</h1>
 
-          <p className="mt-1 text-sm text-gray-500">SKU: #012345</p>
+          <p className="mt-1 text-sm text-gray-500">SKU: #000{}</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-4 lg:items-start">
@@ -52,30 +79,30 @@ function ProductDetails() {
                 <legend className="text-lg font-bold">Type of documents</legend>
 
                 <div className="mt-2 flex gap-1">
-                  <label for="material_cotton" className="cursor-pointer">
+                  <label className="cursor-pointer">
                     <input
                       type="radio"
                       id="material_cotton"
                       name="material"
                       className="peer sr-only"
-                      checked
+                      
                     />
 
-                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
-                      Bank
+                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs ">
+                    1215
                     </span>
                   </label>
 
-                  <label for="material_wool" className="cursor-pointer">
+                  <label className="cursor-pointer">
                     <input
                       type="radio"
                       id="material_wool"
                       name="material"
                       className="peer sr-only"
-                      checked
+                      
                     />
 
-                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
+                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs ">
                       Legal
                     </span>
                   </label>
@@ -86,7 +113,7 @@ function ProductDetails() {
                 {/* PROFILE PIC */}
                 <div className="avatar">
                   <div className="w-16 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" />
+                    <img src="https://placeimg.com/192/192/people" alt='profile img' />
                   </div>
                 </div>
                 <p className="text-sm">
@@ -107,17 +134,10 @@ function ProductDetails() {
                 <p className="text-xl font-bold">$199.99/h</p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full rounded bg-red-700 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white"
-              >
-                Add to cart
-              </button>
-
               <Link to="/Checkout">
                 <button
                   type="button"
-                  className="w-full rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  className="w-full mt-5 rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
                 >
                   Book Now
                 </button>
@@ -143,16 +163,6 @@ function ProductDetails() {
                 <br></br>
               </p>
 
-              <h2>ABOUT ME</h2>
-
-              <p>
-                As a freelancer translator, I am skilled in translating written
-                documents or spoken language from one language to another. I
-                work with a variety of clients and industries, using my language
-                skills and cultural knowledge to accurately communicate the
-                meaning and intent of the original text. I also have to research
-                and use specialized terminology
-              </p>
             </div>
           </div>
         </div>
