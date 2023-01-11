@@ -103,8 +103,8 @@ function App() {
               <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/HomePage3" element={<HomePage3 />} />
               <Route path="/HomePage4" element={<HomePage4 />} />
-              <Route path="/Category/:id" element={<Category />} />
-              <Route path="/Category2/:id" element={<Category2 />} />
+              <Route path="/Category/:category" element={<Category />} />
+              <Route path="/Category2/:category" element={<Category2 />} />
               <Route path="/About" element={<About />} />
               <Route
                 path="/SignIn"
