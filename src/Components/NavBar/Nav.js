@@ -74,6 +74,10 @@ function Nav() {
                 <Link to="/TeamSection">Contact US</Link>
               </li>
             </ul>
+           {authorized ? (
+            <div>
+            </div>
+           ) : (
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
               <Link
                 to="/SignIn"
@@ -82,6 +86,8 @@ function Nav() {
                 Sign in
               </Link>
             </div>
+           )}
+
           </div>
         </div>
         {authorized ? (
