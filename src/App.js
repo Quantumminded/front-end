@@ -27,7 +27,7 @@ import Checkout from "./Checkout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 //Module for various cookie settings
-import { CookiesProvider } from "react-cookie";
+import { CookiesProvider, useCookies } from "react-cookie";
 //Notification Toasts
 import { ToastContainer } from "react-toastify";
 import { UserContext } from "./utils/UserContext";
@@ -36,13 +36,18 @@ import toastMessage from "./Components/notification/toastMessage";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import PostRequest from "./PostRequest";
 function App() {
+  //Cookies
+  const [cookies, setCookie] = useCookies(["token"]);
   //authetication of user for the whole app
-  const [jwttoken, setJwttoken] = useState(localStorage.getItem("token"));
+  const [jwttoken, setJwttoken] = useState(
+    cookies.token || localStorage.getItem("token")
+  );
   const [user, setUser] = useState();
   const [authorized, setAuthorized] = useState(false);
   //Context we will user Through out the App
   const contextValue = {
     token: jwttoken,
+    setJwttoken: setJwttoken,
     user: user,
     setUser: setUser,
     authorized: authorized,
@@ -106,16 +111,9 @@ function App() {
               <Route path="/Category/:category" element={<Category />} />
               <Route path="/Category2/:category" element={<Category2 />} />
               <Route path="/About" element={<About />} />
-              <Route
-                path="/SignIn"
-                element={<SignIn setJwttoken={setJwttoken} />}
-              />
+              <Route path="/SignIn" element={<SignIn />} />
               <Route path="/WorkerPorfile" element={<WorkerProfile />} />
-              <Route
-                path="/Profile"
-                setJwttoken={setJwttoken}
-                element={<ClientProfile />}
-              />
+              <Route path="/Profile" element={<ClientProfile />} />
               <Route path="Post" element={<PostRequest />} />
               {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>

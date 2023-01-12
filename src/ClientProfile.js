@@ -1,9 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import LogoutButton from "./Components/Login/LogoutButton.jsx";
-import ImageUpload from "./Components/upload/ImageUpload.jsx";
-import useContextHook from "./utils/customContextHook.js";
 
+import ImageUpload from "./Components/upload/ImageUpload.jsx";
+import SideBar from "./SideBar.jsx";
+import useContextHook from "./utils/customContextHook.js";
 function ClientProfile({ setJwttoken }) {
   const { user } = useContextHook();
   return (
@@ -13,52 +12,7 @@ function ClientProfile({ setJwttoken }) {
         <>
           <div className="flex gap-4">
             <div className="w-1/5">
-              <nav className="bg-gray-800 h-screen">
-                <ul className="py-4 px-2">
-                  <li className="mb-4">
-                    <NavLink
-                      to="/"
-                      className="block font-semibold text-gray-400 hover:text-white"
-                      activeClassName="text-white"
-                    >
-                      Home
-                    </NavLink>
-                  </li>
-                  <li className="mb-4">
-                    <NavLink
-                      to="/ClientProfile"
-                      className="block font-semibold text-gray-400 hover:text-white"
-                      activeClassName="text-white"
-                    >
-                      Profile
-                    </NavLink>
-                  </li>
-                  <li className="mb-4">
-                    <NavLink
-                      to="/messages"
-                      className="block font-semibold text-gray-400 hover:text-white"
-                      activeClassName="text-white"
-                    >
-                      Messages
-                    </NavLink>
-                  </li>
-                  <li className="mb-4">
-                    <NavLink
-                      to="/settings"
-                      className="block font-semibold text-gray-400 hover:text-white"
-                      activeClassName="text-white"
-                    >
-                      Settings
-                    </NavLink>
-                  </li>
-                  <li className="mb-4">
-                    <LogoutButton
-                      setJwttoken={setJwttoken}
-                      className="block font-semibold text-gray-400 hover:text-white"
-                    />
-                  </li>
-                </ul>
-              </nav>
+<SideBar/>
             </div>
             <div className="w-11/12 mx-auto p-4">
               <div className="rounded relative mt-8 h-48 flex">
@@ -236,7 +190,7 @@ function ClientProfile({ setJwttoken }) {
                     Submit
                   </button>
                 </form>
-                {/* <ImageUpload /> */}
+                <ImageUpload />
               </div>
             </div>
           </div>

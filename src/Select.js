@@ -18,8 +18,17 @@ function Select() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-x-8 md:gap-6 gap-4 lg:mt-12 md:mt-9 mt-6">
-            <SelectionCard type={"Get something Translated"} path={"Request"} />
-            <SelectionCard type={"Offer your Service"} path={"Offer"} />
+            {/* //Selection cards take type description path and image as props */}
+            <SelectionCard
+              type={"Request"}
+              path={"Request"}
+              image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_from_a_camera.jpg/1200px-Black_from_a_camera.jpg"
+            />
+            <SelectionCard
+              type={"Offer"}
+              path={"Offer"}
+              image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_from_a_camera.jpg/1200px-Black_from_a_camera.jpg"
+            />
           </div>
         </div>
       </div>

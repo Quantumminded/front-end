@@ -18,19 +18,20 @@ export function Type({ handleChange, type }) {
       >
         {type == "document" && (
           <>
-            <option value="call">Agentur für Arbeit</option>
-            <option value="dokument">Rental Contract</option>
-            <option value="translation">Taxes</option>
+            <option value="forms">Forms</option>
+            <option value="documents">Documents</option>
+            <option value="application">Application</option>
+            <option value="late_submissions">late submissions</option>
+            <option value="contract">Contract</option>
           </>
         )}
         {type == "call" && (
           <>
-            <option value="call">Kita</option>
-            <option value="dokument">Work</option>
-            <option value="translation">MakeAppointment</option>
+            <option value="outbound">Do a Call</option>
+            <option value="inbound">Recieve a Call</option>
           </>
         )}
-                {type == "translation" && (
+        {type == "translation" && (
           <>
             <option value="call">Kita</option>
             <option value="dokument">Work</option>
