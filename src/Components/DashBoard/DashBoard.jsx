@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import SideBar from '../../SideBar.jsx'
 import { client } from '../../utils/client.mjs'
+
 import useContextHook from '../../utils/customContextHook'
-import HomeCard from '../HomePage/HomeCard'
 import ProfileIcon from '../notification/Profile/ProfileIcon'
+import DashBoardCard from './DashBoardCard.js'
 import DashBoardTabs from './DashBoardTabs.jsx'
 import OnGoinDashBoard from './OnGoinDashBoard.jsx'
 
 export default function DashBoard() {
     const { user, token } = useContextHook()
+    const [userOpenTask, setUserOpenTask] = useState()
     const [activeTab, setActiveTab] = useState('Dashboard')
     //Gets All requests
     // useEffect(() => {
@@ -17,9 +19,26 @@ export default function DashBoard() {
 
     //TODO: FINISH THE BACKEND AND FRONTEND CONNECTION FOR THE USERS TASKS
     useEffect(() => {
-        client(token).get('user/task').then(data => console.log(data))
-
+        fetchTask()
     }, [])
+    async function fetchTask() {
+        try {
+            const { data } = await client(token).get('user/task')
+            setUserOpenTask(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function acceptedTasks() {
+        try {
+            const { data } = await client(token).get('user/task')
+            setUserOpenTask(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     return (
         <><div className='container flex'>
@@ -32,8 +51,8 @@ export default function DashBoard() {
                             <ProfileIcon />
                             {/* Image + Name */}
                             {
-                                user &&
-                                <p className=' text-base text-black'>{user.email}</p>
+                                user && <><p className='text-sm text-black'>{user.firstName + ' ' + user.lastName}</p>
+                                    <p className='text-sm text-black'>{user.email}</p></>
                             }
                         </div>
                         {/* Response Rates */}
@@ -50,7 +69,7 @@ export default function DashBoard() {
                     <DashBoardTabs setActiveTab={setActiveTab} activeTab={activeTab} />
                     <div className=' w-full h-screen bg-emerald-600 flex gap-4 p-4'>
                         {/* Active Offers */}
-                        {activeTab == "Dashboard" && <HomeCard />}
+                        {activeTab == "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
                         {/* ACCEPTED TASK/REQUESTS*/}
                         {activeTab == "Active" && <OnGoinDashBoard />}
                         {/* History of All the Work */}
