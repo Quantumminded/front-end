@@ -42,7 +42,7 @@ function DashBoardCard({ language, task, user }) {
               {/* PROFILE PIC  */}
               <div className="avatar flex justify-end ml-2">
                 <div className="w-12 rounded-full">
-                  <img src={user.image} alt="img" />
+                  <img src={user && user.image} alt="img" />
                 </div>
               </div>
             </div>
