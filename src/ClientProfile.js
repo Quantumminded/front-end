@@ -132,7 +132,6 @@ function ClientProfile() {
                     <input
                       value={user.email}
                       ref={email}
-                      onChange={handleUserChange}
                       type="email"
                       name="email"
                       id="floating_email"
@@ -153,15 +152,16 @@ function ClientProfile() {
                       <input
                         value={user.firstname}
                         ref={firstname}
+                        onChange={handleUserChange}
                         type="text"
-                        name="floating_first_name"
+                        name="firstname"
                         id="floating_first_name"
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         required
                       />
                       <label
-                        htmlFor="floating_first_name"
+                        htmlFor="firstname"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         First name
@@ -171,15 +171,16 @@ function ClientProfile() {
                       <input
                         value={user.lastname}
                         ref={lastname}
+                        onChange={handleUserChange}
                         type="text"
-                        name="floating_last_name"
-                        id="floating_last_name"
+                        name="lastname"
+                        id="lastname"
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         required
                       />
                       <label
-                        htmlFor="floating_last_name"
+                        htmlFor="lastname"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Last name
@@ -191,16 +192,17 @@ function ClientProfile() {
                       <input
                         value={user.phonenumber}
                         ref={phonenumber}
+                        onChange={handleUserChange}
                         type="tel"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        name="floating_phone"
-                        id="floating_phone"
+                        name="phonenumber"
+                        id="phonenumber"
                         className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         required
                       />
                       <label
-                        htmlFor="floating_phone"
+                        htmlFor="phonenumber"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Phone number
@@ -210,6 +212,7 @@ function ClientProfile() {
                       <input
                         value={user.address}
                         ref={address}
+                        onChange={handleUserChange}
                         type="text"
                         name="address"
                         id="address"
@@ -218,7 +221,7 @@ function ClientProfile() {
                         required
                       />
                       <label
-                        htmlFor="floating_company"
+                        htmlFor="address"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Address
@@ -228,6 +231,7 @@ function ClientProfile() {
                       <input
                         value={user.languages}
                         ref={languages}
+                        onChange={handleUserChange}
                         type="text"
                         name="languages"
                         id="languages"
@@ -236,7 +240,7 @@ function ClientProfile() {
                         required
                       />
                       <label
-                        htmlFor="floating_company"
+                        htmlFor="languages"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Languages
