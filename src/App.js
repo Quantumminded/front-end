@@ -19,6 +19,7 @@ import DocumentForm from "./DocumentForm";
 import CallForm from "./CallForm";
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
+import Category2 from "./Category2";
 import About from "./About";
 import TeamSection from "./Components/About/TeamSection";
 import Privacy from "./Components/PrivacyPolicy/Privacy";
@@ -107,7 +108,8 @@ function App() {
               <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/HomePage3" element={<HomePage3 />} />
               <Route path="/HomePage4" element={<HomePage4 />} />
-              <Route path="/Category/:id" element={<Category />} />
+              <Route path="/Category/:category" element={<Category />} />
+              <Route path="/Category2/:category" element={<Category2 />} />
               <Route path="/About" element={<About />} />
               <Route path="/SignIn" element={<SignIn />} />
               <Route path="/WorkerPorfile" element={<WorkerProfile />} />
