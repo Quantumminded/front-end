@@ -15,6 +15,7 @@ export default function OnGoinDashBoard({ data }) {
         </thead>
         <tbody className="divide-y divide-gray-100 border-t border-gray-100">
           <TabelRow />
+
         </tbody>
       </table>
     </div>
