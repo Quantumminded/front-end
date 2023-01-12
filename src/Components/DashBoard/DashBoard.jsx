@@ -11,6 +11,7 @@ import OnGoinDashBoard from './OnGoinDashBoard.jsx'
 export default function DashBoard() {
     const { user, token } = useContextHook()
     const [userOpenTask, setUserOpenTask] = useState()
+    const [AllAcceptedTask, setAllAcceptedTask] = useState()
     const [activeTab, setActiveTab] = useState('Dashboard')
     //Gets All requests
     // useEffect(() => {
@@ -20,6 +21,7 @@ export default function DashBoard() {
     //TODO: FINISH THE BACKEND AND FRONTEND CONNECTION FOR THE USERS TASKS
     useEffect(() => {
         fetchTask()
+        acceptedTasks()
     }, [])
     async function fetchTask() {
         try {
@@ -32,8 +34,8 @@ export default function DashBoard() {
 
     async function acceptedTasks() {
         try {
-            const { data } = await client(token).get('user/task')
-            setUserOpenTask(data)
+            const { data } = await client(token).get('/task/accepted')
+            setAllAcceptedTask(data)
         } catch (error) {
             console.log(error)
         }
@@ -71,7 +73,7 @@ export default function DashBoard() {
                         {/* Active Offers */}
                         {activeTab == "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
                         {/* ACCEPTED TASK/REQUESTS*/}
-                        {activeTab == "Active" && <OnGoinDashBoard />}
+                        {activeTab == "Active" && <OnGoinDashBoard AllAcceptedTask={AllAcceptedTask} />}
                         {/* History of All the Work */}
                         {activeTab == "Finished" && <OnGoinDashBoard />}
 

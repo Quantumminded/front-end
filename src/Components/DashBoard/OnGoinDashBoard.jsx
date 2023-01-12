@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function OnGoinDashBoard({ data }) {
+export default function OnGoinDashBoard({ AllAcceptedTask }) {
+  console.log(AllAcceptedTask)
   return (
     <div className="w-full overflow-hidden rounded-lg border border-gray-200 shadow-md bg-gray-50">
       <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
@@ -14,7 +15,8 @@ export default function OnGoinDashBoard({ data }) {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-100 border-t border-gray-100">
-          <TabelRow />
+          {AllAcceptedTask && AllAcceptedTask.map((ele, i) => <TabelRow data={ele} key={i} />)}
+
 
         </tbody>
       </table>
@@ -24,27 +26,31 @@ export default function OnGoinDashBoard({ data }) {
 
 
 //TabelRow for The Table componnent
-function TabelRow({ user, accepted }) {
+function TabelRow({ data }) {
+  console.log(data)
+  const { lastName, firstName, email, image, status, title, task_languages
+    , time, type, user_language
+  } = data
   // if (user)
   //   const { email, image, firstName, lastName } = user;
   return (<tr className="hover:bg-gray-50">
     <th className="flex gap-3 px-6 py-4 font-normal text-gray-900">
       <div className="relative h-10 w-10">
-        <img className="h-full w-full rounded-full object-cover object-center" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+        <img className="h-full w-full rounded-full object-cover object-center" src={image} alt="" />
         <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
       </div>
       <div className="text-sm">
-        <div className="font-medium text-gray-700">Steven Jobs</div>
-        <div className="text-gray-400">jobs@sailboatui.com</div>
+        <div className="font-medium text-gray-700">{`${firstName} ${lastName}`}</div>
+        <div className="text-gray-400">{email}</div>
       </div>
     </th>
     <td className="px-6 py-4">
-<StatusLabel     />
+      <StatusLabel status={status} />
     </td>
     <td className="px-6 py-4">Product Designer</td>
     <td className="px-6 py-4">
       <div className="flex gap-2">
-<TypeLabel     />
+        <TypeLabel user_language={user_language} />
       </div>
     </td>
     <td className="px-6 py-4">
@@ -64,16 +70,19 @@ function TabelRow({ user, accepted }) {
   </tr>);
 }
 
-    function TypeLabel({}) {
-      return (<span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">
-          Design
-        </span>);
-    }
+function TypeLabel({ user_language }) {
+  return (<>{user_language && user_language.map((ele, i) =>
+    <span key={i} className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">
+      {ele}
+    </span>
+  )}</>)
 
-    function StatusLabel({}) {
-      return (<span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">
-        <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
-        Active
-      </span>);
-    }
-    
+
+}
+
+function StatusLabel({ status }) {
+  return (<span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">
+    <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
+    {status}
+  </span>);
+}
