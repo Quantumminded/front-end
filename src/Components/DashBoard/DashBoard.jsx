@@ -1,57 +1,91 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import SideBar from '../../SideBar.jsx'
+import { client } from '../../utils/client.mjs'
+
 import useContextHook from '../../utils/customContextHook'
-import HomeCard from '../HomePage/HomeCard'
 import ProfileIcon from '../notification/Profile/ProfileIcon'
+import DashBoardCard from './DashBoardCard.js'
+import DashBoardTabs from './DashBoardTabs.jsx'
+import OnGoinDashBoard from './OnGoinDashBoard.jsx'
 
 export default function DashBoard() {
     const { user, token } = useContextHook()
+    const [userOpenTask, setUserOpenTask] = useState()
+    const [AllAcceptedTask, setAllAcceptedTask] = useState()
+    const [activeTab, setActiveTab] = useState('Dashboard')
+    //Gets All requests
+    // useEffect(() => {
+    //     client(token).get(`/requests/all/${user.languages}`)
+    // })
+
+    //TODO: FINISH THE BACKEND AND FRONTEND CONNECTION FOR THE USERS TASKS
+    useEffect(() => {
+        fetchTask()
+        acceptedTasks()
+    }, [])
+    async function fetchTask() {
+        try {
+            const { data } = await client(token).get('user/task')
+            setUserOpenTask(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function acceptedTasks() {
+        try {
+            const { data } = await client(token).get('/task/accepted')
+            setAllAcceptedTask(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     return (
-        <div className='container mx-auto flex 	min-h-screen'>
-            <div className=' w-1/4 bg-orange-500'>
-                {/* Profile */}
-                <div className='container'>
-                    <div className='flex items-center flex-col p-4'>
-                        <ProfileIcon />
-                        {/* Image + Name */}
-                        <p className=' text-base text-black'>{user && user.email}</p>
+        <><div className='container flex'>
+            <SideBar />
+            <div className='container mx-auto flex 	min-h-screen'>
+                {/* Profile 1/4Coloum */}
+                <div className=' w-1/4 bg-slate-700'>
+                    <div className='container'>
+                        <div className='flex items-center flex-col p-4'>
+                            <ProfileIcon />
+                            {/* Image + Name */}
+                            {
+                                user && <><p className='text-sm text-black'>{user.firstName + ' ' + user.lastName}</p>
+                                    <p className='text-sm text-black'>{user.email}</p></>
+                            }
+                        </div>
+                        {/* Response Rates */}
                     </div>
-                    {/* Response Rates */}
+                    {/* Inbox */}
+
+                    {/* Link Your Socialmedia */}
                 </div>
-                {/* Inbox */}
+                {/* Profile 1/4Coloum END*/}
+                {/* DashBoard 3/4 Coloum */}
 
-                {/* Link Your Socialmedia */}
+                {/* TABS */}
+                <div className='w-3/4'>
+                    <DashBoardTabs setActiveTab={setActiveTab} activeTab={activeTab} />
+                    <div className=' w-full h-screen flex gap-4 p-4'>
+                        {/* Active Offers */}
+                        {activeTab == "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
+                        {/* ACCEPTED TASK/REQUESTS*/}
+                        {activeTab == "Active" && <OnGoinDashBoard AllAcceptedTask={AllAcceptedTask} />}
+                        {/* History of All the Work */}
+                        {activeTab == "Finished" && <OnGoinDashBoard />}
+
+
+
+
+
+                    </div>
+                </div>
             </div>
-            <div className=' w-3/4 bg-emerald-600 grid grid-cols-4 gap-4 p-4'>
-
-                {/* Active Offers */}
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-
-                <HomeCard />
-
-            </div>
+            {/* DashBoard 3/4 Coloum End */}
         </div>
+        </>
     )
 }
