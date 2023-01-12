@@ -1,19 +1,61 @@
-import React from "react";
-
-import ImageUpload from "./Components/upload/ImageUpload.jsx";
+import React, { useRef, useEffect, useState } from "react";
+import { client } from "./utils/client.mjs";
+// import ImageUpload from "./Components/upload/ImageUpload.jsx";
 import SideBar from "./SideBar.jsx";
 import useContextHook from "./utils/customContextHook.js";
-function ClientProfile({ setJwttoken }) {
-  const { user } = useContextHook();
+import toastMessage from "./Components/notification/toastMessage.js";
+function ClientProfile() {
+  const { user, token, setUser } = useContextHook();
+  const fileInput = useRef();
+  const email = useRef();
+  const firstname = useRef();
+  const lastname = useRef();
+  const address = useRef();
+  const phonenumber = useRef();
+  const languages = useRef();
+
+  const [imageFile, setImageFile] = useState();
+  //Image upload logic
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const file = fileInput.current.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    if ((event.target.type = "submit"))
+      client(token)
+        .post("/upload", formData)
+        .then((response) => {
+          toastMessage("info", response.data);
+        })
+        .catch((error) => {
+          toastMessage("warning", error);
+        });
+  };
+
+  function handleUserChange(event) {
+    setUser({
+      ...user,
+      [event.target.name]: event.target.value,
+    });
+  }
+  const handleImage = () => {
+    fileInput.current.click();
+  };
   return (
     //TODO:Finish ClientProfile
     <>
       {user && (
         <>
           <div className="flex gap-4">
-            <div className="w-1/5">
-<SideBar/>
-            </div>
+            <SideBar />
             <div className="w-11/12 mx-auto p-4">
               <div className="rounded relative mt-8 h-48 flex">
                 <img
@@ -45,11 +87,23 @@ function ClientProfile({ setJwttoken }) {
                   </div>
                 </div>
                 <div className="w-full h-full rounded-full bg-cover bg-center bg-no-repeat relative bottom-0 -mb-10 ml-12 shadow flex items-center">
-                  <img
-                    src={user.image}
-                    alt="profile"
-                    className="relative h-20 w-20 object-cover rounded-full shadow "
-                  />
+                  <div>
+                    <span href="#" onClick={handleImage}>
+                      <img
+                        src={user.image}
+                        alt="profile"
+                        className="relative h-20 w-20 object-cover rounded-full shadow hover:opacity-75"
+                      />
+                    </span>
+
+                    <button
+                      type="submit"
+                      onClick={handleSubmit}
+                      className="w-full"
+                    >
+                      Upadate
+                    </button>
+                  </div>
                   <div className="cursor-pointer flex flex-col justify-center items-center z-10 text-gray-100">
                     {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +131,10 @@ function ClientProfile({ setJwttoken }) {
                   <div className="relative z-0 mb-6 w-full group">
                     <input
                       value={user.email}
+                      ref={email}
+                      onChange={handleUserChange}
                       type="email"
-                      name="floating_email"
+                      name="email"
                       id="floating_email"
                       className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
@@ -86,7 +142,7 @@ function ClientProfile({ setJwttoken }) {
                       disabled
                     />
                     <label
-                      for="floating_email"
+                      htmlFor="floating_email"
                       className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                     >
                       Email address
@@ -95,7 +151,8 @@ function ClientProfile({ setJwttoken }) {
                   <div className="grid md:grid-cols-2 md:gap-6">
                     <div className="relative z-0 mb-6 w-full group">
                       <input
-                        value={user.firstName}
+                        value={user.firstname}
+                        ref={firstname}
                         type="text"
                         name="floating_first_name"
                         id="floating_first_name"
@@ -104,7 +161,7 @@ function ClientProfile({ setJwttoken }) {
                         required
                       />
                       <label
-                        for="floating_first_name"
+                        htmlFor="floating_first_name"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         First name
@@ -112,7 +169,8 @@ function ClientProfile({ setJwttoken }) {
                     </div>
                     <div className="relative z-0 mb-6 w-full group">
                       <input
-                        value={user.lastName}
+                        value={user.lastname}
+                        ref={lastname}
                         type="text"
                         name="floating_last_name"
                         id="floating_last_name"
@@ -121,7 +179,7 @@ function ClientProfile({ setJwttoken }) {
                         required
                       />
                       <label
-                        for="floating_last_name"
+                        htmlFor="floating_last_name"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Last name
@@ -132,6 +190,7 @@ function ClientProfile({ setJwttoken }) {
                     <div className="relative z-0 mb-6 w-full group">
                       <input
                         value={user.phonenumber}
+                        ref={phonenumber}
                         type="tel"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         name="floating_phone"
@@ -141,7 +200,7 @@ function ClientProfile({ setJwttoken }) {
                         required
                       />
                       <label
-                        for="floating_phone"
+                        htmlFor="floating_phone"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Phone number
@@ -150,6 +209,7 @@ function ClientProfile({ setJwttoken }) {
                     <div className="relative z-0 mb-6 w-full group">
                       <input
                         value={user.address}
+                        ref={address}
                         type="text"
                         name="address"
                         id="address"
@@ -158,7 +218,7 @@ function ClientProfile({ setJwttoken }) {
                         required
                       />
                       <label
-                        for="floating_company"
+                        htmlFor="floating_company"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Address
@@ -167,6 +227,7 @@ function ClientProfile({ setJwttoken }) {
                     <div className="relative z-0 mb-6 w-full group">
                       <input
                         value={user.languages}
+                        ref={languages}
                         type="text"
                         name="languages"
                         id="languages"
@@ -175,7 +236,7 @@ function ClientProfile({ setJwttoken }) {
                         required
                       />
                       <label
-                        for="floating_company"
+                        htmlFor="floating_company"
                         className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                       >
                         Languages
@@ -190,7 +251,11 @@ function ClientProfile({ setJwttoken }) {
                     Submit
                   </button>
                 </form>
-                <ImageUpload />
+                {/* ImageUploadHidden */}
+                <form onSubmit={handleSubmit} style={{ display: "none" }}>
+                  <input type="file" ref={fileInput} accept="image/*" />
+                  <button type="submit">Upload</button>
+                </form>
               </div>
             </div>
           </div>

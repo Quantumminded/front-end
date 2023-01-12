@@ -2,8 +2,8 @@ import React, { useRef } from 'react';
 import { client } from '../../utils/client.mjs';
 import useContextHook from '../../utils/customContextHook.js';
 import toastMessage from '../notification/toastMessage.js';
-const ImageUpload = () => {
-    const fileInput = useRef(null);
+const ImageUpload = ({ fileInput }) => {
+
     const { token } = useContextHook()
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -28,7 +28,7 @@ const ImageUpload = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ display: "none" }} >
             <input type="file" ref={fileInput} accept="image/*" />
             <button type="submit">Upload</button>
         </form>

@@ -29,7 +29,7 @@ export default function OnGoinDashBoard({ AllAcceptedTask }) {
 //TabelRow for The Table componnent
 function TabelRow({ data }) {
   if (data) {
-    const { lastName, firstName, email, image, status, title, task_languages
+    const { lastname, firstname, email, image, status, title, task_languages
       , time, type, user_language
     } = data
 
@@ -41,7 +41,7 @@ function TabelRow({ data }) {
           <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
         </div>
         <div className="text-sm">
-          <div className="font-medium text-gray-700">{`${firstName} ${lastName}`}</div>
+          <div className="font-medium text-gray-700">{`${firstname} ${lastname}`}</div>
           <div className="text-gray-400">{email}</div>
         </div>
       </th>
