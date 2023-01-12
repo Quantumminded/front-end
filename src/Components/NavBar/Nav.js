@@ -82,6 +82,10 @@ function Nav() {
                   className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1 self-center md:hidden lg:hidden sm:block">
                   Get Started
                 </Link>
+                <div className=" md:hidden lg:hidden sm:flex sm:my-3 sm:space-x-2">
+                  <NotificationCenter />
+                  <ProfileIcon />
+                </div>
               </div>
             </>
            ) : (
@@ -98,15 +102,17 @@ function Nav() {
           </div>
         </div>
         {authorized ? (
-          <div className="flex gap-4 p-3">
+          <div className="flex gap-4 ">
             <Link
               to="/Select"
               className="hidden md:flex lg:flex px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1 self-center "
             >
               Get Started
             </Link>
+            <div className="hidden lg:flex md:flex">
             <NotificationCenter />
             <ProfileIcon />
+            </div>
           </div>
         ) : (
           <div className="hidden space-x-2 md:inline-block">
