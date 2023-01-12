@@ -47,7 +47,7 @@ export default function DashBoard() {
             <SideBar />
             <div className='container mx-auto flex 	min-h-screen'>
                 {/* Profile 1/4Coloum */}
-                <div className=' w-1/4 bg-orange-500'>
+                <div className=' w-1/4 bg-slate-700'>
                     <div className='container'>
                         <div className='flex items-center flex-col p-4'>
                             <ProfileIcon />
@@ -69,7 +69,7 @@ export default function DashBoard() {
                 {/* TABS */}
                 <div className='w-3/4'>
                     <DashBoardTabs setActiveTab={setActiveTab} activeTab={activeTab} />
-                    <div className=' w-full h-screen bg-emerald-600 flex gap-4 p-4'>
+                    <div className=' w-full h-screen flex gap-4 p-4'>
                         {/* Active Offers */}
                         {activeTab == "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
                         {/* ACCEPTED TASK/REQUESTS*/}
