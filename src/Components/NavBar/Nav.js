@@ -79,7 +79,7 @@ function Nav() {
               <div className="sm:pt-3 ">
                 <Link
                   to="/Select"
-                  className="px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-gray-800 hover:text-y1 self-center md:hidden lg:hidden sm:block">
+                  className="px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y1 self-center md:hidden lg:hidden sm:block">
                   Get Started
                 </Link>
                 <div className=" md:hidden lg:hidden sm:flex sm:my-3 sm:space-x-2">
@@ -92,7 +92,7 @@ function Nav() {
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
               <Link
                 to="/SignIn"
-                className="inline-block w-full mb-1 px-4 py-2 text-center text-b1 bg-y1 rounded-md shadow hover:bg-b2 hover:text-y2 "
+                className="inline-block w-full mb-1 px-4 py-2 text-center text-b1 bg-y1 rounded-md shadow hover:bg-b3 hover:text-y2 "
               >
                 Sign in
               </Link>
@@ -105,11 +105,11 @@ function Nav() {
           <div className="flex gap-4 ">
             <Link
               to="/Select"
-              className="hidden md:flex lg:flex px-4 py-2 text-b1 bg-y1 rounded-md shadow hover:bg-b2 hover:text-y2 self-center "
+              className="hidden md:flex lg:flex px-4 py-2 text-b1 bg-y1 rounded-md shadow hover:bg-b3 hover:text-y2 self-center "
             >
               Get Started
             </Link>
-            <div className="hidden lg:flex md:flex">
+            <div className="hidden lg:flex md:flex gap-2">
             <NotificationCenter />
             <ProfileIcon />
             </div>
