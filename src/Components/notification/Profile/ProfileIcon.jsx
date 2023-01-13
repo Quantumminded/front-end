@@ -29,7 +29,7 @@ export default function ProfileIcon() {
         <>
             <div className="flex flex-1 px-2">
                 <div className="dropdown dropdown-end">
-                    <div tabIndex={0} id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" className="overflow-hidden relative w-12 h-11 rounded bg-gray-100 dark:bg-gray-600">
+                    <div tabIndex={0} id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" className="overflow-hidden relative w-12 h-12 rounded bg-gray-100 dark:bg-gray-600">
                         <img className="w-full h-full object-cover rounded absolute shadow flex items-center justify-center" src={user.image} alt="Default avatar" />                    </div>
                     <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                         <li><Link to='/Profile'>Profile</Link></li>
