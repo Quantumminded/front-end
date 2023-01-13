@@ -3,31 +3,26 @@ import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
-    <div className="bg-b2">
-      {/* Hero section big img */}
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1619418602850-35ad20aa1700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80")`,
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">
-              Don't get lost in translation
+    <div className="bg-white">
+      {/* Hero section */}
+      <div className="bg-gray-100">
+        <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
+          <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-b2 font-black leading-7 md:leading-10">
+              Don't get lost in <br></br>
+              <span className="text-y2">Translations</span>
+              
             </h1>
-            <p className="mb-5">
-              Welcome to our translation services website! We are a team of
-              professional freelancer translators dedicated to providing
-              high-quality and accurate translations at competitive rates. With
-              a diverse range of language expertise and experience in various
-              industries, we are equipped to handle any translation project you
-              may have.
+            <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
+            Get your translation done by a professional translator on our website. Find the perfect translator for your important documents and ensure accurate and precise communication in any language. Trust our team of experienced professionals to handle all of your translation needs.{" "}
             </p>
-            <button className="btn btn-primary">
-              <Link to="/HomePage">Get Started</Link>
-            </button>
+          </div>
+          <div className="flex justify-center items-center">
+            <Link to="/SignIn">
+              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out lg:text-xl lg:font-bold px-4 sm:px-10 border py-2 sm:py-4 text-sm text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -74,7 +69,7 @@ function LandingPage() {
                 translation tools and techniques to ensure that your document
                 translations are accurate and true to the original content.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/documents">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
@@ -152,7 +147,7 @@ function LandingPage() {
                 ensure that your calls are seamless and accurately convey the
                 intended message.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/calls">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
@@ -230,7 +225,7 @@ function LandingPage() {
                 turnaround times, and our team is available to assist with any
                 questions or concerns you may have throughout the process.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/translation">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
@@ -276,7 +271,12 @@ function LandingPage() {
                 Meet our professional translator
               </h1>
               <p className="text-base leading-normal text-y1 mt-4 md:w-8/12 lg:w-11/12 text-center lg:text-left">
-              A team of highly skilled and experienced language experts who are dedicated to delivering top-quality translations for a wide range of industries and projects. From legal documents to marketing materials, our translators have the expertise and attention to detail to accurately convey the meaning and context of your content in any language.
+                A team of highly skilled and experienced language experts who
+                are dedicated to delivering top-quality translations for a wide
+                range of industries and projects. From legal documents to
+                marketing materials, our translators have the expertise and
+                attention to detail to accurately convey the meaning and context
+                of your content in any language.
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-white hover:bg-indigo-600 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
