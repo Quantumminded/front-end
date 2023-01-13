@@ -10,10 +10,10 @@ export default function DashBoardTabs({ setActiveTab, activeTab }) {
     return (
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
             <li className="mr-2">
-                <a name="Dashboard" onClick={handleTab} className={activeTab === "Dashboard" ? active : inactive}>Dashboard</a>
+                <a name="Dashboard" onClick={handleTab} className={activeTab == "Dashboard" ? active : inactive}>Created Tasks</a>
             </li>
             <li className="mr-2">
-                <a name="Active" onClick={handleTab} className={activeTab === "Active" ? active : inactive}>OnGoing</a>
+                <a name="Active" onClick={handleTab} className={activeTab == "Active" ? active : inactive}>Accepted</a>
             </li>
             <li className="mr-2">
                 <a name="Finished" onClick={handleTab} className={activeTab === "Finished" ? active : inactive}>Finished</a>

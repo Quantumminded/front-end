@@ -79,12 +79,12 @@ const Messages = () => {
                     </div>
                 ))}
             </div>
-            <div className="w-2/3 bg-white p-4">
+            <div className="w-2/3 bg-white p-4 chat">
                 {selectedChat && (
                     <>
-                        <div className="mb-4">
+                        <div className="mb-4 chat-start">
                             {selectedChat.messages.map((message) => (
-                                <div key={message.id}>{message.text}</div>
+                                <div key={message.id} className=" chat-bubble">{message.text}</div>
                             ))}
                         </div>
                         <form onSubmit={handleSendMessage} className="absolute bottom-0 flex">
