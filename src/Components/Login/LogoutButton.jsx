@@ -32,12 +32,12 @@ export default function LogoutButton() {
     return (
         <div className='text-center'>
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
-                <button type="button" onClick={handleLogout} className="inline-block w-full px-4 py-2 text-center text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800">
+                <button type="button" onClick={handleLogout} className="inline-block w-full px-4 py-2 text-center text-b1 bg-y2 rounded-md shadow hover:bg-b2 hover:text-y2">
                     Logout
                 </button>
             </div>
             <div className="hidden space-x-2 md:inline-block">
-                <button type="button" onClick={handleLogout} className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1">
+                <button type="button" onClick={handleLogout} className="px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b2 hover:text-y2">
                     Logout
                 </button>
             </div>
