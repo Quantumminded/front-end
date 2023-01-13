@@ -6,7 +6,7 @@ import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
 import HomeCard from "./Components/HomePage/HomeCard";
-
+import qs from "qs";
 const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
@@ -55,7 +55,16 @@ const PostOffer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     client(token)
-      .post("/task/create", { ...formValues })
+      .post(
+        "/task/create",
+        qs.stringify({
+          title: formValues.title,
+          description: formValues.description,
+          type: formValues.type,
+          price: formValues.price,
+          "languages[]": formValues.languages,
+        })
+      )
       .then((response) => {
         setMessage(response.data);
         console.log(response);
