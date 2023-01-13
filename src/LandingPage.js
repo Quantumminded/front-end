@@ -263,14 +263,14 @@ function LandingPage() {
       </div>
 
       {/* Translator Section */}
-      <div>
+      <div className="bg-gray-100">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row justify-center items-center py-12 mx-4 md:mx-6 ">
             <div className="lg:w-1/2 flex flex-col justify-center items-center lg:items-start">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-y1 text-center lg:text-left">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-y2 text-center lg:text-left">
                 Meet our professional translator
               </h1>
-              <p className="text-base leading-normal text-y1 mt-4 md:w-8/12 lg:w-11/12 text-center lg:text-left">
+              <p className="text-base leading-normal text-b1 mt-4 md:w-8/12 lg:w-11/12 text-center lg:text-left">
                 A team of highly skilled and experienced language experts who
                 are dedicated to delivering top-quality translations for a wide
                 range of industries and projects. From legal documents to
@@ -279,7 +279,7 @@ function LandingPage() {
                 of your content in any language.
               </p>
               <div className="w-full flex justify-center lg:justify-start">
-                <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-white hover:bg-indigo-600 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
+                <button className="bg-y2 text-base font-medium text-b2 rounded text-center py-4 px-9 mt-8 lg:mt-12 hover:text-y2 hover:bg-b2 leading-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 w-full sm:w-auto">
                   <Link to="/HomePage">View All</Link>
                 </button>
               </div>
@@ -496,14 +496,14 @@ function LandingPage() {
 
       {/* Partnership section */}
       <>
-        <div className="px-4 py-12">
-          <div className="lg:max-w-[1440px] md:max-w-[744px] max-w-[375px] w-full  py-12 bg-b2 mx-auto">
+        <div className="px-4 py-12 ">
+          <div className="lg:max-w-[1440px] md:max-w-[744px] max-w-[375px] w-full  py-12 bg-b2 mx-auto rounded-3xl">
             <div className="mb-10">
               <p className="text-3xl font-semibold leading-9 text-center text-y1 lg:text-4xl">
                 Valuable Partnerships
               </p>
             </div>
-            <div className="lg:max-w-[1280px] w-full bg-y2 px-12 py-12 mx-auto rounded">
+            <div className="lg:max-w-[1280px] w-full bg-y2 px-12 py-12 mx-auto rounded-3xl">
               <div className="block lg:block md:hidden">
                 <div className="flex flex-col items-center justify-center lg:justify-between lg:flex-row gap-x-8 gap-y-12">
                   <svg
