@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Components/NavBar/Nav";
-import LandingPage from "./LandingPage";
-import HomePage2 from "./HomePage2";
 import HomePage from "./HomePage";
+import HomePage2 from "./HomePage2";
+import ServicePage from "./ServicePage";
 import HomePage3 from "./HomePage3";
 import HomePage4 from "./HomePage4";
 import SignIn from "./SignIn";
@@ -103,8 +103,8 @@ function App() {
           <BrowserRouter>
             <Nav />
             <Routes>
-              <Route index element={<LandingPage />} />
-              <Route path="/HomePage" element={<HomePage />} />
+              <Route index element={<HomePage />} />
+              <Route path="/ServicePage" element={<ServicePage />} />
               <Route path="/HomePage2" element={<HomePage2 />} />
               <Route path="/HomePage3" element={<HomePage3 />} />
               <Route path="/HomePage4" element={<HomePage4 />} />
