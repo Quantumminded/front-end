@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
-    <div className="bg-b2">
+    <div className="bg-white">
       {/* Hero section */}
       <div className="bg-gray-100">
         <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
@@ -19,7 +19,7 @@ function LandingPage() {
           </div>
           <div className="flex justify-center items-center">
             <Link to="/SignIn">
-              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 bg-y2 transition duration-150 ease-in-out hover:bg-b2 lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border py-2 sm:py-4 text-sm">
+              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out lg:text-xl lg:font-bold px-4 sm:px-10 border py-2 sm:py-4 text-sm text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 Get Started
               </button>
             </Link>
@@ -69,7 +69,7 @@ function LandingPage() {
                 translation tools and techniques to ensure that your document
                 translations are accurate and true to the original content.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/documents">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
@@ -147,7 +147,7 @@ function LandingPage() {
                 ensure that your calls are seamless and accurately convey the
                 intended message.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/calls">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
@@ -225,7 +225,7 @@ function LandingPage() {
                 turnaround times, and our team is available to assist with any
                 questions or concerns you may have throughout the process.
               </p>
-              <button className="dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 flex items-center bg-b2">
+              <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
                 <Link to="/Category/translation">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg

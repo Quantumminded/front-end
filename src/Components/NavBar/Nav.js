@@ -105,7 +105,7 @@ function Nav() {
           <div className="flex gap-4 ">
             <Link
               to="/Select"
-              className="hidden md:flex lg:flex px-4 py-2 text-b1 bg-y1 rounded-md shadow hover:bg-b3 hover:text-y2 self-center "
+              className="hidden md:flex lg:flex px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center "
             >
               Get Started
             </Link>
@@ -118,7 +118,7 @@ function Nav() {
           <div className="hidden space-x-2 md:inline-block">
             <Link
               to="/SignIn"
-              className="px-4 py-2 text-b1 bg-yellow-300 rounded-md shadow hover:bg-gray-800 hover:text-y1"
+              className="px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2"
             >
               Sign in
             </Link>
