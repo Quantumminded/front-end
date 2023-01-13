@@ -52,12 +52,12 @@ function HomePage() {
             </div>
           </div>
           {/* Text & Button */}
-          <div className=" rounded-3xl bg-b2 dark:bg-gray-800 lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
+          <div className=" rounded-3xl bg-b2 lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
             <div>
               <h1 className=" md:w-8/12 lg:w-10/12 xl:8/12 2xl:w-8/12 w-full xl:text-6xl sm:text-5xl text-4xl font-semibold text-y2 capitalize">
                 Documents
               </h1>
-              <p className="dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-white mt-5">
+              <p className=" md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-white mt-5">
                 Get your documents translated with us! At [Company Name], we
                 specialize in providing high-quality and accurate translations
                 for a variety of personal and professional documents. From birth
@@ -130,7 +130,7 @@ function HomePage() {
             </div>
           </div>
           {/* Text & Button */}
-          <div className="rounded-3xl bg-y2 dark:bg-gray-800 lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
+          <div className="rounded-3xl bg-y2  lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
             <div>
               <h1 className=" md:w-8/12 lg:w-10/12 xl:8/12 2xl:w-8/12 w-full xl:text-6xl sm:text-5xl text-4xl font-semibold text-b2 capitalize">
                 Calls

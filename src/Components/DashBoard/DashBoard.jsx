@@ -71,11 +71,11 @@ export default function DashBoard() {
                     <DashBoardTabs setActiveTab={setActiveTab} activeTab={activeTab} />
                     <div className=' w-full h-screen flex gap-4 p-4'>
                         {/* Active Offers */}
-                        {activeTab == "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
+                        {activeTab === "Dashboard" && userOpenTask && userOpenTask.map((ele, i) => <DashBoardCard key={i} task={ele} user={user} />)}
                         {/* ACCEPTED TASK/REQUESTS*/}
-                        {activeTab == "Active" && <OnGoinDashBoard AllAcceptedTask={AllAcceptedTask} />}
+                        {activeTab === "Active" && <OnGoinDashBoard AllAcceptedTask={AllAcceptedTask} />}
                         {/* History of All the Work */}
-                        {activeTab == "Finished" && <OnGoinDashBoard />}
+                        {activeTab === "Finished" && <OnGoinDashBoard />}
 
 
 
