@@ -50,7 +50,7 @@ export default function DashBoard() {
                 <div className=' w-1/4 bg-slate-700'>
                     <div className='container'>
                         <div className='flex items-center flex-col p-4'>
-                            <ProfileIcon />
+                            <img src={user.image} className="rounded-full" />
                             {/* Image + Name */}
                             {
                                 user && <><p className='text-sm text-black'>{user.firstname + ' ' + user.lastname}</p>
