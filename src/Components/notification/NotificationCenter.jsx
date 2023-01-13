@@ -13,7 +13,7 @@ export default function NotificationCenter() {
           className="inline-flex relative items-center p-3 text-sm font-medium text-center text-b3 bg-y2 rounded-lg hover:bg-b3 hover:text-y2 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           <svg
-            className="w-6 h-5"
+            className="w-6 h-6"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"

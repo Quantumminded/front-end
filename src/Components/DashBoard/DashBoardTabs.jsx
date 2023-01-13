@@ -1,5 +1,4 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
 
 export default function DashBoardTabs({ setActiveTab, activeTab }) {
     const active = "inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
@@ -17,7 +16,7 @@ export default function DashBoardTabs({ setActiveTab, activeTab }) {
                 <a name="Active" onClick={handleTab} className={activeTab == "Active" ? active : inactive}>Accepted</a>
             </li>
             <li className="mr-2">
-                <a name="Finished" onClick={handleTab} className={activeTab == "Finished" ? active : inactive}>Finished</a>
+                <a name="Finished" onClick={handleTab} className={activeTab === "Finished" ? active : inactive}>Finished</a>
             </li>
         </ul>
     )

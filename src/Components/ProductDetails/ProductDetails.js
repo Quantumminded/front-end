@@ -73,22 +73,22 @@ function ProductDetails() {
                       className="peer sr-only"
                       
                     />
-
-                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs ">
+                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
                     {cards[0].type}
                     </span>
                   </label>
                 </div>
               </fieldset>
 
-              <div className="rounded border bg-gray-100 p-4">
+              <div className="rounded-2xl border bg-b2 p-4">
                 {/* PROFILE PIC */}
-                <div className="avatar">
+                <div className="avatar mb-3 flex justify-center">
                   <div className="w-16 rounded-full">
                     <img src="https://placeimg.com/192/192/people" alt='profile img' />
                   </div>
                 </div>
-                <p className="text-sm">
+                <h6 className="text-center text-y2">About me</h6>
+                <p className="text-sm text-white">
                   <span className="block">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
@@ -103,13 +103,14 @@ function ProductDetails() {
               </div>
 
               <div>
+                <h5 className="text-lg font-bold">Price</h5>
                 <p className="text-xl font-bold">{cards[0].price}</p>
               </div>
 
               <Link to="/Checkout">
                 <button
                   type="button"
-                  className="w-full mt-5 rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
+                  className="w-full mt-5  border border-gray-300 px-6 py-3 text-sm font-bold uppercase tracking-wide text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2"
                 >
                   Book Now
                 </button>
@@ -119,8 +120,8 @@ function ProductDetails() {
 
           <div className="lg:col-span-3">
             <div className="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
+              <h5 className="text-lg font-bold">DESCRIPTION</h5>
               <p>
-                DESCRIPTION <br></br>
                 {cards[0].description}<br></br>
                 <br></br>
               </p>

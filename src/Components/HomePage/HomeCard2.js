@@ -8,7 +8,7 @@ function HomeCard2({ card }) {
     <>
       <div key={card.id} className="wrapper antialiased text-gray-900 mb-10">
     <div className="wrapper antialiased text-gray-900 mb-10">
-      <div className="">
+      <div>
           <div className="relative bottom-0 left-0">
             <div className="absolute bottom-14 right-0 p-3 bg-transparent">
               
@@ -31,7 +31,7 @@ function HomeCard2({ card }) {
             
           </div>
         <div className="relative px-4 -mt-8">
-          <div className="bg-cyan-200 p-6 rounded-lg shadow-lg">
+          <div className=" p-6 rounded-lg shadow-lg ">
 
               {/* PROFILE PIC  */} 
               <div className="avatar flex justify-center mb-3 ">
@@ -42,7 +42,7 @@ function HomeCard2({ card }) {
               <div className="flex items-baseline">
               
               {/* TYPE OF SERVICES */}
-              <span className="bg-y1 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+              <span className="bg-b2 text-y2 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                 {card.type}
               </span>
               {/* LANGUAGE SPOKEN */}
@@ -80,8 +80,8 @@ function HomeCard2({ card }) {
           </div>
           {/* BOOK NOW BUTTONS */}
           <div className="text-gray-600 flex justify-center text-sm align-top">
-            <div className="align-top">
-              <button className="h-12 w-40 float-left bg-b3 hover:bg-blue-800 text-y1 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-2xl">
+            <div className="align-top ">
+              <button className="h-12 w-40 float-left bg-y2 hover:bg-b2 text-b2 hover:text-y2 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-lg">
                 <Link to="/Checkout">&nbsp;Book Now&nbsp;</Link>
               </button>
             </div>
