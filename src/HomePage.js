@@ -130,7 +130,7 @@ function HomePage() {
             </div>
           </div>
           {/* Text & Button */}
-          <div className="rounded-3xl bg-y2  lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
+          <div className="rounded-3xl bg-y2 lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center">
             <div>
               <h1 className=" md:w-8/12 lg:w-10/12 xl:8/12 2xl:w-8/12 w-full xl:text-6xl sm:text-5xl text-4xl font-semibold text-b2 capitalize">
                 Calls
