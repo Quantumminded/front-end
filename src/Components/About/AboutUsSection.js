@@ -73,8 +73,8 @@ We hope that [translation web site] will become your go-to resource for all of y
                         <circle cx="24" cy="24" r="24" fill="#1F2937" />
                         <path d="M21 23C23.2091 23 25 21.2091 25 19C25 16.7909 23.2091 15 21 15C18.7909 15 17 16.7909 17 19C17 21.2091 18.7909 23 21 23Z" stroke="#FFD60A" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M15 33V31C15 29.9391 15.4214 28.9217 16.1716 28.1716C16.9217 27.4214 17.9391 27 19 27H23C24.0609 27 25.0783 27.4214 25.8284 28.1716C26.5786 28.9217 27 29.9391 27 31V33" stroke="#FFD60A" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M28 15.1301C28.8604 15.3504 29.623 15.8508 30.1676 16.5524C30.7122 17.254 31.0078 18.117 31.0078 19.0051C31.0078 19.8933 30.7122 20.7562 30.1676 21.4578C29.623 22.1594 28.8604 22.6598 28 22.8801" stroke="white" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M33 33.0001V31.0001C32.9949 30.1173 32.6979 29.2609 32.1553 28.5645C31.6126 27.8682 30.8548 27.3708 30 27.1501" stroke="white" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M28 15.1301C28.8604 15.3504 29.623 15.8508 30.1676 16.5524C30.7122 17.254 31.0078 18.117 31.0078 19.0051C31.0078 19.8933 30.7122 20.7562 30.1676 21.4578C29.623 22.1594 28.8604 22.6598 28 22.8801" stroke="#FFD60A" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M33 33.0001V31.0001C32.9949 30.1173 32.6979 29.2609 32.1553 28.5645C31.6126 27.8682 30.8548 27.3708 30 27.1501" stroke="#FFD60A" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </div>
                 <hr className="z-10 absolute top-2/4 w-full bg-b2" />
@@ -82,7 +82,7 @@ We hope that [translation web site] will become your go-to resource for all of y
             <div className="sm:hidden grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
                 <div>
                     <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-y1 mt-6">400k User</p>
-                    <p className="font-normal text-base leading-6 text-y1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <p className="font-normal text-base leading-6 text-b1 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                 </div>
             </div>
 
