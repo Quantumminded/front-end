@@ -261,7 +261,7 @@ const PostOffer = () => {
                         Publish
                       </button>
                     </div>
-                    <HomeCard language={formValues.languages}/>
+                    <HomeCard language={formValues.languages} />
                   </div>
                 </div>
               </div>
