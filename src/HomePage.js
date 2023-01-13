@@ -34,7 +34,7 @@ return (
       </div>
     ) : (
       <>
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7 text-center">
       Most popular in Documents
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
@@ -43,7 +43,7 @@ return (
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 text-center">
       Most popular in Calls
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
@@ -52,7 +52,7 @@ return (
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 text-center">
       Most popular in Translations
       </h2>
       <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
