@@ -62,10 +62,10 @@ function Nav() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-white hover:text-y2">
-                <Link to="/HomePage">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li className="text-white hover:text-y2">
-                <Link to="/">Services</Link>
+                <Link to="/ServicePage">Services</Link>
               </li>
               <li className="text-white hover:text-y2">
                 <Link to="/About">About US</Link>

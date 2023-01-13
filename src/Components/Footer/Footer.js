@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="p-4 bg-b1 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <footer className="p-4 bg-b2 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
       <span className="text-sm text-y1 sm:text-center dark:text-y1">
         © 2023{" "}
         <Link to="https://flowbite.com/" className="hover:underline">

@@ -7,7 +7,7 @@ import AboutUsSection from "./Components/About/AboutUsSection";
 
 function About() {
   return (
-    <div className="bg-b2">
+    <div>
       <AboutUsSection />
       <TeamSection />
     </div>
