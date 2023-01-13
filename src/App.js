@@ -25,7 +25,7 @@ import TeamSection from "./Components/About/TeamSection";
 import Privacy from "./Components/PrivacyPolicy/Privacy";
 import Checkout from "./Checkout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
-
+import Messages from "./Messages";
 //Module for various cookie settings
 import { CookiesProvider, useCookies } from "react-cookie";
 //Notification Toasts
@@ -132,6 +132,7 @@ function App() {
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Dashboard" element={<DashBoard />} />
               <Route path="/ProductDetails/:id" element={<ProductDetails />} />
+              <Route path="/messages" element={<Messages />} />
             </Routes>
             <Footer />
           </BrowserRouter>
