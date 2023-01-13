@@ -102,10 +102,10 @@ function Nav() {
           </div>
         </div>
         {authorized ? (
-          <div className="flex gap-4 ">
+          <div className="flex gap-4">
             <Link
               to="/Select"
-              className="h-12 hidden md:flex lg:flex px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center "
+              className="h-12 hidden md:flex lg:flex px-4 py-3 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold"
             >
               Get Started
             </Link>
