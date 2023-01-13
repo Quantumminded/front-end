@@ -53,7 +53,7 @@ export default function DashBoard() {
                             <ProfileIcon />
                             {/* Image + Name */}
                             {
-                                user && <><p className='text-sm text-black'>{user.firstName + ' ' + user.lastName}</p>
+                                user && <><p className='text-sm text-black'>{user.firstname + ' ' + user.lastname}</p>
                                     <p className='text-sm text-black'>{user.email}</p></>
                             }
                         </div>
