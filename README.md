@@ -31,7 +31,7 @@ User profile:
 - see my profile
 - see exit point
 - Add weather widget
-- Create events
+- Create eventss
 
 
 
