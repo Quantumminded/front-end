@@ -38,6 +38,7 @@ export default function SignUp({ setSignUp, signUp }) {
         password,
         language
     ) => {
+        console.log(signUp)
         e.preventDefault();
         //Sets a boolean so we can disable the button while the request is not resolve
         setLoading(true)
@@ -60,6 +61,8 @@ export default function SignUp({ setSignUp, signUp }) {
             });
         //Sets a boolean so we can disable the button while the request is not resolve
         setLoading(false)
+        setSignUp(!signUp)
+        console.log(signUp)
     };
 
     function comparePasswords() {
@@ -151,6 +154,7 @@ export default function SignUp({ setSignUp, signUp }) {
                                                 <label htmlFor="floating_last_name" className="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" > Last name</label >
                                             </div >
                                         </div >
+                                        <label htmlFor="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left">Your Language</label>
                                         <AllLanguages setLanguage={setLanguage} />
                                         <Button
                                             type="submit"
