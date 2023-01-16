@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import BookNow from "../Payment/BookNow";
+// import BookNow from "../Payment/BookNow";
 
 function ProductDetails() {
   let { id } = useParams();
