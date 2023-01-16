@@ -70,7 +70,7 @@ function HomePage() {
                 translations are accurate and true to the original content.
               </p>
               <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
-                <Link to="/Category/documents">Explore</Link>
+                <Link to="/Category/document">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -148,7 +148,7 @@ function HomePage() {
                 intended message.
               </p>
               <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-y2 bg-b2 rounded-md shadow hover:bg-yellow-500 hover:text-b2">
-                <Link to="/Category/calls">Explore</Link>
+                <Link to="/Category/call">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
