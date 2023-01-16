@@ -2,7 +2,7 @@ import React from 'react'
 
 function HomeHeroSection() {
   return (
-    <div className="hero min-h-min" style={{ backgroundImage: `url("https://www.atltranslate.com/hubfs/languages%20for%20translation.png")` }}>
+    <div className="hero min-h-min py-12 my-5" style={{ backgroundImage: `url("https://www.atltranslate.com/hubfs/languages%20for%20translation.png")` }}>
         {/* Text Over Hero Img. */}
         <div className="hero-content text-center text-neutral-content mt-20">
           <div className="max-w-md ">
