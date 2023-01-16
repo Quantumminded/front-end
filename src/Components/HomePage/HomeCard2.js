@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-import BookNow from "./BookNow";
+import BookNow from "../Payment/BookNow";
 
 function HomeCard2({ card }) {
   
