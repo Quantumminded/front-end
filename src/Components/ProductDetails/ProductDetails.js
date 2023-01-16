@@ -118,7 +118,7 @@ function ProductDetails() {
                 </button>
               </Link>
 
-              {/* <BookNow /> */}
+              {/* <BookNow card={ cards } /> */}
             </form>
           </div>
 

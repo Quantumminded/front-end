@@ -84,7 +84,7 @@ function HomeCard2({ card }) {
           {/* BOOK NOW BUTTONS */}
           <div className="text-gray-600 flex justify-center text-sm align-top">
             <div className="align-top ">
-              <BookNow />
+              <BookNow card={ card } />
             </div>
           </div>
         </div>

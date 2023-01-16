@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function BookNow() {
+function BookNow(props) {
+  console.log(props.card.id)
     const [error, setError] = useState(null);
 
   const handleClick = () => {
@@ -14,6 +15,7 @@ function BookNow() {
           { id: 1, quantity: 3 },
           { id: 2, quantity: 1 },
         ],
+        
       }),
     })
       .then(res => {
@@ -32,10 +34,10 @@ function BookNow() {
       });
   }
   return (
-    <button className="h-12 w-40 float-left bg-y2 hover:bg-b2 text-b2 hover:text-y2 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-lg">
+    <div className="h-12 w-40 text-center float-left bg-y2 hover:bg-b2 text-b2 hover:text-y2 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-lg">
       <button onClick={handleClick}>Checkout</button>
       {error && <p>{error.message}</p>}
-    </button>
+    </div>
   )
 }
 
