@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import BookNow from "../Payment/BookNow";
+import BookNow from "../Payment/BookNow";
 
 function ProductDetails() {
   let { id } = useParams();
@@ -109,15 +109,12 @@ function ProductDetails() {
                 <p className="text-xl font-bold">{cards[0].price}</p>
               </div>
 
-              <Link to="/Checkout">
-                <button
-                  type="button"
-                  className="w-full mt-5  border border-gray-300 px-6 py-3 text-sm font-bold uppercase tracking-wide text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2"
-                >
-                  Book Now
-                </button>
-              </Link>
-
+              {/* Checkoutbutton */}
+              <div>
+                <Link>
+                    <BookNow card={ cards } />
+                </Link>
+              </div>
               {/* <BookNow card={ cards } /> */}
             </form>
           </div>

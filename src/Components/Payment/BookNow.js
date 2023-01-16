@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-function BookNow(props) {
-  console.log(props.card.id)
+function BookNow({ card }) {
+  console.log(card)
     const [error, setError] = useState(null);
 
-  const handleClick = () => {
+  const handleClick = (card) => {
     fetch("http://localhost:3001/create-checkout-session", {
       method: "POST",
       headers: {
@@ -35,7 +35,7 @@ function BookNow(props) {
   }
   return (
     <div className="h-12 w-40 text-center float-left bg-y2 hover:bg-b2 text-b2 hover:text-y2 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-lg">
-      <button onClick={handleClick}>Checkout</button>
+      <button onClick={() => handleClick(card)}>Checkout</button>
       {error && <p>{error.message}</p>}
     </div>
   )
