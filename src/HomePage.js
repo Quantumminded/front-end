@@ -8,12 +8,12 @@ function HomePage() {
       <div className="bg-gray-100 bg-cover bg-center" style={{ backgroundImage: `url("https://techcrunch.com/wp-content/uploads/2016/02/shutterstock_348701531.jpg")` }}>
         <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-b2 font-black leading-7 md:leading-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-y2 font-black leading-7 md:leading-10">
               Don't get lost in <br></br>
               <span className="text-y2">Translations</span>
               
             </h1>
-            <p className="mt-5 sm:mt-10 lg:w-10/12 text-b1 font-normal text-center text-sm sm:text-lg">
+            <p className="font-bold mt-5 sm:mt-10 lg:w-10/12 text-b1  text-center text-sm sm:text-lg">
             Get your translation done by a professional translator on our website. Find the perfect translator for your important documents and ensure accurate and precise communication in any language. Trust our team of experienced professionals to handle all of your translation needs.{" "}
             </p>
           </div>
