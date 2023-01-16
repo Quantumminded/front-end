@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+import BookNow from "./BookNow";
+
 function HomeCard2({ card }) {
   
 
@@ -81,9 +84,7 @@ function HomeCard2({ card }) {
           {/* BOOK NOW BUTTONS */}
           <div className="text-gray-600 flex justify-center text-sm align-top">
             <div className="align-top ">
-              <button className="h-12 w-40 float-left bg-y2 hover:bg-b2 text-b2 hover:text-y2 text-xl font-bold p-2 m-2 rounded-full -mt-2 shadow-lg">
-                <Link to="/Checkout">&nbsp;Book Now&nbsp;</Link>
-              </button>
+              <BookNow />
             </div>
           </div>
         </div>
