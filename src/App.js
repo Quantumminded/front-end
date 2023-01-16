@@ -129,7 +129,7 @@ function App() {
               <Route path="/TransaltionForm" element={<TransaltionForm />} />
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/TeamSection" element={<TeamSection />} />
-              <Route path="/Checkout" element={<Checkout />} />
+              <Route path="/Checkout/:id" element={<Checkout />} />
               <Route path="/Dashboard" element={<DashBoard />} />
               <Route path="/ProductDetails/:id" element={<ProductDetails />} />
               <Route path="/messages" element={<Messages />} />
