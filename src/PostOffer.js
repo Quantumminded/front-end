@@ -57,6 +57,7 @@ const PostOffer = () => {
     client(token)
       .post(
         "/task/create",
+        // had to create a stringify version because i had trouble with render and my database 
         qs.stringify({
           title: formValues.title,
           description: formValues.description,

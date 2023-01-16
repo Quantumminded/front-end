@@ -14,7 +14,7 @@ function HomePage3() {
     async function fetchCards() {
       try {
         const response = await fetch(
-          "https://super-secret-backend.onrender.com/api/task/all"
+          "https://ultra-top-secret-backend-production.up.railway.app/api/task/all"
         );
         const data = await response.json();
         setCards(data);
@@ -36,7 +36,7 @@ function HomePage3() {
 
   const handleDisabledClick = () => {
     setCurrentCardIndex(0);
-  }
+  };
 
   return (
     <>

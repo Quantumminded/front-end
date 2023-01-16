@@ -12,7 +12,9 @@ function Category() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://super-secret-backend.onrender.com/api/category/${category}`)
+    fetch(
+      `https://ultra-top-secret-backend-production.up.railway.app/api/category/${category}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setCards(data.filter((card) => card.type === category));

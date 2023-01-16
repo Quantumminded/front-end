@@ -22,7 +22,7 @@ function HomePage4() {
     async function fetchCards() {
       try {
         const response = await fetch(
-          "https://super-secret-backend.onrender.com/api/task/all"
+          "https://ultra-top-secret-backend-production.up.railway.app/api/task/all"
         );
         const data = await response.json();
         setCards(data);
@@ -119,7 +119,10 @@ function HomePage4() {
           <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
             {cards
               .filter((card) => card.type === "translation")
-              .slice(currentIndex["translation"], currentIndex["translation"] + 1)
+              .slice(
+                currentIndex["translation"],
+                currentIndex["translation"] + 1
+              )
               .map((card) => (
                 <HomeCard2 key={card.id} card={card} />
               ))}
@@ -131,7 +134,10 @@ function HomePage4() {
             >
               Previous
             </button>
-            <button className="btn" onClick={() => handleNextClick("translation")}>
+            <button
+              className="btn"
+              onClick={() => handleNextClick("translation")}
+            >
               Next
             </button>
           </div>
