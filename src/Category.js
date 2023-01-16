@@ -12,9 +12,7 @@ function Category() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://ultra-top-secret-backend-production.up.railway.app/api/category/${category}`
-    )
+    fetch(`${process.env.REACT_APP_API_FETCH}/api/category/${category}`)
       .then((response) => response.json())
       .then((data) => {
         setCards(data.filter((card) => card.type === category));

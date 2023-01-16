@@ -9,9 +9,7 @@ function Category2() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://ultra-top-secret-backend-production.up.railway.app/api/category/${category}`
-    )
+    fetch(`${process.env.REACT_APP_API_FETCH}/api/category/${category}`)
       .then((response) => response.json())
       .then((data) => {
         // filter cards to only display those with a matching category

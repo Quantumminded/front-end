@@ -14,7 +14,7 @@ function HomePage3() {
     async function fetchCards() {
       try {
         const response = await fetch(
-          "https://ultra-top-secret-backend-production.up.railway.app/api/task/all"
+          `${process.env.REACT_APP_API_FETCH}/api/task/all`
         );
         const data = await response.json();
         setCards(data);

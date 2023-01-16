@@ -6,12 +6,11 @@ import { useEffect, useState } from "react";
 function ProductDetails() {
   let { id } = useParams();
   const [cards, setCards] = useState([]);
-
   useEffect(() => {
     async function fetchCards() {
       try {
         const response = await fetch(
-          `https://ultra-top-secret-backend-production.up.railway.app/api/task/all/${id}`
+          `${process.env.REACT_APP_API_FETCH}/api/task/all/${id}`
         );
         const data = await response.json();
         setCards(data);
@@ -110,7 +109,7 @@ function ProductDetails() {
                   <p className="text-xl font-bold">{cards[0].price}</p>
                 </div>
 
-                <Link to="/Checkout">
+                <Link to={`/Checkout/${id}`}>
                   <button
                     type="button"
                     className="w-full mt-5  border border-gray-300 px-6 py-3 text-sm font-bold uppercase tracking-wide text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2"
