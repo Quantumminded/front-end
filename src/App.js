@@ -4,22 +4,17 @@ import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Components/NavBar/Nav";
 import HomePage from "./HomePage";
-import HomePage2 from "./HomePage2";
 import ServicePage from "./ServicePage";
-import HomePage3 from "./HomePage3";
-import HomePage4 from "./HomePage4";
 import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
 import PostOffer from "./PostOffer";
 import SelectRequest from "./SelectRequest";
 import Select from "./Select";
-import WorkerProfile from "./WorkerProfile";
 import ClientProfile from "./ClientProfile";
 import DocumentForm from "./DocumentForm";
 import CallForm from "./CallForm";
 import TransaltionForm from "./TransaltionForm";
 import Category from "./Category";
-import Category2 from "./Category2";
 import About from "./About";
 import TeamSection from "./Components/About/TeamSection";
 import Privacy from "./Components/PrivacyPolicy/Privacy";
@@ -105,14 +100,9 @@ function App() {
             <Routes>
               <Route index element={<HomePage />} />
               <Route path="/ServicePage" element={<ServicePage />} />
-              <Route path="/HomePage2" element={<HomePage2 />} />
-              <Route path="/HomePage3" element={<HomePage3 />} />
-              <Route path="/HomePage4" element={<HomePage4 />} />
               <Route path="/Category/:category" element={<Category />} />
-              <Route path="/Category2/:category" element={<Category2 />} />
               <Route path="/About" element={<About />} />
               <Route path="/SignIn" element={<SignIn />} />
-              <Route path="/WorkerPorfile" element={<WorkerProfile />} />
               <Route path="/Profile" element={<ClientProfile />} />
               <Route path="Post" element={<PostRequest />} />
               {/* SELECT IS THE MAIN ROUTE */}
