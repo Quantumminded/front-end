@@ -21,6 +21,7 @@ import Privacy from "./Components/PrivacyPolicy/Privacy";
 import Checkout from "./Checkout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import Messages from "./Messages";
+import Error from "./Components/404/Error";
 //Module for various cookie settings
 import { CookiesProvider, useCookies } from "react-cookie";
 //Notification Toasts
@@ -105,6 +106,7 @@ function App() {
               <Route path="/SignIn" element={<SignIn />} />
               <Route path="/Profile" element={<ClientProfile />} />
               <Route path="Post" element={<PostRequest />} />
+              <Route path="/Error" element={<Error />} />
               {/* SELECT IS THE MAIN ROUTE */}
               <Route path="Select" element={<Select />}>
                 {/* Request is the Outlet of select  */}
