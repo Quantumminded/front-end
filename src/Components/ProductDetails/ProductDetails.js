@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import BookNow from "../Payment/BookNow";
 
 function ProductDetails() {
   let { id } = useParams();
@@ -73,6 +74,7 @@ function ProductDetails() {
                       className="peer sr-only"
                       
                     />
+
                     <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
                     {cards[0].type}
                     </span>
@@ -115,6 +117,8 @@ function ProductDetails() {
                   Book Now
                 </button>
               </Link>
+
+              {/* <BookNow /> */}
             </form>
           </div>
 
