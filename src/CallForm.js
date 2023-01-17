@@ -66,14 +66,14 @@ const CallForm = () => {
     // submit form values to API or somewhere else
   };
   return (
-    <div className="bg-b2">
+    <div className="">
       <div className="pb-12 pt-12">
         <div className="flex justify-center">
           <BreadCrumbs />
         </div>
         <form className=" ml-52 mr-52" id="login" onSubmit={handleSubmit}>
-          <div className="bg-white dark:bg-gray-800">
-            <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
+          <div className="bg-gray-100 ">
+            <div className="container mx-auto bg-white rounded">
               <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
                 <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center">
                   <p className="mx-auto text-lg text-gray-800 dark:text-gray-100 font-bold">
@@ -250,11 +250,11 @@ const CallForm = () => {
                   {/* End here */}
                   <div className=" container mx-auto w-11/12 xl:w-full">
                     <div className="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex justify-end">
-                      <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
+                      <button className="py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold">
                         Cancel
                       </button>
                       <button
-                        className="bg-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm"
+                        className="py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold"
                         type="submit"
                       >
                         Publish

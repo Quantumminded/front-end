@@ -6,7 +6,7 @@ export function Type({ handleChange, type }) {
       {" "}
       <label
         htmlFor="type"
-        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+        className="pb-2 text-sm font-bold text-gray-800"
       >
         Type
       </label>
@@ -14,7 +14,7 @@ export function Type({ handleChange, type }) {
         onChange={handleChange}
         name="type"
         id="type"
-        className="bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+        className="bg-transparent border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
       >
         {type == "document" && (
           <>
