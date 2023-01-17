@@ -5,15 +5,15 @@ function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero section */}
-      <div className="bg-gray-100" style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}>
+      {/* <div className="bg-cover bg-center bg-transparent" style={{opacity:1, backgroundImage: `url("https://techcrunch.com/wp-content/uploads/2016/02/shutterstock_348701531.jpg")` }} >
         <div className="container mx-auto flex flex-col items-center py-12 sm:py-24">
-          <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-b2 font-black leading-7 md:leading-10">
+          <div className=" w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
+            <h1 className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-y2 font-black leading-7 md:leading-10">
               Don't get lost in <br></br>
-              <span className="text-y2">Translations</span>
+              <span className="text-y2 ">Translations</span>
               
             </h1>
-            <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
+            <p className=" font-bold mt-5 sm:mt-10 lg:w-10/12 text-b1 text-center text-sm sm:text-lg">
             Get your translation done by a professional translator on our website. Find the perfect translator for your important documents and ensure accurate and precise communication in any language. Trust our team of experienced professionals to handle all of your translation needs.{" "}
             </p>
           </div>
@@ -25,7 +25,24 @@ function HomePage() {
             </Link>
           </div>
         </div>
+      </div> */}
+    {/* HERO TEST */}
+    <div className="hero min-h-min" style={{ backgroundImage: `url("https://techcrunch.com/wp-content/uploads/2016/02/shutterstock_348701531.jpg")` }}>
+      <div className="hero-overlay bg-opacity-60 "></div>
+      <div className="hero-content text-center text-neutral-content ">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-extrabold text-y1">Don't get lost in <br></br>
+            <span>Translation</span>
+          </h1>
+          <p className="mb-5 font-bold text-base text-y1">Get your translation done by a professional translator on our website. Find the perfect translator for your important documents and ensure accurate and precise communication in any language. Trust our team of experienced professionals to handle all of your translation needs.</p>
+            <Link to="/SignIn">
+              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out lg:text-xl lg:font-bold px-4 sm:px-10 border py-2 sm:py-4 text-sm text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
+                Get Started
+              </button>
+            </Link>
+        </div>
       </div>
+    </div>      
 
       {/* LANDING HERO SECTION */}
       {/* Documents hero  */}
@@ -36,7 +53,7 @@ function HomePage() {
               {/* IMG */}
               <div className="w-full lg:w-auto lg:-mr-32 ">
                 <img
-                  src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                  src="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
                   alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14 rounded-full"
                 />
@@ -45,7 +62,7 @@ function HomePage() {
             <div className="absolute top-0 bg-y2 md:h-96 w-full hidden md:block lg:hidden rounded-3xl"></div>
             <div className="w-full h-full lg:hidden bg-y2 rounded-3xl">
               <img
-                src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                src="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
                 alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14 rounded-full"
               />
@@ -70,7 +87,7 @@ function HomePage() {
                 translations are accurate and true to the original content.
               </p>
               <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2">
-                <Link to="/Category/documents">Explore</Link>
+                <Link to="/Category/document">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -114,7 +131,7 @@ function HomePage() {
               {/* IMG */}
               <div className="w-full lg:w-auto lg:-mr-32">
                 <img
-                  src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                  src="https://cdn.pixabay.com/photo/2017/08/06/04/09/people-2588594_960_720.jpg"
                   alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14 rounded-full"
                 />
@@ -123,7 +140,7 @@ function HomePage() {
             <div className="absolute top-0 bg-b2 md:h-96 w-full hidden md:block lg:hidden rounded-3xl"></div>
             <div className="w-full h-full lg:hidden bg-b2 rounded-3xl">
               <img
-                src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                src="https://cdn.pixabay.com/photo/2017/08/06/04/09/people-2588594_960_720.jpg"
                 alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14 rounded-full"
               />
@@ -148,7 +165,7 @@ function HomePage() {
                 intended message.
               </p>
               <button className=" sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none  font-medium leading-none  py-4 px-8 flex items-center text-y2 bg-b2 rounded-md shadow hover:bg-yellow-500 hover:text-b2">
-                <Link to="/Category/calls">Explore</Link>
+                <Link to="/Category/call">Explore</Link>
                 <div className="ml-2 mt-0.5">
                   <svg
                     className="fill-stroke"
@@ -192,7 +209,7 @@ function HomePage() {
               {/* IMG */}
               <div className="w-full lg:w-auto lg:-mr-32">
                 <img
-                  src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                  src="https://cdn.pixabay.com/photo/2022/08/16/06/30/different-language-7389469_960_720.jpg"
                   alt="with decent chairs"
                   className="w-full relative z-30 lg:pl-20 px-6 py-14 rounded-full"
                 />
@@ -201,7 +218,7 @@ function HomePage() {
             <div className="absolute top-0  bg-y2 md:h-96 w-full hidden md:block lg:hidden rounded-3xl"></div>
             <div className="w-full h-full lg:hidden bg-y2 rounded-3xl">
               <img
-                src="https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png"
+                src="https://cdn.pixabay.com/photo/2022/08/16/06/30/different-language-7389469_960_720.jpg"
                 alt="with decent chairs"
                 className="w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14 rounded-full"
               />

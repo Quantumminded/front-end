@@ -29,13 +29,16 @@ function Category() {
           <button className="btn loading mb-32">loading</button>
         </div>
       ) : (
-        <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8 p-5">
-          {cards.map((card) => (
-            <div key={card.id} className="bg-white rounded-lg ">
-              <HomeCard2 card={card} />
+          <div>
+            <h2 className="text-center text-4xl font-bold text-b2">{cards[0].type}</h2>
+            <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8 p-5">
+              {cards.map((card) => (
+                <div key={card.id} className="bg-white rounded-lg ">
+                  <HomeCard2 card={card} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
       )}
     </>
   );

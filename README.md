@@ -14,24 +14,20 @@
 - **User sign up:** As a user I can sign up in the platform
 - **User Log in:** As a user I can login to the platform
 - **User log out:** As a user I can logout from the platform so no one else can use it
-- **Add Exit Points** As a user I can add an exit point
-- **Edit Exit Points** As a user I can edit an exit point
-- **Read Exit Points** As a user I can read an exit point
-- **Delete Exit Points** As a user I can delete an exit point
-- **Add Pre Operations Checklist** As a user I can add players to a tournament
-- **Edit PreOpp Checklist** As a user I can edit a player profile to fit into the tournament view
-- **View Tournament Table** As a user I want to see the tournament table
-- **Edit User** As a user I can edit my profile, add or substract exit points
+- **Add Offers** As a user I can add an Offers
+- **Edit Offers** As a user I can edit an Offers
+- **Read Offers** As a user I can read an Offers
+- **Delete Offers** As a user I can delete an Offers
+- **Edit User** As a user I can edit my profile, add or substract Offers
 - **Chat** As an anon I can chat with other people in the platfor
 
 ## Backlog
 
 User profile:
 
-- see my profile
-- see exit point
-- Add weather widget
-- Create events
+- See my profile
+- See Offers
+- Create Offers
 
 
 
@@ -39,33 +35,39 @@ User profile:
 
 ## React Router Routes
 
-| Path             | Component            | Permissions                | Behavior                                                     |
-| ---------------- | -------------------- | -------------------------- | ------------------------------------------------------------ |
-| `/`              | Home                 | Public `<Route>`           | Home pag                                                    |
-| `/signup`        | SignupPage           | Public `<Route>`           | Sign up form, link to login, navigate to homepage after signup |
-| `/login`         | LoginPage            | anon only `<AnonRoute>`    | Login form, link to signup, navigate to homepage after login |
-| `/exitpoint`     | TournamentListPage   | user only `<PrivateRoute>` | Shows all exit points in a list                              |
-| `/exitpoint/add` | TournamentListPage   | user only `<PrivateRoute>` | Edits a exit points                                          |
-| `/exitpoint/:id` | TournamentDetailPage | user only `<PrivateRoute>` | Details of a exit points to edit                             |
-| `/exitpoint/:id` | n/a                  | user only `<PrivateRoute>` | Delete exit points                                           |
-|                  |                      |                            |                                                              |
-|                  |                      |                            |                                                              |
-|                  |                      |                            |                                                              |
-|                  |                      |                            |                                                              |
-|                  |                      |                            |                                                              |
-|                  |                      |                            |                                                              |
+| Path                      | Component            | Permissions                | Behavior                                                      |
+| ------------------------- | -------------------- | -------------------------- | ------------------------------------------------------------- |
+| `/`                       | Home                 | Public `<Route>`           | Home pag                                                      |
+| `/SignIn`                 | SignupPage           | Public `<Route>`           | Sign up form, link to login, navigate to homepage after signup|
+| `/ServicePage`            | SercivePage          | Public `<Route>`           | Shows all offers in a list                                    |
+| `/Category/:category`     | CategoryPage         | Public `<Route>`           | Shows offers from the same category                           |
+| '/ProductDetails/:id'     | ProductDetails       | Public `<Route>`           | Shows all details of the product                              |
+| '/About`                  | AboutPage            | Public `<Route>`           | Details about the mission and the founders of the webpage     | 
+| '/TeamSection'            | TeamSection          | Public `<Route>`           | Shows info and contact of the development team                | 
+| '/Privacy'                | Privacy              | Public `<Route>`           | Privacy Policy                                                |  
+| '/Profile`                | ProfilePage          | user only `<PrivateRoute>` | Shows all profile details, change and add details             |
+| '/Select'                 | Select               | user only `<PrivateRoute>` | Select to post Offer or Request                               |
+| `/Request'                | SelectRequest        | user only `<PrivateRoute>` | Request form                                                  |
+| `/Offer'                  | SelectOffer          | user only `<PrivateRoute>` | Offer form                                                    |                 
+| '/Dashboard'              | Dashboard            | user only `<PrivateRoute>` | Shows navbar to profile setting and chat, details about offers|
+
 
 ## Components
 
-- LoginPage
-- SplashPage
-- ProfilePage
+- Home
 - SignupPage
-- EditProfilePage
-- EditExitPointPage
-- ExitPointPage
-- EditProfilePage
-- Navbar
+- SercivePage
+- CategoryPage
+- ProductDetails
+- AboutPage
+- TeamSection
+- Privacy
+- ProfilePage
+- Select
+- SelectRequest
+- SelectOffer 
+- Dashboard 
+- Nav
 - Footer
 
 ## Services

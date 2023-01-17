@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import BookNow from "../Payment/BookNow";
 
 function ProductDetails() {
   let { id } = useParams();
@@ -64,20 +65,22 @@ function ProductDetails() {
                 <fieldset>
                   <legend className="text-lg font-bold">Type of service</legend>
 
-                  <div className="mt-2 flex gap-1">
-                    <label className="cursor-pointer">
-                      <input
-                        type="radio"
-                        id="material_cotton"
-                        name="material"
-                        className="peer sr-only"
-                      />
-                      <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
-                        {cards[0].type}
-                      </span>
-                    </label>
-                  </div>
-                </fieldset>
+                <div className="mt-2 flex gap-1">
+                  <label className="cursor-pointer">
+                    <input
+                      type="radio"
+                      id="material_cotton"
+                      name="material"
+                      className="peer sr-only"
+                      
+                    />
+
+                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
+                    {cards[0].type}
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
 
                 <div className="rounded-2xl border bg-b2 p-4">
                   {/* PROFILE PIC */}
@@ -109,16 +112,15 @@ function ProductDetails() {
                   <p className="text-xl font-bold">{cards[0].price}</p>
                 </div>
 
-                <Link to={`/Checkout/${id}`}>
-                  <button
-                    type="button"
-                    className="w-full mt-5  border border-gray-300 px-6 py-3 text-sm font-bold uppercase tracking-wide text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2"
-                  >
-                    Book Now
-                  </button>
+              {/* Checkoutbutton */}
+              <div>
+                <Link>
+                    <BookNow card={ cards } />
                 </Link>
-              </form>
-            </div>
+              </div>
+              {/* <BookNow card={ cards } /> */}
+            </form>
+          </div>
 
             <div className="lg:col-span-3">
               <div className="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
