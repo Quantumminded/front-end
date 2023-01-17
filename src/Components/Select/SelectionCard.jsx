@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function SelectionCard({ type, description, path, image }) {
+    console.log(path)
     function scrollIntoView() {
         setTimeout(() => {
             const elmntToView = document.getElementById(path);

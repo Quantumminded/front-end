@@ -194,3 +194,9 @@ export const languages = [
     { "code": "zh", "name": "Chinese" },
     { "code": "zu", "name": "Zulu" }
 ];
+
+// to get the name out of the array 
+export function fullName(input) {
+    const { name } = languages.find((ele) => ele.code == input);
+    return name;
+};
