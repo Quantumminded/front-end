@@ -15,7 +15,7 @@ export default function ProfileIcon() {
                         {user.image ?
                             <img className="w-full h-full object-cover rounded absolute shadow flex items-center justify-center" src={user.image} alt="Default avatar" />
                             :
-                            <svg className=" w-full h-full object-cover rounded absolute shadow flex items-center justify-center text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>}
+                            <svg className=" w-full h-full object-cover rounded absolute shadow flex items-center justify-center text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>}
                     </div>
                     <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                         <li><Link to='/Profile'>Profile</Link></li>
