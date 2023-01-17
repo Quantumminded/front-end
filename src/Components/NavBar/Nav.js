@@ -109,7 +109,7 @@ function Nav() {
             >
               Get Started
             </Link>
-            <div className="hidden lg:flex md:flex gap-2">
+            <div className="hidden lg:flex md:flex gap-4">
             <NotificationCenter />
             <ProfileIcon />
             </div>
