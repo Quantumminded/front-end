@@ -65,31 +65,27 @@ function ProductDetails() {
                 <fieldset>
                   <legend className="text-lg font-bold">Type of service</legend>
 
-                <div className="mt-2 flex gap-1">
-                  <label className="cursor-pointer">
-                    <input
-                      type="radio"
-                      id="material_cotton"
-                      name="material"
-                      className="peer sr-only"
-                      
-                    />
+                  <div className="mt-2 flex gap-1">
+                    <label className="cursor-pointer">
+                      <input
+                        type="radio"
+                        id="material_cotton"
+                        name="material"
+                        className="peer sr-only"
+                      />
 
-                    <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
-                    {cards[0].type}
-                    </span>
-                  </label>
-                </div>
-              </fieldset>
+                      <span className="block rounded-full border border-gray-200 px-3 py-1 text-xs bg-y2 text-b2 ">
+                        {cards[0].type}
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
 
                 <div className="rounded-2xl border bg-b2 p-4">
                   {/* PROFILE PIC */}
                   <div className="avatar mb-3 flex justify-center">
                     <div className="w-16 rounded-full">
-                      <img
-                        src="https://placeimg.com/192/192/people"
-                        alt="profile img"
-                      />
+                      <img src={cards[0].image} alt="profile img" />
                     </div>
                   </div>
                   <h6 className="text-center text-y2">About me</h6>
@@ -112,15 +108,15 @@ function ProductDetails() {
                   <p className="text-xl font-bold">{cards[0].price}</p>
                 </div>
 
-              {/* Checkoutbutton */}
-              <div>
-                <Link>
-                    <BookNow card={ cards } />
-                </Link>
-              </div>
-              {/* <BookNow card={ cards } /> */}
-            </form>
-          </div>
+                {/* Checkoutbutton */}
+                <div>
+                  <Link>
+                    <BookNow card={cards} />
+                  </Link>
+                </div>
+                {/* <BookNow card={ cards } /> */}
+              </form>
+            </div>
 
             <div className="lg:col-span-3">
               <div className="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
