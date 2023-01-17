@@ -18,7 +18,7 @@ function SelectRequest() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8 md:gap-6 gap-4 lg:mt-12 md:mt-9 mt-6">
             <div className="relative flex items-center justify-center">
-              <img src="https://i.ibb.co/kqt7S1z/img-1.png" alt="chair" className="rounded-3xl" />
+              <img src="https://guidable.co/wp-content/uploads/2019/07/Untitled-design-13.png" alt="chair" className="rounded-3xl min-h-full" />
               <div className="absolute top-0 flex flex-col w-80 md:w-80 lg:w-80 xl:w-96 h-full items-center justify-between py-10">
                 <div className="flex items-center justify-center flex-col h-full">
                   <h2 className="xl:px-10 md:px-2 px-7 text-2xl font-semibold leading-normal text-center text-y1">
@@ -37,7 +37,7 @@ function SelectRequest() {
               </div>
             </div>
             <div className="relative flex items-center justify-center">
-              <img src="https://i.ibb.co/w04zsMJ/img-2.png" alt="chair" className="rounded-3xl" />
+              <img src="https://thatwhitepaperguy.com/wp-content/uploads/2019/05/bigstock-E-learning-or-online-translato-146735912-1024x768.jpg" alt="chair" className="rounded-3xl min-h-full" />
               <div className="absolute top-0 flex flex-col w-80 md:w-80 lg:w-80 xl:w-96 h-full items-center justify-between py-10">
                 <div className="flex items-center justify-center flex-col h-full">
                   <h2 className="xl:px-10 md:px-2 px-7 text-2xl font-semibold leading-7 lg:leading-7 text-center text-y1">
@@ -56,7 +56,7 @@ function SelectRequest() {
               </div>
             </div>
             <div className="relative flex items-center justify-center">
-              <img src="https://i.ibb.co/3ctkDMB/img-3.png" alt="chair" className="rounded-3xl" />
+              <img src="https://images.idgesg.net/images/article/2022/04/translation-software-cybrain-shutterstock-100925209-large.jpg?auto=webp&quality=85,70" alt="chair" className="rounded-3xl min-h-full" />
               <div className="absolute top-0 flex flex-col w-80 md:w-80 lg:w-80 xl:w-96 h-full items-center justify-between py-10">
                 <div className="flex items-center justify-center flex-col h-full">
                   <h2 className="xl:px-10 md:px-2 px-7 text-2xl font-semibold sm:w-auto leading-normal text-center text-y1">
