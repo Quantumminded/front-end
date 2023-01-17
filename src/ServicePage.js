@@ -36,8 +36,8 @@ function ServicePage() {
         </div>
       ) : (
         <>
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 mt-7 text-center">
-            Most popular in Documents
+          <h2 className="text-2xl font-bold tracking-tight text-y2 mx-7 mt-4 py-2 text-center bg-b2 rounded-2xl">
+            Most Popular In Documents
           </h2>
           <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
             {cards
@@ -47,8 +47,8 @@ function ServicePage() {
               ))}
           </div>
 
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 text-center">
-            Most popular in Calls
+          <h2 className="text-2xl font-bold tracking-tight text-y2 mx-7 mt-4 py-2 text-center bg-b2 rounded-2xl">
+            Most Popular In Calls
           </h2>
           <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
             {cards
@@ -58,8 +58,8 @@ function ServicePage() {
               ))}
           </div>
 
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 ml-7 text-center">
-            Most popular in Translations
+          <h2 className="text-2xl font-bold tracking-tight text-y2 mx-7 mt-4 py-2 text-center bg-b2 rounded-2xl">
+            Most Popular In Translations
           </h2>
           <div className="container mx-auto px-7 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 pt-6 gap-8">
             {cards
