@@ -15,7 +15,7 @@ function SelectRequest() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8 md:gap-6 gap-4 lg:mt-12 md:mt-9 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8 md:gap-6 gap-4 lg:mt-12 md:mt-9 mt-6 mb-20">
             <div className="relative flex items-center justify-center">
               <img src="https://guidable.co/wp-content/uploads/2019/07/Untitled-design-13.png" alt="chair" className="rounded-3xl min-h-full opacity-60" />
               <div className="absolute top-0 flex flex-col w-80 md:w-80 lg:w-80 xl:w-96 h-full items-center justify-between py-10">
@@ -48,7 +48,7 @@ function SelectRequest() {
                 </div>
               </div>
             </div>
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center ">
               <img src="https://images.idgesg.net/images/article/2022/04/translation-software-cybrain-shutterstock-100925209-large.jpg?auto=webp&quality=85,70" alt="chair" className="rounded-3xl min-h-full opacity-60" />
               <div className="absolute top-0 flex flex-col w-80 md:w-80 lg:w-80 xl:w-96 h-full items-center justify-between py-10">
                 <div className="flex items-center justify-center flex-col h-full">
