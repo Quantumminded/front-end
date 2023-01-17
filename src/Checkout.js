@@ -1,14 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { Stepper } from "./Components/Order/Stepper.jsx";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import { languages } from "./languages.jsx";
 import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
+import toast from "./Components/notification/toastMessage.js";
 
 function Checkout() {
   const { token } = useContextHook();
   const [show, setShow] = useState(false);
   const { id } = useParams();
   const [fetchData, setFetchData] = useState();
+  //Inputs
+  const [formValues, setFormValues] = useState({
+    time: "",
+    date: "",
+    details: "",
+  });
+  function handleChange(e) {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  }
   const fetchTask = async () => {
     try {
       const { data } = await client(token).get(`/api/task/all/${id}`);
@@ -33,9 +44,26 @@ function Checkout() {
     );
     return findings;
   };
-  // useEffect(() => {
-  //   fetchTask();
-  // }, [id]);
+  async function doAccept() {
+    try {
+      const { data } = await client(token).post(`/task/accepted/${id}`, {
+        ...formValues,
+      });
+      setMessage(data);
+      window.location.href = "/messages";
+    } catch (error) {
+      setMessage(error.response.data);
+    }
+  }
+  useEffect(() => {
+    fetchTask();
+  }, [id]);
+
+  // Notification toast takes type and message from the response
+  const [message, setMessage] = useState();
+  useEffect(() => {
+    if (message) toast(message.type, message.message);
+  }, [message]);
   if (fetchData)
     return (
       <>
@@ -81,21 +109,21 @@ function Checkout() {
                   </div>
 
                   <p className="text-5xl font-black leading-10 text-gray-800 pt-3">
-                    Products
+                    Order
                   </p>
                   {/* Product cards */}
                   <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
                     <div className="w-1/4">
                       <img
-                        src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
+                        src={fetchData[0].image}
                         alt=""
                         className="w-full h-full object-center object-cover"
                       />
                     </div>
                     <div className="md:pl-3 md:w-3/4">
-                      <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
+                      {/* <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
                         {fetchData[0].id}
-                      </p>
+                      </p> */}
                       <div className="flex items-center justify-between w-full pt-1">
                         <p className="text-base font-black leading-none text-gray-800">
                           {fetchData[0].title}
@@ -119,10 +147,6 @@ function Checkout() {
                       <p className="text-xs leading-3 text-gray-600 py-4">
                         {fetchData[0].type}
                       </p>
-                      <p className="w-96 text-xs leading-3 text-gray-600">
-                        Date:
-                      </p>
-                      <input type={"time"} />
                       <div className="flex items-center justify-between pt-5 pr-6">
                         <div className="flex itemms-center">
                           <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
@@ -133,7 +157,7 @@ function Checkout() {
                           </p>
                         </div>
                         <p className="text-base font-black leading-none text-gray-800">
-                          $200
+                          {fetchData[0].price}
                         </p>
                       </div>
                     </div>
@@ -193,31 +217,83 @@ function Checkout() {
                   <div className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto">
                     <div>
                       <p className="text-4xl font-black leading-9 text-gray-800">
-                        Summary
+                        Provide some Information
                       </p>
-                      <div className="flex items-center justify-between pt-16">
-                        <p className="text-base leading-none text-gray-800">
-                          Subtotal
-                        </p>
-                        <p className="text-base leading-none text-gray-800">
-                          $200
-                        </p>
-                      </div>
-                      <div className="flex items-center justify-between pt-5">
-                        <p className="text-base leading-none text-gray-800">
-                          Shipping
-                        </p>
-                        <p className="text-base leading-none text-gray-800">
-                          $30
-                        </p>
-                      </div>
-                      <div className="flex items-center justify-between pt-5">
-                        <p className="text-base leading-none text-gray-800">
-                          Tax
-                        </p>
-                        <p className="text-base leading-none text-gray-800">
-                          $35
-                        </p>
+
+                      <div className="flex items-center justify-between  pt-16">
+                        <div className="">
+                          {/* Task Provider */}
+                          <div class="flex items-center space-x-4 pb-4">
+                            <img
+                              class="w-10 h-10 rounded-full"
+                              src={fetchData[0].image}
+                              alt=""
+                            />
+                            <div class="font-medium dark:text-white">
+                              <div>{`${fetchData[0].firstname} ${fetchData[0].lastname}`}</div>
+                              <div class="text-sm text-gray-500 dark:text-gray-400">
+                                Joined in August 2014
+                              </div>
+                            </div>
+                          </div>
+                          {/* Task Provider */}
+                          {/* TEXTBOx */}
+                          <div className="mb-3 xl:w-96">
+                            <label
+                              for="exampleFormControlTextarea1"
+                              className="form-label inline-block mb-2 text-gray-700"
+                            >
+                              Describe your Task
+                            </label>
+                            <textarea
+                              name="details"
+                              value={formValues.details}
+                              onChange={handleChange}
+                              className="
+                                  form-control
+                                  block
+                                  w-full
+                                  px-3
+                                  py-1.5
+                                  text-base
+                                  font-normal
+                                  text-gray-700
+                                  bg-white bg-clip-padding
+                                  border border-solid border-gray-300
+                                  rounded
+                                  transition
+                                  ease-in-out
+                                  m-0
+                                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                                "
+                              id="exampleFormControlTextarea1"
+                              rows="3"
+                              placeholder="Your message"
+                            ></textarea>
+                            <p className="w-96 text-xs leading-3 text-gray-600 py-2">
+                              Please select due Date:
+                            </p>
+                            <div className="flex gap-2 justify-between">
+                              <input
+                                value={formValues.time}
+                                type={"time"}
+                                name="time"
+                                onChange={handleChange}
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              />
+                              <input
+                                value={formValues.date}
+                                type={"date"}
+                                name="date"
+                                onChange={handleChange}
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="select time"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        {/* TEXTBOx */}
+                        <Stepper formValues={formValues} />
                       </div>
                     </div>
                     <div>
@@ -226,10 +302,13 @@ function Checkout() {
                           Total
                         </p>
                         <p className="text-2xl font-bold leading-normal text-right text-gray-800">
-                          $265
+                          {fetchData[0].price}
                         </p>
                       </div>
-                      <button className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
+                      <button
+                        onClick={doAccept}
+                        className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white"
+                      >
                         Checkout
                       </button>
                     </div>
@@ -262,11 +341,11 @@ function Checkout() {
 
   return (
     <>
-      <div class="text-center">
+      <div className="text-center">
         <div role="status">
           <svg
             aria-hidden="true"
-            class="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +359,7 @@ function Checkout() {
               fill="currentFill"
             />
           </svg>
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     </>
