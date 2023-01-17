@@ -7,6 +7,7 @@ import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
 import qs from "qs";
 import { fullName } from "./languages";
+import HomeCard from "./Components/HomePage/HomeCard";
 const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
