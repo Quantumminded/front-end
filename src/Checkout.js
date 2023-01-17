@@ -50,7 +50,7 @@ function Checkout() {
         ...formValues,
       });
       setMessage(data);
-      window.location.href = "/messages";
+      setTimeout(() => (window.location.href = "/messages"), 2000);
     } catch (error) {
       setMessage(error.response.data);
     }
@@ -115,7 +115,7 @@ function Checkout() {
                   <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
                     <div className="w-1/4">
                       <img
-                        src={fetchData[0].image}
+                        src={"https://picsum.photos/400/300"}
                         alt=""
                         className="w-full h-full object-center object-cover"
                       />
