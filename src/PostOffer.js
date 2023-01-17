@@ -77,20 +77,20 @@ const PostOffer = () => {
     // submit form values to API or somewhere else
   };
   return (
-    <div id="Offer" className="bg-b2">
+    <div id="Offer" className="bg-gray-100">
       <div className="pb-12 pt-12">
         <div className="flex justify-center">
           <BreadCrumbs />
         </div>
         <form className=" ml-52 mr-52" id="login" onSubmit={handleSubmit}>
-          <div className="bg-white dark:bg-gray-800">
-            <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
-              <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
-                <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center">
-                  <p className="mx-auto text-lg text-gray-800 dark:text-gray-100 font-bold">
-                    Profile
+          <div className="bg-white ">
+            <div className="container mx-auto bg-white">
+              <div className="xl:w-full border-b border-gray-300 py-5 bg-white">
+                <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center ">
+                  <p className="mx-auto text-lg text-gray-800 font-bold">
+                    Offer
                   </p>
-                  <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+                  <div className="ml-2 cursor-pointer text-gray-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -107,38 +107,15 @@ const PostOffer = () => {
                 </div>
               </div>
               <div className="mx-auto">
-                <div className="w-11/12 mx-auto ">
+                <div className="w-11/12 mx-auto">
                   <div className="rounded relative mt-8 h-48">
                     <img
-                      src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form1.jpg"
+                      src="https://www.shutterstock.com/image-vector/translator-translation-service-typographic-header-260nw-1770496304.jpg"
                       alt=""
-                      className="w-full h-full object-cover rounded absolute shadow"
+                      className="w-full h-full px-28 object-cover rounded absolute shadow"
                     />
-                    <div className="absolute bg-black opacity-50 top-0 right-0 bottom-0 left-0 rounded" />
-                    <div className="flex items-center px-3 py-2 rounded absolute right-0 mr-4 mt-4 cursor-pointer">
-                      <p className="text-xs text-gray-100">
-                        Change Cover Photo
-                      </p>
-                      <div className="ml-2 text-gray-100">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-edit"
-                          width={18}
-                          height={18}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" />
-                          <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
-                          <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
-                          <line x1={16} y1={5} x2={19} y2={8} />
-                        </svg>
-                      </div>
-                    </div>
+                    <div className="absolute bg-black opacity-0 top-0 right-0 bottom-0 left-0 rounded" />
+                    
                     <div className="w-20 h-20 rounded-full bg-cover bg-center bg-no-repeat absolute bottom-0 -mb-10 ml-12 shadow flex items-center justify-center">
                       <img
                         src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg"
@@ -171,7 +148,7 @@ const PostOffer = () => {
                   <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                     <label
                       htmlFor="title"
-                      className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                      className="pb-2 text-sm font-bold text-gray-800"
                     >
                       Titel
                     </label>
@@ -182,14 +159,14 @@ const PostOffer = () => {
                       id="title"
                       name="title"
                       required
-                      className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                      className="border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
                       placeholder="I will translate Documents"
                     />
                   </div>
                   <div className="mt-8 flex flex-col xl:w-3/5 lg:w-1/2 md:w-1/2 w-full">
                     <label
                       htmlFor="about"
-                      className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                      className="pb-2 text-sm font-bold text-gray-800"
                     >
                       Description
                     </label>
@@ -199,11 +176,11 @@ const PostOffer = () => {
                       id="description"
                       name="description"
                       required
-                      className="bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                      className="bg-transparent border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500"
                       placeholder="Let the world know who you are"
                       rows={5}
                     />
-                    <p className="w-full text-right text-xs pt-1 text-gray-500 dark:text-gray-400">
+                    <p className="w-full text-right text-xs pt-1 text-gray-500">
                       Character Limit: 200
                     </p>
                   </div>
@@ -212,7 +189,7 @@ const PostOffer = () => {
                   <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                     <label
                       htmlFor="type"
-                      className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                      className="pb-2 text-sm font-bold text-gray-800"
                     >
                       Category
                     </label>
@@ -220,17 +197,17 @@ const PostOffer = () => {
                       onChange={handleChange}
                       name="type"
                       id="type"
-                      className="bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                      className="bg-transparent border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500"
                     >
-                      <option value="call">Volvo</option>
-                      <option value="dokument">Saab</option>
-                      <option value="translation">Mercedes</option>
+                      <option value="call">call</option>
+                      <option value="dokument">document</option>
+                      <option value="translation">translation</option>
                     </select>
                   </div>
                   <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                     <label
                       htmlFor="price"
-                      className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                      className="pb-2 text-sm font-bold text-gray-800"
                     >
                       Price
                     </label>
@@ -239,19 +216,19 @@ const PostOffer = () => {
                       onChange={handleChange}
                       name="price"
                       type="number"
-                      className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                      className="border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
                     ></input>
                   </div>
                   <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                     <label
                       htmlFor="type"
-                      className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                      className="pb-2 text-sm font-bold text-gray-800"
                     >
                       Select your Languages
                     </label>
                     <AllLanguages handleLanguages={handleLanguages} />
                     <br />
-                    <div className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400">
+                    <div className="border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500">
                       {formValues.languages &&
                         formValues.languages.map((ele) => (
                           <InputTag language={ele} />
@@ -261,17 +238,19 @@ const PostOffer = () => {
                   {/* End here */}
                   <div className=" container mx-auto w-11/12 xl:w-full">
                     <div className="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex justify-end">
-                      <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
+                      <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 rounded text-indigo-600 px-6 py-2 text-xs mr-4">
                         Cancel
                       </button>
                       <button
-                        className="bg-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm"
+                        className="py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold "
                         type="submit"
                       >
                         Publish
                       </button>
                     </div>
-                    <HomeCard language={formValues.languages} />
+                    <div className="p-28">
+                      <HomeCard language={formValues.languages} />
+                    </div>
                   </div>
                 </div>
               </div>
