@@ -1,46 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { fullName } from "../../languages";
 
 import BookNow from "../Payment/BookNow";
 
 function HomeCard2({ card }) {
+  console.log(card);
   return (
     <>
       <div key={card.id} className="wrapper antialiased text-gray-900 mb-10">
-    <div className="wrapper antialiased text-gray-900 mb-10">
-      <div>
-          <div className="relative bottom-0 left-0">
-            <div className="absolute bottom-14 right-0 p-3 bg-transparent">
-              
-              {/* FLEGs map based on language  */}
-              {card.languages.map((language) => (
-                    <img
-                      key={language}
-                      className="p-2"
-                      src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
-                      alt={language}
-                    />
-                  ))}
-            </div>
-            
-            <img
-              className="w-full shadow rounded-2xl bg-white"
-              src="https://www.diariosigloxxi.com/multimedia/images/img_0b14b9d22e581f001cf5c8fd29644654.jpg"
-              alt="pic"
-            />
-            
-          </div>
-        <div className="relative px-4 -mt-8">
-          <div className=" p-6 rounded-lg shadow-lg ">
+        <div className="wrapper antialiased text-gray-900 mb-10">
+          <div>
+            <div className="relative bottom-0 left-0">
+              <div className="absolute bottom-14 right-0 p-3 bg-transparent">
+                {/* FLEGs map based on language  */}
+                {card.languages.map((language) => (
+                  <img
+                    key={language}
+                    className="p-2"
+                    src={`https://flagcdn.com/24x18/${language.toLowerCase()}.png`}
+                    alt={language}
+                  />
+                ))}
+              </div>
 
-              {/* PROFILE PIC  */} 
-              <div className="avatar flex justify-center mb-3 ">
+              <img
+                className="w-full shadow rounded-2xl bg-white"
+                src="https://www.diariosigloxxi.com/multimedia/images/img_0b14b9d22e581f001cf5c8fd29644654.jpg"
+                alt="pic"
+              />
+            </div>
+            <div className="relative px-4 -mt-8">
+              <div className=" p-6 rounded-lg shadow-lg ">
+                {/* PROFILE PIC  */}
+                <div className="avatar flex justify-center mb-3 ">
                   <div className="w-12 rounded-full">
-                    <img
-                      src="https://placeimg.com/192/192/people"
-                      alt="profile pictrue"
-                    />
+                    <img src={card.image} alt="profile pictrue" />
                   </div>
                 </div>
                 <div className="flex items-baseline">
@@ -50,7 +45,8 @@ function HomeCard2({ card }) {
                   </span>
                   {/* LANGUAGE SPOKEN */}
                   <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                    {card.languages[0]} | {card.languages[1]}
+                    {fullName(card.languages[0])} |{" "}
+                    {fullName(card.languages[1])}
                   </div>
                 </div>
                 {/* SMALL DESCIPTION OF SERVICE */}

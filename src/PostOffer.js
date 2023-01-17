@@ -5,15 +5,15 @@ import InputTag from "./Components/Form/InputTag";
 import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
 import toastMessage from "./Components/notification/toastMessage";
-import HomeCard from "./Components/HomePage/HomeCard";
 import qs from "qs";
+import { fullName } from "./languages";
 const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
     if (message) toastMessage(message.type, message.message);
   }, [message]);
 
-  const { token } = useContextHook();
+  const { token, user } = useContextHook();
   // let form = useRef(null);
   //   const handleSubmit = (event) => {
   //       event.preventDefault();
@@ -40,6 +40,11 @@ const PostOffer = () => {
   const handleChange = (event) => {
     setFormValues({
       ...formValues,
+      title: `I will make your ${
+        formValues.type
+      } : From ${formValues.languages.map((ele) =>
+        fullName(ele)
+      )} to ${fullName(user.languages)}`,
       [event.target.name]: event.target.value,
     });
   };
@@ -57,7 +62,7 @@ const PostOffer = () => {
     client(token)
       .post(
         "/task/create",
-        // had to create a stringify version because i had trouble with render and my database 
+        // had to create a stringify version because i had trouble with render and my database
         qs.stringify({
           title: formValues.title,
           description: formValues.description,
@@ -75,6 +80,13 @@ const PostOffer = () => {
         console.log(err);
       });
     // submit form values to API or somewhere else
+  };
+  const remove = (language) => {
+    const newValues = formValues.languages.filter((item) => item !== language);
+    setFormValues({
+      ...formValues,
+      languages: newValues,
+    });
   };
   return (
     <div id="Offer" className="bg-gray-100">
@@ -154,7 +166,7 @@ const PostOffer = () => {
                     </label>
                     <input
                       value={formValues.title}
-                      onChange={handleChange}
+                      onChange={`handleChange`}
                       type="text"
                       id="title"
                       name="title"
@@ -199,9 +211,9 @@ const PostOffer = () => {
                       id="type"
                       className="bg-transparent border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500"
                     >
-                      <option value="call">call</option>
-                      <option value="dokument">document</option>
-                      <option value="translation">translation</option>
+                      <option value="call">Call</option>
+                      <option value="document">Dokument</option>
+                      <option value="translation">Translation</option>
                     </select>
                   </div>
                   <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
@@ -230,8 +242,13 @@ const PostOffer = () => {
                     <br />
                     <div className="border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500">
                       {formValues.languages &&
-                        formValues.languages.map((ele) => (
-                          <InputTag language={ele} />
+                        formValues.languages.map((ele, i) => (
+                          <InputTag
+                            key={i}
+                            index={i}
+                            language={ele}
+                            remove={remove}
+                          />
                         ))}
                     </div>
                   </div>
@@ -248,9 +265,7 @@ const PostOffer = () => {
                         Publish
                       </button>
                     </div>
-                    <div className="p-28">
-                      <HomeCard language={formValues.languages} />
-                    </div>
+                    <HomeCard language={formValues.languages} />
                   </div>
                 </div>
               </div>
