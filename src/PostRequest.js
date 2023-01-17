@@ -75,7 +75,7 @@ export default function PostRequest() {
     // submit form values to API or somewhere else
   };
   return (
-    <div id="PostRequest" className="bg-b2">
+    <div id="PostRequest" className="">
       <div className="pb-12 pt-12">
         <div className="flex justify-center">
           <BreadCrumbs />
