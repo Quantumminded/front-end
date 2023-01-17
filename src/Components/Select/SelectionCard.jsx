@@ -23,7 +23,7 @@ export default function SelectionCard({ type, description, path, image }) {
                 </div>
                 <div className="px-4 md:w-auto w-full">
                     <Link onClick={scrollIntoView} to={path}>
-                        <button className="w-full py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold">
+                        <button className="w-full py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold border border-black hover:border-y2">
                             Select
                         </button>
                     </Link>
