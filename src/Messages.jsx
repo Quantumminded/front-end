@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import SideBar from './SideBar';
 import { client } from './utils/client.mjs';
 import useContextHook from './utils/customContextHook';
+import ChatInside from './Chat/ChatInside';
 
 const Messages = () => {
     const { token } = useContextHook()
@@ -79,8 +80,10 @@ const Messages = () => {
                     </div>
                 ))}
             </div>
-            <div className="w-2/3 bg-white p-4 chat">
-                {selectedChat && (
+            <div className="w-2/3 bg-white p-4">
+
+                <ChatInside />
+                {/* {selectedChat && (
                     <>
                         <div className="mb-4 chat-start">
                             {selectedChat.messages.map((message) => (
@@ -98,7 +101,7 @@ const Messages = () => {
                             <button className="bg-blue-500 text-white rounded p-2 ml-2">Send</button>
                         </form>
                     </>
-                )}
+                )} */}
             </div>
         </div>
     );
