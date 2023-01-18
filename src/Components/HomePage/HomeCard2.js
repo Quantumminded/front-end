@@ -31,7 +31,7 @@ function HomeCard2({ card }) {
               />
             </div>
             <div className="relative px-4 -mt-8">
-              <div className=" p-6 rounded-lg shadow-lg ">
+              <div className=" p-6 rounded-lg shadow-3xl">
                 {/* PROFILE PIC  */}
                 <div className="avatar flex justify-center mb-3 ">
                   <div className="w-12 rounded-full">
