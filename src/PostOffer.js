@@ -128,7 +128,7 @@ const PostOffer = () => {
                       className="w-full h-full px-28 object-cover rounded absolute shadow"
                     />
                     <div className="absolute bg-black opacity-0 top-0 right-0 bottom-0 left-0 rounded" />
-
+                    
                     <div className="w-20 h-20 rounded-full bg-cover bg-center bg-no-repeat absolute bottom-0 -mb-10 ml-12 shadow flex items-center justify-center">
                       <img
                         src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg"
@@ -266,6 +266,7 @@ const PostOffer = () => {
                         Publish
                       </button>
                     </div>
+                    <HomeCard language={formValues.languages} />
                   </div>
                 </div>
               </div>
