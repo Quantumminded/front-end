@@ -86,7 +86,7 @@ export default function ChatInside({ selectedChat }) {
                                 </svg>
                             </button>
                         </span>
-                        <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Write your message!" className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3" />
+                        <input value={input} onKeyDown={(e) => { if (e.key === 'Enter') { sendMessage() } }} onChange={(e) => { setInput(e.target.value) }} type="text" placeholder="Write your message!" className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3" />
                         <div className="absolute right-0 items-center inset-y-0 hidden sm:flex">
                             <button type="button" className="inline-flex items-center justify-center rounded-full h-10 w-10 transition duration-500 ease-in-out text-gray-500 hover:bg-gray-300 focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6 text-gray-600">
