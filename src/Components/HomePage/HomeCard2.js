@@ -53,6 +53,11 @@ function HomeCard2({ card }) {
                 <h4 className="mt-2 text-sm uppercase leading-tight">
                   {card.title}
                 </h4>
+                {/* LANGUAGE SPOKEN */}
+                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                    {fullName(card.languages[0])} |{" "}
+                    {fullName(card.languages[1])}
+                  </div>
                 {/* PRICE OF SERVICE */}
                 <div className="mt-1">
                   {card.price}
