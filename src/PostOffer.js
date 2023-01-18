@@ -95,7 +95,7 @@ const PostOffer = () => {
         <div className="flex justify-center">
           <BreadCrumbs />
         </div>
-        <form className=" ml-52 mr-52" id="login" onSubmit={handleSubmit}>
+        <form className="ml-52 mr-52" id="login" onSubmit={handleSubmit}>
           <div className="bg-white ">
             <div className="container mx-auto bg-white">
               <div className="xl:w-full border-b border-gray-300 py-5 bg-white">

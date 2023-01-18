@@ -18,17 +18,6 @@ export default function PostRequest() {
   }, [message]);
 
   const { token } = useContextHook();
-  // let form = useRef(null);
-  //   const handleSubmit = (event) => {
-  //       event.preventDefault();
-  //       const form_data = new FormData(form.current);
-  //       let payload = {};
-  //       form_data.forEach(function (value, key) {
-  //           payload[key] = value;
-  //       });
-  //       // console.log("payload", payload);
-  //       // Place your API call here to submit your payload.
-  //   };
 
   // useState hook to store form values
   const [formValues, setFormValues] = useState({
@@ -75,16 +64,16 @@ export default function PostRequest() {
     // submit form values to API or somewhere else
   };
   return (
-    <div id="PostRequest" className="bg-b2">
-      <div className="pb-12 pt-12">
+    <div id="PostRequest" className="bg-gray-100">
+      <div className="py-12">
         <div className="flex justify-center">
           <BreadCrumbs />
         </div>
-        <form className=" ml-52 mr-52" id="login" onSubmit={handleSubmit}>
-          <div className="bg-white dark:bg-gray-800">
+        <form className="mx-52" id="login" onSubmit={handleSubmit}>
+          <div className="bg-white">
             <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
               {/* TOPSECTION  START */}
-              <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
+              <div className="xl:w-full border-b border-gray-300  py-5 bg-white">
                 <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center">
                   <p className="mx-auto text-lg text-gray-800 dark:text-gray-100 font-bold">
                     Request for {type}
@@ -93,17 +82,14 @@ export default function PostRequest() {
               </div>
               {/* TOPSECTION  End */}
               <div className="mx-auto">
-                <div className="w-11/12 mx-auto ">
-                  {/* ProfileBanner */}
-                  {/* ProfileBanner End */}
-
+                <div className="w-11/12 mx-auto">
                   {/* InputFields */}
                   <div className="flex flex-col items-end">
                     {/* Title */}
                     <div className="mt-16 flex flex-col xl:w-3/6 lg:w-1/2 md:w-1/2 w-full">
                       <label
                         htmlFor="title"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 border-y2"
                       >
                         Titel
                       </label>
@@ -114,7 +100,7 @@ export default function PostRequest() {
                         id="title"
                         name="title"
                         required
-                        className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="border pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 border-y2"
                         placeholder="I will translate Documents"
                       />
                     </div>
@@ -134,11 +120,11 @@ export default function PostRequest() {
                         id="description"
                         name="description"
                         required
-                        className="bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="bg-transparent border pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 border-y2"
                         placeholder="Let the world know who you are"
                         rows={5}
                       />
-                      <p className="w-full text-right text-xs pt-1 text-gray-500 dark:text-gray-400">
+                      <p className="w-full text-right text-xs pt-1 text-gray-500">
                         Character Limit: 200
                       </p>
                     </div>
@@ -148,7 +134,7 @@ export default function PostRequest() {
                       <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full items-end">
                         <label
                           htmlFor="dueDate"
-                          className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                          className="pb-2 text-sm font-bold text-gray-800"
                         >
                           Due to when ?
                         </label>
@@ -157,14 +143,14 @@ export default function PostRequest() {
                           name="dueDate"
                           id="dueDate"
                           type="date"
-                          className="w-1/2 bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                          className="w-1/2 bg-transparent border pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 border-y2"
                           placeholder="Select date"
                         />
                       </div>
                       <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full items-end">
                         <label
                           htmlFor="dueDate"
-                          className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                          className="pb-2 text-sm font-bold text-gray-800"
                         >
                           Time
                         </label>
@@ -173,7 +159,7 @@ export default function PostRequest() {
                           name="dueTime"
                           id="dueTime"
                           type="time"
-                          className="w-1/2 bg-transparent border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                          className="w-1/2 bg-transparent border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 resize-none placeholder-gray-500 text-gray-500 dark:text-gray-400"
                           placeholder="Select Time"
                         />
                       </div>
@@ -190,7 +176,7 @@ export default function PostRequest() {
                     <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                       <label
                         htmlFor="price"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 "
                       >
                         Price
                       </label>
@@ -199,7 +185,7 @@ export default function PostRequest() {
                         onChange={handleChange}
                         name="price"
                         type="number"
-                        className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="border border-y2 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
                       ></input>
                     </div>
                     {/* Price End */}
@@ -241,7 +227,7 @@ export default function PostRequest() {
                         Cancel
                       </button>
                       <button
-                        className="bg-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm"
+                        className="py-3 px-6 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y2 self-center text-center font-bold"
                         type="submit"
                       >
                         Publish

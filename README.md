@@ -8,7 +8,7 @@
 
 ## User Stories
 
-- **Admin sign up:** As an admin I can sign up in the platfor
+- **Admin sign up:** As an admin I can sign up 
 - **Admin log in:** As an admin I can login to the platform
 - **Admin log out:** As an admin I can logout from the platform so no one else can use it
 - **User sign up:** As a user I can sign up in the platform
@@ -146,17 +146,15 @@ Exit model
 
 ### Trello/Kanban
 
-[Link to your trello board](https://trello.com/b/PBqtkUFX/curasan) or picture of your physical board
+[Link to your trello board](https://trello.com/b/pMnNIdPP/finalproject)
 
 ### Git
 
-The url to your repository and to your deployed project
+[Client repository Link](https://github.com/Quantumminded/front-end)
 
-[Client repository Link](https://github.com/screeeen/project-client)
+[Server repository Link](https://github.com/FirstInLineMaxim/Ultra-Top-Secret-Backend)
 
-[Server repository Link](https://github.com/screeeen/project-server)
-
-[Deployed App Link](http://heroku.com/)
+[Deployed App Link](https://rococo-nougat-fa00e0.netlify.app)
 
 ### Slides
 
@@ -164,10 +162,4 @@ The url to your presentation slides
 
 [Slides Link](http://slides.com/)
 
-Wireframe
 
-The url to your presentation slides
-
-[Figma Link](http://www.figma.com/file/GNvDVBD1NPTydU2PJy4DDM/dataBASE?node-id=0%3A88)
-
-https://www.figma.com/file/GNvDVBD1NPTydU2PJy4DDM/dataBASE?node-id=0%3A88

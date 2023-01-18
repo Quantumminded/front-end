@@ -3,7 +3,6 @@ import React from 'react'
 function AboutUsSection() {
   return (
     <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-            <p className="font-normal text-sm leading-3 text-b1 hover:text-y2 cursor-pointer pb-2">About</p>
             <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                 <div className="w-full lg:w-6/12">
                     <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9 text-y1">We are here to make great translation accessible and delightfull for everyone</h2>

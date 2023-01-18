@@ -26,12 +26,12 @@ function HomeCard2({ card }) {
 
               <img
                 className="w-full shadow rounded-2xl bg-white"
-                src="https://www.diariosigloxxi.com/multimedia/images/img_0b14b9d22e581f001cf5c8fd29644654.jpg"
+                src="https://etranslationservices.com/backup/wp-content/uploads/2020/12/Online-Translation-Tools-e1617588803861.jpg"
                 alt="pic"
               />
             </div>
             <div className="relative px-4 -mt-8">
-              <div className=" p-6 rounded-lg shadow-lg ">
+              <div className=" p-6 rounded-lg shadow-2xl">
                 {/* PROFILE PIC  */}
                 <div className="avatar flex justify-center mb-3 ">
                   <div className="w-12 rounded-full">
@@ -43,18 +43,18 @@ function HomeCard2({ card }) {
                   <span className="bg-b2 text-y2 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                     {card.type}
                   </span>
-                  {/* LANGUAGE SPOKEN */}
-                  <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                    {fullName(card.languages[0])} |{" "}
-                    {fullName(card.languages[1])}
-                  </div>
+                </div>
+                {/* LANGUAGE SPOKEN */}
+                <div className="mt-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                  {fullName(card.languages[0])} |{" "}
+                  {fullName(card.languages[1])}
                 </div>
                 {/* SMALL DESCIPTION OF SERVICE */}
-                <h4 className="mt-1 text-xl font-semibold uppercase leading-tight ">
+                <h4 className="mt-2 text-lg uppercase leading-tight">
                   {card.title}
                 </h4>
                 {/* PRICE OF SERVICE */}
-                <div className="mt-1">
+                <div className="mt-2">
                   {card.price}
                   <span className="text-gray-600 text-sm"> /h</span>
                 </div>
