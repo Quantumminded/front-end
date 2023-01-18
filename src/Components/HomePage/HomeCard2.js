@@ -46,15 +46,15 @@ function HomeCard2({ card }) {
                 </div>
                 {/* LANGUAGE SPOKEN */}
                 <div className="mt-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                    {fullName(card.languages[0])} |{" "}
-                    {fullName(card.languages[1])}
+                  {fullName(card.languages[0])} |{" "}
+                  {fullName(card.languages[1])}
                 </div>
                 {/* SMALL DESCIPTION OF SERVICE */}
-                <h4 className="mt-2 text-sm uppercase leading-tight">
+                <h4 className="mt-2 text-lg uppercase leading-tight">
                   {card.title}
                 </h4>
                 {/* PRICE OF SERVICE */}
-                <div className="mt-1">
+                <div className="mt-2">
                   {card.price}
                   <span className="text-gray-600 text-sm"> /h</span>
                 </div>
