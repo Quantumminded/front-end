@@ -18,17 +18,6 @@ export default function PostRequest() {
   }, [message]);
 
   const { token } = useContextHook();
-  // let form = useRef(null);
-  //   const handleSubmit = (event) => {
-  //       event.preventDefault();
-  //       const form_data = new FormData(form.current);
-  //       let payload = {};
-  //       form_data.forEach(function (value, key) {
-  //           payload[key] = value;
-  //       });
-  //       // console.log("payload", payload);
-  //       // Place your API call here to submit your payload.
-  //   };
 
   // useState hook to store form values
   const [formValues, setFormValues] = useState({
@@ -80,7 +69,7 @@ export default function PostRequest() {
         <div className="flex justify-center">
           <BreadCrumbs />
         </div>
-        <form className=" mx-52" id="login" onSubmit={handleSubmit}>
+        <form className="mx-52" id="login" onSubmit={handleSubmit}>
           <div className="bg-white">
             <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
               {/* TOPSECTION  START */}
