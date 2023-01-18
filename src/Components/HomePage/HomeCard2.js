@@ -26,7 +26,7 @@ function HomeCard2({ card }) {
 
               <img
                 className="w-full shadow rounded-2xl bg-white"
-                src="https://www.transperfect.com/sites/default/files/styles/responsive_image_2000/public/media/image/3%20Methods%20of%20%20Translation%20for%20LifeSci.png?itok=LrhJiZns"
+                src="https://etranslationservices.com/backup/wp-content/uploads/2020/12/Online-Translation-Tools-e1617588803861.jpg"
                 alt="pic"
               />
             </div>
