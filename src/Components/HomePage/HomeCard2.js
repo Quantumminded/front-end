@@ -26,7 +26,7 @@ function HomeCard2({ card }) {
 
               <img
                 className="w-full shadow rounded-2xl bg-white"
-                src="https://www.diariosigloxxi.com/multimedia/images/img_0b14b9d22e581f001cf5c8fd29644654.jpg"
+                src="https://ehlion.com/wp-content/uploads/2020/07/translate.jpg"
                 alt="pic"
               />
             </div>
