@@ -111,7 +111,7 @@ function ProductDetails() {
                 {/* Checkoutbutton */}
                 <div>
                   <Link>
-                    <BookNow card={cards} />
+                    <BookNow />
                   </Link>
                 </div>
                 {/* <BookNow card={ cards } /> */}
