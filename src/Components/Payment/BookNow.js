@@ -5,7 +5,7 @@ function BookNow({ card }) {
     const [error, setError] = useState(null);
 
   const handleClick = (card) => {
-    fetch("https://super-secret-backend.onrender.com/create-checkout-session", {
+    fetch("http://localhost:3001/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

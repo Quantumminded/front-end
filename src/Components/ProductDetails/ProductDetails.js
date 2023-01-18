@@ -119,7 +119,7 @@ function ProductDetails() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
+              <div className="prose max-w-none [&>iframe]:mt-3 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl">
                 <h5 className="text-lg font-bold">DESCRIPTION</h5>
                 <p>
                   {cards[0].description}
