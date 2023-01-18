@@ -50,7 +50,7 @@ function HomeCard2({ card }) {
                   </div>
                 </div>
                 {/* SMALL DESCIPTION OF SERVICE */}
-                <h4 className="mt-1 text-lg font-semibold uppercase leading-tight ">
+                <h4 className="mt-1 text-sm uppercase leading-tight">
                   {card.title}
                 </h4>
                 {/* PRICE OF SERVICE */}
