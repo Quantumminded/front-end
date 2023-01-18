@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import toastMessage from '../Components/notification/toastMessage.js'
 import { client } from '../utils/client.mjs'
 import useContextHook from '../utils/customContextHook'
 import MyMessage from './my_message'
@@ -12,17 +13,22 @@ export default function ChatInside({ selectedChat }) {
     const [messages, setMessages] = useState([])
     const [input, setInput] = useState('')
     const [messageSend, setMessageSend] = useState(false)
+    const [resMessage, setResMessage] = useState();
+    useEffect(() => {
+        if (resMessage) toastMessage(resMessage.type, resMessage.message);
+    }, [resMessage]);
+
     useEffect(() => {
         client(token).get(`/chat/selectedChat/${selectedChat.id}`).then(({ data }) => setMessages(data))
         setMessageSend(false)
     }, [selectedChat, token, messageSend])
     const sendMessage = async () => {
-        await client(token).post(`/chat/new/message/${selectedChat.id}`, { message: input })
+        await client(token).post(`/chat/new/message/${selectedChat.id}`, { message: input }).then(({ data }) => setResMessage(data))
         setInput('')
         setMessageSend(true)
     }
     if (!user) return <>Loading...</>
-    const { firstname, lastname, image: contacted_image, createdby_image } = selectedChat
+    const { firstname, lastname, image: contacted_image, createdby_image, createdby_firstname, createdby_lastname } = selectedChat
     const { image } = user
     if (user && messages)
 
@@ -40,7 +46,7 @@ export default function ChatInside({ selectedChat }) {
                         </div>
                         <div className="flex flex-col leading-tight">
                             <div className="text-2xl mt-1 flex items-center">
-                                <span className="text-gray-700 mr-3">{`${firstname} ${lastname}`}</span>
+                                <span className="text-gray-700 mr-3">{selectedChat.created_by == user.id ? `${firstname} ${lastname}` : `${createdby_firstname} ${createdby_lastname}`}</span>
                             </div>
                             {/* <span className="text-lg text-gray-600">Junior Developer</span> */}
                         </div>
