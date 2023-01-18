@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Highlight, Small } from "../../Style/StyledTypography";
 import { Button } from "../../Style/StyledComponents";
 import { useCookies } from "react-cookie";
+import logo from "../../img/translation.png";
 //Custom Axios client with header & authorization
 import { client } from "../../utils/client.mjs";
 import toast from "../notification/toastMessage";
@@ -99,7 +100,7 @@ export default function Login({ setSignUp, signUp }) {
                         >
                             <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                                 <div>
-                                    <h2 className="text-4xl font-bold text-white">Brand</h2>
+                                    <h2 className="text-4xl font-bold text-y2">GlobalSpeak</h2>
 
                                     <p className="max-w-xl mt-3 text-gray-300">
                                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
@@ -113,8 +114,9 @@ export default function Login({ setSignUp, signUp }) {
                         <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
                             <div className="flex-1">
                                 <div className="text-center">
-                                    <h2 className="text-4xl font-bold text-center text-gray-700 dark:text-white">
-                                        Brand
+                                {/* <img src={logo} className="h-20" /> */}
+                                    <h2 className="text-4xl font-bold text-center text-gray-700">
+                                      GlobalSpeak
                                     </h2>
 
                                     <p className="mt-3 text-gray-500 dark:text-gray-300">

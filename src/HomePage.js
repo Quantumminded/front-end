@@ -53,7 +53,7 @@ function HomePage() {
                 Documents
               </h1>
               <p className=" md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-white mt-5">
-                Get your documents translated with us! At [Company Name], we
+                Get your documents translated with us! At GlobalSpeak, we
                 specialize in providing high-quality and accurate translations
                 for a variety of personal and professional documents. From birth
                 certificates and diplomas to legal contracts and technical
@@ -131,7 +131,7 @@ function HomePage() {
                 Calls
               </h1>
               <p className=" md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-b3 mt-5">
-                At [Company Name], we understand the importance of clear and
+                At GlobalSpeak, we understand the importance of clear and
                 accurate communication, especially when it comes to phone calls.
                 That's why we offer professional call translation services to
                 help you connect with clients and partners around the world. Our
@@ -209,7 +209,7 @@ function HomePage() {
                 Translations
               </h1>
               <p className="md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-white mt-5">
-                At [Company Name], we connect businesses and individuals with
+                At GlobalSpeak, we connect businesses and individuals with
                 skilled freelancer translators for all their translation needs.
                 Whether you need website localization, document translation, or
                 interpretation services, we have a team of professionals ready
