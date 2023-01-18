@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import AllLanguages from "./AllLanguages";
-import BreadCrumbs from "./Components/BreadCrumbs/BreadCrumbs";
-import InputTag from "./Components/Form/InputTag";
-import { client } from "./utils/client.mjs";
-import useContextHook from "./utils/customContextHook";
-import toastMessage from "./Components/notification/toastMessage";
-import { Type } from "./Type";
+import AllLanguages from "../../AllLanguages";
+import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
+import InputTag from "../Form/InputTag";
+import { client } from "../../utils/client.mjs";
+import useContextHook from "../../utils/customContextHook";
+import toastMessage from "../notification/toastMessage";
+import { Type } from "../../Type";
 import { useParams } from "react-router";
 
 export default function PostRequest() {
@@ -42,9 +42,7 @@ export default function PostRequest() {
     console.log(event.target.name);
     setFormValues({
       ...formValues,
-      [event.target.name]: [
-        event.target.value,
-      ],
+      [event.target.name]: [event.target.value],
     });
   };
 

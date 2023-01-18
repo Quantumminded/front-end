@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router";
-import SelectionCard from "./Components/Select/SelectionCard";
+import SelectionCard from "../Select/SelectionCard";
 
 function Select() {
   return (
@@ -12,7 +12,10 @@ function Select() {
               Select Service
             </h1>
             <p className="text-1xl leading-6 text-center font-bold text-b2 sm:w-96 md:w-9/12 lg:w-5/12 mt-4 p-3">
-            We are here to assist you with all your language needs. Whether you are looking to request a translation or offer your own translation services, we have got you covered. Please select from the options below to proceed:
+              We are here to assist you with all your language needs. Whether
+              you are looking to request a translation or offer your own
+              translation services, we have got you covered. Please select from
+              the options below to proceed:
             </p>
           </div>
 

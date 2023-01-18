@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 // // // IMPORT COMPONENT
-import HomeCard2 from "./Components/HomePage/HomeCard2";
-import HomeHeroSection from "./Components/HomePage/HomeHeroSection";
-import CategoryButtons from "./Components/HomePage/CategoryButtons";
+import HomeCard2 from "../HomePage/HomeCard2";
+import HomeHeroSection from "../HomePage/HomeHeroSection";
+import CategoryButtons from "../HomePage/CategoryButtons";
 
 function ServicePage() {
   const [cards, setCards] = useState([]);

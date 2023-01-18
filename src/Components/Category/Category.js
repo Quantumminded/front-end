@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // IMPORT COMPONENT
-import Banner from "./Components/Category/Banner";
-import CategoryButtons from "./Components/HomePage/CategoryButtons";
-import HomeCard2 from "./Components/HomePage/HomeCard2";
+import Banner from "./Banner";
+import CategoryButtons from "../HomePage/CategoryButtons";
+import HomeCard2 from "../HomePage/HomeCard2";
 
 function Category() {
   const { category } = useParams();

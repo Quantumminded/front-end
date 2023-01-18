@@ -2,8 +2,8 @@ import React from "react";
 
 // IMPORT COMPONENT
 
-import TeamSection from "./Components/About/TeamSection";
-import AboutUsSection from "./Components/About/AboutUsSection";
+import TeamSection from "./TeamSection";
+import AboutUsSection from "./AboutUsSection";
 
 function About() {
   return (

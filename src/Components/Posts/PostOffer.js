@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import AllLanguages from "./AllLanguages";
-import BreadCrumbs from "./Components/BreadCrumbs/BreadCrumbs";
-import InputTag from "./Components/Form/InputTag";
-import { client } from "./utils/client.mjs";
-import useContextHook from "./utils/customContextHook";
-import toastMessage from "./Components/notification/toastMessage";
+import AllLanguages from "../../AllLanguages";
+import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
+import InputTag from "../Form/InputTag";
+import { client } from "../../utils/client.mjs";
+import useContextHook from "../../utils/customContextHook";
+import toastMessage from "../notification/toastMessage";
 import qs from "qs";
-import { fullName } from "./languages";
-import HomeCard from "./Components/HomePage/HomeCard";
+import { fullName } from "../../languages";
+import HomeCard from "../HomePage/HomeCard";
 const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
@@ -128,7 +128,7 @@ const PostOffer = () => {
                       className="w-full h-full px-28 object-cover rounded absolute shadow"
                     />
                     <div className="absolute bg-black opacity-0 top-0 right-0 bottom-0 left-0 rounded" />
-                    
+
                     <div className="w-20 h-20 rounded-full bg-cover bg-center bg-no-repeat absolute bottom-0 -mb-10 ml-12 shadow flex items-center justify-center">
                       <img
                         src="https://cdn.tuk.dev/assets/webapp/forms/form_layouts/form2.jpg"

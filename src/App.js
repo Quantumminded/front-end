@@ -3,22 +3,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 //Import pages
 import Nav from "./Components/NavBar/Nav";
-import HomePage from "./HomePage";
-import ServicePage from "./ServicePage";
+import HomePage from "./Components/HomePage/HomePage";
+import ServicePage from "./Components/Category/ServicePage";
 import SignIn from "./SignIn";
 import Footer from "./Components/Footer/Footer";
-import PostOffer from "./PostOffer";
-import SelectRequest from "./SelectRequest";
-import Select from "./Select";
+import PostOffer from "./Components/Posts/PostOffer";
+import SelectRequest from "./Components/Posts/SelectRequest";
+import Select from "./Components/Posts/Select";
 import ClientProfile from "./ClientProfile";
-import DocumentForm from "./DocumentForm";
-import CallForm from "./CallForm";
-import TransaltionForm from "./TransaltionForm";
-import Category from "./Category";
-import About from "./About";
+import CallForm from "./Components/Form/CallForm";
+import Category from "./Components/Category/Category";
+import About from "./Components/About/About";
 import TeamSection from "./Components/About/TeamSection";
 import Privacy from "./Components/PrivacyPolicy/Privacy";
-import Checkout from "./Checkout";
+import Checkout from "./Components/Payment/Checkout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import Messages from "./Messages";
 import Error from "./Components/404/Error";
@@ -30,7 +28,7 @@ import { UserContext } from "./utils/UserContext";
 import { client } from "./utils/client.mjs";
 import toastMessage from "./Components/notification/toastMessage";
 import DashBoard from "./Components/DashBoard/DashBoard";
-import PostRequest from "./PostRequest";
+import PostRequest from "./Components/Posts/PostRequest";
 function App() {
   //Cookies
   const [cookies, setCookie] = useCookies(["token"]);
@@ -116,16 +114,14 @@ function App() {
                 </Route>
                 <Route path="Offer" element={<PostOffer />} />
               </Route>
-              <Route path="/DocumentForm" element={<DocumentForm />} />
               <Route path="/CallForm" element={<CallForm />} />
-              <Route path="/TransaltionForm" element={<TransaltionForm />} />
               <Route path="/Privacy" element={<Privacy />} />
               <Route path="/TeamSection" element={<TeamSection />} />
               <Route path="/Checkout/:id" element={<Checkout />} />
               <Route path="/Dashboard" element={<DashBoard />} />
               <Route path="/ProductDetails/:id" element={<ProductDetails />} />
               <Route path="/messages" element={<Messages />} />
-              <Route path="/*" element={<Error/>}/>
+              <Route path="/*" element={<Error />} />
             </Routes>
             <Footer />
           </BrowserRouter>

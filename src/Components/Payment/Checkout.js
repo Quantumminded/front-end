@@ -1,10 +1,10 @@
-import { Stepper } from "./Components/Order/Stepper.jsx";
+import { Stepper } from "../Order/Stepper.jsx";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { languages } from "./languages.jsx";
-import { client } from "./utils/client.mjs";
-import useContextHook from "./utils/customContextHook";
-import toast from "./Components/notification/toastMessage.js";
+import { languages } from "../../languages.jsx";
+import { client } from "../../utils/client.mjs";
+import useContextHook from "../../utils/customContextHook";
+import toast from "../notification/toastMessage.js";
 
 function Checkout() {
   const { token } = useContextHook();
