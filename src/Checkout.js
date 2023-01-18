@@ -1,6 +1,6 @@
 import { Stepper } from "./Components/Order/Stepper.jsx";
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { languages } from "./languages.jsx";
 import { client } from "./utils/client.mjs";
 import useContextHook from "./utils/customContextHook";
@@ -11,11 +11,12 @@ function Checkout() {
   const [show, setShow] = useState(false);
   const { id } = useParams();
   const [fetchData, setFetchData] = useState();
+  const navigate = useNavigate();
   //Inputs
   const [formValues, setFormValues] = useState({
-    time: "",
-    date: "",
-    details: "",
+    time: null,
+    date: null,
+    details: null,
   });
   function handleChange(e) {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -44,13 +45,17 @@ function Checkout() {
     );
     return findings;
   };
-  async function doAccept() {
+  async function doAccept(e) {
+    e.preventDefault();
     try {
       const { data } = await client(token).post(`/task/accepted/${id}`, {
         ...formValues,
       });
       setMessage(data);
-      setTimeout(() => (window.location.href = "/messages"), 2000);
+      await client(token).post("/chat/new", {
+        created_with: fetchData[0].users_id,
+      });
+      setTimeout(() => navigate("/messages"), 2000);
     } catch (error) {
       setMessage(error.response.data);
     }
@@ -214,7 +219,10 @@ function Checkout() {
 
                 {/* Summary section  */}
                 <div className="xl:w-1/2 md:w-1/3  w-full bg-gray-100 h-full">
-                  <div className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto">
+                  <form
+                    onSubmit={doAccept}
+                    className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto"
+                  >
                     <div>
                       <p className="text-4xl font-black leading-9 text-gray-800">
                         Provide some Information
@@ -223,15 +231,15 @@ function Checkout() {
                       <div className="flex items-center justify-between  pt-16">
                         <div className="">
                           {/* Task Provider */}
-                          <div class="flex items-center space-x-4 pb-4">
+                          <div className="flex items-center space-x-4 pb-4">
                             <img
-                              class="w-10 h-10 rounded-full"
+                              className="w-10 h-10 rounded-full"
                               src={fetchData[0].image}
                               alt=""
                             />
-                            <div class="font-medium dark:text-white">
+                            <div className="font-medium dark:text-white">
                               <div>{`${fetchData[0].firstname} ${fetchData[0].lastname}`}</div>
-                              <div class="text-sm text-gray-500 dark:text-gray-400">
+                              <div className="text-sm text-gray-500 dark:text-gray-400">
                                 Joined in August 2014
                               </div>
                             </div>
@@ -240,12 +248,13 @@ function Checkout() {
                           {/* TEXTBOx */}
                           <div className="mb-3 xl:w-96">
                             <label
-                              for="exampleFormControlTextarea1"
+                              htmlFor="exampleFormControlTextarea1"
                               className="form-label inline-block mb-2 text-gray-700"
                             >
                               Describe your Task
                             </label>
                             <textarea
+                              required
                               name="details"
                               value={formValues.details}
                               onChange={handleChange}
@@ -275,6 +284,7 @@ function Checkout() {
                             </p>
                             <div className="flex gap-2 justify-between">
                               <input
+                                required={true}
                                 value={formValues.time}
                                 type={"time"}
                                 name="time"
@@ -282,6 +292,7 @@ function Checkout() {
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                               />
                               <input
+                                required={true}
                                 value={formValues.date}
                                 type={"date"}
                                 name="date"
@@ -306,13 +317,13 @@ function Checkout() {
                         </p>
                       </div>
                       <button
-                        onClick={doAccept}
+                        type="submit"
                         className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white"
                       >
                         Checkout
                       </button>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>

@@ -7,83 +7,59 @@ import useContextHook from './utils/customContextHook';
 import ChatInside from './Chat/ChatInside';
 
 const Messages = () => {
-    const { token } = useContextHook()
-    const [activeChats, setActiveChats] = useState([
-        { id: 'chat1', name: 'Chat 1', messages: [{ id: 2, text: "test2123" }, { id: 2, text: "test2123" }, { id: 2, text: "test2123" }, { id: 2, text: "test2123" }, { id: 2, text: "test2123" }] },
-        { id: 'chat2', name: 'Chat 2', messages: [] },
-        { id: 'chat3', name: 'Chat 3', messages: [] }
-    ]);
+    const { token, user } = useContextHook()
+    const [activeChats, setActiveChats] = useState([]);
     const [selectedChat, setSelectedChat] = useState(null);
-    const [socket, setSocket] = useState(null);
-    const [input, setInput] = useState('');
+
 
     useEffect(() => {
-
-        const socket = io();
-        socket.connect()
-        console.log(socket)
-        setSocket(socket);
-        socket.on("connect", () => {
-            console.log(socket.connected); // true
-        });
-
-        socket.on("disconnect", () => {
-            console.log(socket.connected); // false
-        });
-
-        return () => {
-            socket.off('connect');
-            socket.off('disconnect');
-        };
+        client(token).get('/chat').then(({ data }) => setActiveChats(data))
     }, []);
 
-    const handleSelectChat = (chat) => {
-        setSelectedChat(chat);
-        socket.emit('join', chat.id);
-    }
+    if (user)
+        return (
+            <div className="flex h-screen">
+                <SideBar />
+                <div className="w-1/3 bg-gray-200 p-4 flex flex-col-reverse place-content-start">
+                    {activeChats.map((chat) => {
+                        const formatDate = (created_at) => {
+                            const date = new Date(created_at);
+                            const day = date.getDate().toString().padStart(2, '0');
+                            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                            const year = date.getFullYear();
+                            const hour = date.getHours().toString().padStart(2, '0');
+                            const minutes = date.getMinutes().toString().padStart(2, '0');
+                            const formattedDate = `${day}-${month}-${year} ${hour}:${minutes}`;
+                            return formattedDate
+                        }
+                        return (
+                            <div
+                                key={chat.id}
+                                className={classnames("p-2 cursor-pointer hover:bg-gray-300", { "bg-gray-300": chat === selectedChat })}
+                                onClick={() => setSelectedChat(chat)}
+                            >
+                                {(chat.firstname == user.firstname) ? <><div class="flex items-center space-x-4">
+                                    <img class="w-10 h-10 rounded-full object-cover" src={chat.createdby_image} alt={chat.createdby_firstname} />
+                                    <div class="font-medium dark:text-white">
+                                        <div>{`${chat.createdby_firstname} ${chat.createdby_lastname}`}</div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400">{formatDate(chat.created_at)}</div>
+                                    </div>
+                                </div></> : <div class="flex items-center space-x-4">
+                                    <img class="w-10 h-10 rounded-full object-cover" src={chat.image} alt={chat.firstname} />
+                                    <div class="font-medium dark:text-white">
+                                        <div>{`${chat.firstname} ${chat.lastname}`}</div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400">{formatDate(chat.created_at)}</div>
+                                    </div>
+                                </div>}
 
-    useEffect(() => {
-        if (socket && selectedChat) {
-            socket.on(`chat:${selectedChat.id}`, (message) => {
-                // Update the selectedChat's messages
-                setSelectedChat((prevChat) => {
-                    return {
-                        ...prevChat,
-                        messages: [...prevChat.messages, message]
-                    }
-                });
-            });
-        }
-    }, [socket, selectedChat]);
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className="w-2/3 bg-white p-4">
+                    {selectedChat && <ChatInside selectedChat={selectedChat} />}
 
-    const handleSendMessage = (event) => {
-
-        event.preventDefault();
-        if (socket && selectedChat && input) {
-            client(token).post('/user/chat', { messages: input, name: "testname" }).then(res => console.log(res))
-            socket.emit(`chat:${selectedChat.id}`, { text: input });
-            setInput('');
-        }
-    }
-
-    return (
-        <div className="flex h-screen">
-            <SideBar />
-            <div className="w-1/3 bg-gray-200 p-4">
-                {activeChats.map((chat) => (
-                    <div
-                        key={chat.id}
-                        className={classnames("p-2 cursor-pointer", { "bg-gray-300": chat === selectedChat })}
-                        onClick={() => handleSelectChat(chat)}
-                    >
-                        {chat.name}
-                    </div>
-                ))}
-            </div>
-            <div className="w-2/3 bg-white p-4">
-
-                <ChatInside />
-                {/* {selectedChat && (
+                    {/* {selectedChat && (
                     <>
                         <div className="mb-4 chat-start">
                             {selectedChat.messages.map((message) => (
@@ -102,9 +78,9 @@ const Messages = () => {
                         </form>
                     </>
                 )} */}
+                </div>
             </div>
-        </div>
-    );
+        );
 };
 
 export default Messages;
