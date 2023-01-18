@@ -12,8 +12,7 @@ function BookNow({ card }) {
       },
       body: JSON.stringify({
         items: [
-          { id: 1, quantity: 3 },
-          { id: 2, quantity: 1 },
+          { id: 1, quantity: 1 },
         ],
         
       }),
