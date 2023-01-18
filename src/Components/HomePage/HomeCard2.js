@@ -25,7 +25,7 @@ function HomeCard2({ card }) {
               </div>
 
               <img
-                className="w-full shadow rounded-2xl bg-white opacity-70"
+                className="w-full shadow rounded-2xl bg-white"
                 src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/TXBCIBXOPII6ZH4QPHPR7MUCSY.jpg"
                 alt="pic"
               />
