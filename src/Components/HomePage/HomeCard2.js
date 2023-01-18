@@ -26,7 +26,7 @@ function HomeCard2({ card }) {
 
               <img
                 className="w-full shadow rounded-2xl bg-white"
-                src="https://ehlion.com/wp-content/uploads/2020/07/translate.jpg"
+                src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/TXBCIBXOPII6ZH4QPHPR7MUCSY.jpg"
                 alt="pic"
               />
             </div>
