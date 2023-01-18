@@ -5,7 +5,7 @@ function BookNow({ card }) {
     const [error, setError] = useState(null);
 
   const handleClick = (card) => {
-    fetch("http://localhost:3001/create-checkout-session", {
+    fetch("https://ultra-top-secret-backend-production.up.railway.app/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
