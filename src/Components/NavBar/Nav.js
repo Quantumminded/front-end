@@ -4,7 +4,7 @@ import NotificationCenter from "../notification/NotificationCenter";
 import ProfileIcon from "../notification/Profile/ProfileIcon";
 import "../../index.css";
 import useContextHook from "../../utils/customContextHook";
-
+import logo from "../../img/translation.png";
 function Nav() {
   const { authorized } = useContextHook();
   const [navbar, setNavbar] = useState(false);
@@ -13,8 +13,9 @@ function Nav() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="/">
-              <h2 className="text-2xl font-bold text-white">LOGO</h2>
+            <Link to="/" className="flex gap-2">
+              <img src={logo} className="h-10 w-10" />
+              <h2 className="text-2xl font-bold text-white">GlobalSpeak</h2>
             </Link>
             <div className="md:hidden">
               <button
@@ -74,31 +75,31 @@ function Nav() {
                 <Link to="/TeamSection">Contact US</Link>
               </li>
             </ul>
-           {authorized ? (
-            <>
-              <div className="sm:pt-3 ">
-                <Link
-                  to="/Select"
-                  className=" px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y1 self-center md:hidden lg:hidden sm:block">
-                  Get Started
-                </Link>
-                <div className=" md:hidden lg:hidden sm:flex sm:my-3 sm:space-x-2">
-                  <NotificationCenter />
-                  <ProfileIcon />
+            {authorized ? (
+              <>
+                <div className="sm:pt-3 ">
+                  <Link
+                    to="/Select"
+                    className=" px-4 py-2 text-b1 bg-y2 rounded-md shadow hover:bg-b3 hover:text-y1 self-center md:hidden lg:hidden sm:block"
+                  >
+                    Get Started
+                  </Link>
+                  <div className=" md:hidden lg:hidden sm:flex sm:my-3 sm:space-x-2">
+                    <NotificationCenter />
+                    <ProfileIcon />
+                  </div>
                 </div>
+              </>
+            ) : (
+              <div className="mt-3 space-y-2 lg:hidden md:hidden">
+                <Link
+                  to="/SignIn"
+                  className="inline-block w-full mb-1 px-4 py-2 text-center text-b1 bg-y1 rounded-md shadow hover:bg-b3 hover:text-y2 "
+                >
+                  Sign in
+                </Link>
               </div>
-            </>
-           ) : (
-            <div className="mt-3 space-y-2 lg:hidden md:hidden">
-              <Link
-                to="/SignIn"
-                className="inline-block w-full mb-1 px-4 py-2 text-center text-b1 bg-y1 rounded-md shadow hover:bg-b3 hover:text-y2 "
-              >
-                Sign in
-              </Link>
-            </div>
-           )}
-
+            )}
           </div>
         </div>
         {authorized ? (
@@ -110,8 +111,8 @@ function Nav() {
               Get Started
             </Link>
             <div className="hidden lg:flex md:flex gap-4">
-            <NotificationCenter />
-            <ProfileIcon />
+              <NotificationCenter />
+              <ProfileIcon />
             </div>
           </div>
         ) : (
