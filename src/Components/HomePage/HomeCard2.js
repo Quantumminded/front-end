@@ -45,7 +45,7 @@ function HomeCard2({ card }) {
                   </span>
                 </div>
                 {/* LANGUAGE SPOKEN */}
-                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                <div className="mt-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
                     {fullName(card.languages[0])} |{" "}
                     {fullName(card.languages[1])}
                 </div>
