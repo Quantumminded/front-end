@@ -43,21 +43,16 @@ function HomeCard2({ card }) {
                   <span className="bg-b2 text-y2 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                     {card.type}
                   </span>
-                  {/* LANGUAGE SPOKEN */}
-                  <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+                </div>
+                {/* LANGUAGE SPOKEN */}
+                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
                     {fullName(card.languages[0])} |{" "}
                     {fullName(card.languages[1])}
-                  </div>
                 </div>
                 {/* SMALL DESCIPTION OF SERVICE */}
                 <h4 className="mt-2 text-sm uppercase leading-tight">
                   {card.title}
                 </h4>
-                {/* LANGUAGE SPOKEN */}
-                <div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-                    {fullName(card.languages[0])} |{" "}
-                    {fullName(card.languages[1])}
-                  </div>
                 {/* PRICE OF SERVICE */}
                 <div className="mt-1">
                   {card.price}
