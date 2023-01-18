@@ -5,15 +5,18 @@ function BookNow({ card }) {
 
   const handleClick = (card) => {
     console.log(card.id);
-    fetch("http://localhost:3001/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        items: [{ id: card.id, quantity: 1 }],
-      }),
-    })
+    fetch(
+      "https://ultra-top-secret-backend-production.up.railway.app/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: [{ id: card.id, quantity: 1 }],
+        }),
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           return res.json().then((json) => {
