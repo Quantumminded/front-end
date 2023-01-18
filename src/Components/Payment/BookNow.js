@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 
 function BookNow({ card }) {
-  console.log(card);
   const [error, setError] = useState(null);
 
   const handleClick = (card) => {
+    console.log(card.id);
     fetch("http://localhost:3001/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: [
-          { id: 1, quantity: 1 },
-        ],
-        
+        items: [{ id: card.id, quantity: 1 }],
       }),
     })
-      .then(res => {
+      .then((res) => {
         if (!res.ok) {
           return res.json().then((json) => {
             throw new Error(json.error);
