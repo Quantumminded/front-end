@@ -125,6 +125,7 @@ function App() {
               <Route path="/Dashboard" element={<DashBoard />} />
               <Route path="/ProductDetails/:id" element={<ProductDetails />} />
               <Route path="/messages" element={<Messages />} />
+              <Route path="/*" element={<Error/>}/>
             </Routes>
             <Footer />
           </BrowserRouter>
