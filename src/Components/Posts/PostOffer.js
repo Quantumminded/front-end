@@ -41,11 +41,6 @@ const PostOffer = () => {
   const handleChange = (event) => {
     setFormValues({
       ...formValues,
-      title: `I will make your ${
-        formValues.type
-      } : From ${formValues.languages.map((ele) =>
-        fullName(ele)
-      )} to ${fullName(user.languages)}`,
       [event.target.name]: event.target.value,
     });
   };
@@ -167,7 +162,7 @@ const PostOffer = () => {
                     </label>
                     <input
                       value={formValues.title}
-                      onChange={`handleChange`}
+                      onChange={handleChange}
                       type="text"
                       id="title"
                       name="title"
