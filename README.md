@@ -19,7 +19,7 @@
 - **Read Offers** As a user I can read an Offers
 - **Delete Offers** As a user I can delete an Offers
 - **Edit User** As a user I can edit my profile, add or substract Offers
-- **Chat** As an anon I can chat with other people in the platfo
+- **Chat** As an anon I can chat with other people in the platform
 
 ## Backlog
 
