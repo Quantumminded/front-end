@@ -4,7 +4,7 @@
 
 ## Description
 
-***GlobalSpeak*** is the resource for all BASE jumpers around the world to check the weather conditions of different jumps and cross referencing latitude and longitude of exit points with Windy API and map box topographyc features.
+***GlobalSpeak*** is the go-to resource for language translation, providing users with the ability to check translations for different languages and cross-reference them with the help of advanced language technology and location-specific features.
 
 ## User Stories
 
