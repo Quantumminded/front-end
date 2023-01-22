@@ -4,7 +4,7 @@
 
 ## Description
 
-***GlobalSpeak*** is the go-to resource for language translation, providing users with the ability to check translations for different languages and cross-reference them with the help of advanced language technology and location-specific features.
+***GlobalSpeak*** is the go-to resource for language translation, providing users with the ability to check translations for different languages and cross-reference them with the help of advanced language technology.
 
 ## User Stories
 
