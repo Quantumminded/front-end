@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AllLanguages from "../../AllLanguages";
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
-import InputTag from "../Form/InputTag";
 import { client } from "../../utils/client.mjs";
 import useContextHook from "../../utils/customContextHook";
 import toastMessage from "../notification/toastMessage";
