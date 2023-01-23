@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from "./Components/Login/LogoutButton.jsx";
 export default function SideBar() {
 
-  return (<nav className="bg-gray-800 h-screen">
+  return (<nav className="bg-b3 h-screen">
     <ul className="py-4 px-2">
       <li className="mb-4">
         <NavLink to="/Profile" className={(navData) => (navData.isActive ? "text-white block font-semibold hover:text-white" : 'text-gray-400 block font-semibold hover:text-white')}>
