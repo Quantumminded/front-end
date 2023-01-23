@@ -4,7 +4,7 @@
 
 ## Description
 
-***dataBASE*** is the resource for all BASE jumpers around the world to check the weather conditions of different jumps and cross referencing latitude and longitude of exit points with Windy API and map box topographyc features.
+***GlobalSpeak*** is the go-to resource for language translation, providing users with the ability to check translations for different languages and cross-reference them with the help of advanced language technology.
 
 ## User Stories
 
@@ -19,7 +19,7 @@
 - **Read Offers** As a user I can read an Offers
 - **Delete Offers** As a user I can delete an Offers
 - **Edit User** As a user I can edit my profile, add or substract Offers
-- **Chat** As an anon I can chat with other people in the platfor
+- **Chat** As an anon I can chat with other people in the platform
 
 ## Backlog
 
@@ -70,24 +70,6 @@ User profile:
 - Nav
 - Footer
 
-## Services
-
-- Auth Service
-  - auth.login(user)
-  - auth.signup(user)
-  - auth.logout()
-  - auth.me()
-  - auth.getUser() // synchronous
-- Exit Point Service
-  - exitPoint.list()
-  - exitPoint.detail(id)
-  - exitPoint.add(id)
-  - exitPoint.delete(id)
-- User Service
-  - user.detail(id)
-
-
-
 # Server / Backend
 
 ## Models
@@ -97,7 +79,7 @@ User model
 ```
 {
   user: {type: String, required: true, unique: true},
-  email: {type: String, required: true, unique: true},
+  email: {type: String, required: true, unique: true}
   password: {type: String, required: true},
   favorites: [{type: Schema.Types.ObjectId,ref:'Exit'}]
   userAgreement: {type: boolean, required: true, default: false}
