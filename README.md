@@ -70,24 +70,6 @@ User profile:
 - Nav
 - Footer
 
-## Services
-
-- Auth Service
-  - auth.login(user)
-  - auth.signup(user)
-  - auth.logout()
-  - auth.me()
-  - auth.getUser() // synchronous
-- Exit Point Service
-  - exitPoint.list()
-  - exitPoint.detail(id)
-  - exitPoint.add(id)
-  - exitPoint.delete(id)
-- User Service
-  - user.detail(id)
-
-
-
 # Server / Backend
 
 ## Models
