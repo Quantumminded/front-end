@@ -198,6 +198,6 @@ export const languages = [
 // to get the name out of the array 
 export function fullName(input) {
     if (!input) return
-    const { name } = languages.find((ele) => ele.code == input);
+    const { name } = languages.find((ele) => ele.code === input);
     return name;
 };

@@ -6,8 +6,7 @@ import { client } from "../../utils/client.mjs";
 import useContextHook from "../../utils/customContextHook";
 import toastMessage from "../notification/toastMessage";
 import qs from "qs";
-import { fullName } from "../../languages";
-import HomeCard from "../HomePage/HomeCard";
+
 const PostOffer = () => {
   const [message, setMessage] = useState();
   useEffect(() => {
