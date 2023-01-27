@@ -12,7 +12,7 @@ function HomeCard({ language }) {
               
               {language &&
                 language.map((ele) => (
-                  // console.log(ele.length)
+                  
                   <img
                     className="p-2"
                     src={`https://flagcdn.com/24x18/${ele}.png`}

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { fullName } from "../../languages";
 
-import BookNow from "../Payment/BookNow";
 
 function HomeCard2({ card }) {
   console.log(card);
