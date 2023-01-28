@@ -142,6 +142,6 @@ Exit model
 
 The url to your presentation slides
 
-[Slides Link](http://slides.com/)
+[Slides Link]
 
 
