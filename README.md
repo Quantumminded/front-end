@@ -15,9 +15,9 @@
 - **User Log in:** As a user I can login to the platform
 - **User log out:** As a user I can logout from the platform so no one else can use it
 - **Add Offers** As a user I can add an Offers
-- **Edit Offers** As a user I can edit an Offers
-- **Read Offers** As a user I can read an Offers
-- **Delete Offers** As a user I can delete an Offers
+- **Edit Offers** As a user I can edit an Offer
+- **Read Offers** As a user I can read an Offer
+- **Delete Offers** As a user I can delete an Offer
 - **Edit User** As a user I can edit my profile, add or substract Offers
 - **Chat** As an anon I can chat with other people in the platform
 
