@@ -14,7 +14,7 @@ function Nav() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/" className="flex gap-2">
-              <img src={logo} className="h-10 w-10" />
+              <img src={logo} alt="logo" className="h-10 w-10" />
               <h2 className="text-2xl font-bold text-white">GlobalSpeak</h2>
             </Link>
             <div className="md:hidden">
