@@ -1,6 +1,3 @@
-# Quick Compo
-
-<img src="/Users/enriquecoscarelli/Downloads/minilogo.png" alt="minilogo" style="zoom:75%;" />
 
 ## Description
 
@@ -28,7 +25,6 @@ User profile:
 - See my profile
 - See Offers
 - Create Offers
-
 
 
 # Client / Frontend
